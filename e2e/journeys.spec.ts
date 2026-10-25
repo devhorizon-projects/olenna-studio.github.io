@@ -96,7 +96,7 @@ test.describe("Olenna Website Key Journeys", () => {
     await expect(page.locator("h1")).toContainText(/We'd Love to Hear From You/i);
 
     // Submit without input triggers validation errors
-    await page.click('button:has-text("Submit Enquiry")');
+    await page.click('button:has-text("Send Message")');
     await expect(page.locator("text=Please enter your full name")).toBeVisible();
     await expect(page.locator("text=Please provide a valid email address")).toBeVisible();
 
@@ -107,8 +107,12 @@ test.describe("Olenna Website Key Journeys", () => {
     await page.fill("#subject", "Bridal consultation");
     await page.fill("#message", "I would like to book a bridal jewellery appointment for next Saturday.");
 
-    await page.click('button:has-text("Submit Enquiry")');
-    // Check validation confirmation state per prompt guidelines
-    await expect(page.locator("text=Submission Validation Complete")).toBeVisible();
+    await page.click('button:has-text("Send Message")');
+    // Check validation confirmation state
+    await expect(
+      page.locator(
+        "text=Thank you! Your message has been sent. Our team will get back to you shortly."
+      )
+    ).toBeVisible();
   });
 });

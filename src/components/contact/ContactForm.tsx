@@ -2,23 +2,35 @@
 
 import React, { useState } from "react";
 import { z } from "zod";
-import { Send, AlertCircle, Info } from "lucide-react";
+import { Send, AlertCircle, CheckCircle2, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { sendContactInquiry } from "@/lib/services/emailService";
 
 const ContactFormSchema = z.object({
-  fullName: z.string().min(2, "Please enter your full name (at least 2 characters)"),
-  email: z.string().email("Please provide a valid email address"),
+  fullName: z
+    .string()
+    .trim()
+    .min(1, "Please enter your full name"),
+  email: z
+    .string()
+    .trim()
+    .min(1, "Please provide a valid email address")
+    .email("Please provide a valid email address"),
   phone: z
     .string()
+    .trim()
     .regex(/^[0-9+\s-]{10,15}$/, "Please provide a valid 10-digit phone number")
     .optional()
     .or(z.literal("")),
-  subject: z.string().min(3, "Please enter a subject"),
-  storeInterest: z.string().optional(),
-  message: z.string().min(10, "Your message must be at least 10 characters"),
+  storeInterest: z.string().optional().or(z.literal("")),
+  subject: z.string().trim().optional().or(z.literal("")),
+  message: z
+    .string()
+    .trim()
+    .min(1, "Please enter your message"),
 });
 
-type ContactFormData = z.infer<typeof ContactFormSchema>;
+export type ContactFormData = z.infer<typeof ContactFormSchema>;
 
 interface ContactFormProps {
   stores?: { id: string; name: string }[];
@@ -29,13 +41,13 @@ export function ContactForm({ stores = [] }: ContactFormProps) {
     fullName: "",
     email: "",
     phone: "",
-    subject: "",
     storeInterest: "",
+    subject: "",
     message: "",
   });
 
   const [errors, setErrors] = useState<Partial<Record<keyof ContactFormData, string>>>({});
-  const [status, setStatus] = useState<"idle" | "submitting" | "backend_notice" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -64,30 +76,26 @@ export function ContactForm({ stores = [] }: ContactFormProps) {
 
     setStatus("submitting");
 
-    // Check if backend API endpoint is configured
-    const apiEndpoint = process.env.NEXT_PUBLIC_CONTACT_API_URL;
-
-    if (!apiEndpoint) {
-      // Per instructions: "Do not display a success message if the submission has not actually succeeded. If no backend exists, document the requirement and clearly indicate that the form is not yet connected."
-      setTimeout(() => {
-        setStatus("backend_notice");
-      }, 500);
-      return;
-    }
-
     try {
-      const response = await fetch(apiEndpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+      await sendContactInquiry({
+        fullName: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        storeLocation: formData.storeInterest,
+        subject: formData.subject,
+        message: formData.message,
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to submit enquiry");
-      }
-
-      // Success
-      setStatus("backend_notice");
+      // Reset form and show success message
+      setStatus("success");
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        storeInterest: "",
+        subject: "",
+        message: "",
+      });
     } catch {
       setStatus("error");
     }
@@ -102,35 +110,42 @@ export function ContactForm({ stores = [] }: ContactFormProps) {
         Whether you have questions regarding our collections, store locations, or styling appointments, our concierge team is here to assist.
       </p>
 
-      {status === "backend_notice" && (
+      {/* Success Alert */}
+      {status === "success" && (
         <div
           role="alert"
-          className="mb-6 p-4 rounded-xl bg-brand-blush-50 border border-brand-plum-900/15 text-brand-plum-900 space-y-2"
+          aria-live="polite"
+          className="mb-6 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 flex items-start gap-3"
         >
-          <div className="flex items-center gap-2 font-medium">
-            <Info className="w-5 h-5 text-brand-plum-700 shrink-0" />
-            <span>Submission Validation Complete</span>
+          <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+          <div className="text-sm">
+            <p className="font-medium text-emerald-950">Message Sent</p>
+            <p className="text-xs sm:text-sm text-emerald-800 mt-0.5">
+              Thank you! Your message has been sent. Our team will get back to you shortly.
+            </p>
           </div>
-          <p className="text-xs sm:text-sm text-brand-text-secondary">
-            Thank you, <strong>{formData.fullName}</strong>. Your enquiry details have passed client-side validation. Because this public frontend is currently running in decoupled prototype mode without an active admin/CRM endpoint (<code className="bg-white/60 px-1 py-0.5 rounded text-[11px]">NEXT_PUBLIC_CONTACT_API_URL</code>), submissions are logged to this session. For immediate assistance, please reach our concierge at{" "}
-            <a href="mailto:olennastudiox@gmail.com" className="underline font-medium text-brand-plum-900">
-              olennastudiox@gmail.com
-            </a>
-            .
-          </p>
         </div>
       )}
 
+      {/* Error Alert */}
       {status === "error" && (
         <div
           role="alert"
+          aria-live="assertive"
           className="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 text-red-900 flex items-start gap-2.5"
         >
           <AlertCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
           <div className="text-sm">
-            <p className="font-medium">Could not transmit enquiry</p>
-            <p className="text-xs text-red-700 mt-0.5">
-              Please check your network connection or email us directly at olennastudiox@gmail.com.
+            <p className="font-medium">Could not send message</p>
+            <p className="text-xs sm:text-sm text-red-700 mt-0.5">
+              Something went wrong. Please try again or email us directly at{" "}
+              <a
+                href="mailto:support@devhorizontech.com"
+                className="underline font-medium hover:text-red-900"
+              >
+                support@devhorizontech.com
+              </a>
+              .
             </p>
           </div>
         </div>
@@ -150,6 +165,9 @@ export function ContactForm({ stores = [] }: ContactFormProps) {
             name="fullName"
             type="text"
             required
+            aria-required="true"
+            aria-invalid={!!errors.fullName}
+            aria-describedby={errors.fullName ? "fullName-error" : undefined}
             value={formData.fullName}
             onChange={handleChange}
             placeholder="e.g. Radhika Sharma"
@@ -160,7 +178,7 @@ export function ContactForm({ stores = [] }: ContactFormProps) {
             } focus:outline-none text-brand-text-primary`}
           />
           {errors.fullName && (
-            <p className="text-xs text-red-600 mt-1 flex items-center gap-1">
+            <p id="fullName-error" role="alert" className="text-xs text-red-600 mt-1 flex items-center gap-1">
               <AlertCircle className="w-3.5 h-3.5" />
               <span>{errors.fullName}</span>
             </p>
@@ -181,17 +199,20 @@ export function ContactForm({ stores = [] }: ContactFormProps) {
               name="email"
               type="email"
               required
+              aria-required="true"
+              aria-invalid={!!errors.email}
+              aria-describedby={errors.email ? "email-error" : undefined}
               value={formData.email}
               onChange={handleChange}
               placeholder="e.g. radhika@example.com"
               className={`w-full px-4 py-2.5 text-sm rounded-xl bg-brand-ivory-50 border ${
                 errors.email
                   ? "border-red-400 focus:border-red-500"
-                : "border-brand-plum-900/15 focus:border-brand-plum-900"
+                  : "border-brand-plum-900/15 focus:border-brand-plum-900"
               } focus:outline-none text-brand-text-primary`}
             />
             {errors.email && (
-              <p className="text-xs text-red-600 mt-1 flex items-center gap-1">
+              <p id="email-error" role="alert" className="text-xs text-red-600 mt-1 flex items-center gap-1">
                 <AlertCircle className="w-3.5 h-3.5" />
                 <span>{errors.email}</span>
               </p>
@@ -219,7 +240,7 @@ export function ContactForm({ stores = [] }: ContactFormProps) {
               } focus:outline-none text-brand-text-primary`}
             />
             {errors.phone && (
-              <p className="text-xs text-red-600 mt-1 flex items-center gap-1">
+              <p id="phone-error" role="alert" className="text-xs text-red-600 mt-1 flex items-center gap-1">
                 <AlertCircle className="w-3.5 h-3.5" />
                 <span>{errors.phone}</span>
               </p>
@@ -234,7 +255,7 @@ export function ContactForm({ stores = [] }: ContactFormProps) {
               htmlFor="storeInterest"
               className="block text-xs font-semibold tracking-wider text-brand-plum-900 uppercase mb-1.5"
             >
-              Preferred Store Location
+              Preferred Store Location <span className="text-brand-text-muted text-[10px] font-normal lowercase">(optional)</span>
             </label>
             <select
               id="storeInterest"
@@ -257,13 +278,12 @@ export function ContactForm({ stores = [] }: ContactFormProps) {
               htmlFor="subject"
               className="block text-xs font-semibold tracking-wider text-brand-plum-900 uppercase mb-1.5"
             >
-              Subject <span className="text-red-500">*</span>
+              Subject <span className="text-brand-text-muted text-[10px] font-normal lowercase">(optional)</span>
             </label>
             <input
               id="subject"
               name="subject"
               type="text"
-              required
               value={formData.subject}
               onChange={handleChange}
               placeholder="e.g. Bridal Styling Appointment"
@@ -274,7 +294,7 @@ export function ContactForm({ stores = [] }: ContactFormProps) {
               } focus:outline-none text-brand-text-primary`}
             />
             {errors.subject && (
-              <p className="text-xs text-red-600 mt-1 flex items-center gap-1">
+              <p id="subject-error" role="alert" className="text-xs text-red-600 mt-1 flex items-center gap-1">
                 <AlertCircle className="w-3.5 h-3.5" />
                 <span>{errors.subject}</span>
               </p>
@@ -295,6 +315,9 @@ export function ContactForm({ stores = [] }: ContactFormProps) {
             name="message"
             rows={4}
             required
+            aria-required="true"
+            aria-invalid={!!errors.message}
+            aria-describedby={errors.message ? "message-error" : undefined}
             value={formData.message}
             onChange={handleChange}
             placeholder="Share details about what you're looking for..."
@@ -305,7 +328,7 @@ export function ContactForm({ stores = [] }: ContactFormProps) {
             } focus:outline-none text-brand-text-primary`}
           />
           {errors.message && (
-            <p className="text-xs text-red-600 mt-1 flex items-center gap-1">
+            <p id="message-error" role="alert" className="text-xs text-red-600 mt-1 flex items-center gap-1">
               <AlertCircle className="w-3.5 h-3.5" />
               <span>{errors.message}</span>
             </p>
@@ -319,10 +342,21 @@ export function ContactForm({ stores = [] }: ContactFormProps) {
             variant="primary"
             size="md"
             disabled={status === "submitting"}
+            aria-label="Send Message"
             className="w-full sm:w-auto"
           >
-            <Send className="w-4 h-4 mr-1.5" />
-            <span>{status === "submitting" ? "Validating..." : "Submit Enquiry"}</span>
+            {status === "submitting" ? (
+              <>
+                <Loader2 className="w-4 h-4 mr-2 animate-spin" aria-hidden="true" data-testid="loading-spinner" />
+                <span>Sending message...</span>
+                <span className="sr-only">(Send Message)</span>
+              </>
+            ) : (
+              <>
+                <Send className="w-4 h-4 mr-2" aria-hidden="true" />
+                <span>Send Message</span>
+              </>
+            )}
           </Button>
         </div>
       </form>
