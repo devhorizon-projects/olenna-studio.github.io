@@ -21,28 +21,32 @@ export default function TermsOfUsePage() {
             Last Updated: October 2026
           </p>
           <p>
-            Welcome to the Olenna brand website. By accessing or browsing this website, you agree to comply with and be bound by the following terms of use.
+            Welcome to Olenna StudioX. By accessing or using our mobile application and brand website, you agree to comply with and be bound by these terms of use.
           </p>
 
           <h2 className="text-xl font-serif text-brand-plum-900 pt-4">
-            1. Informational Purpose
+            1. Platform & Store Services
           </h2>
           <p>
-            This website provides brand information, physical boutique directories, and category previews. Digital purchases and orders are fulfilled through our dedicated Customer PWA application.
+            Olenna StudioX provides brand showcases, physical boutique directories, curated luxury collections, and online shopping services operated by Olenna StudioX | A Sahasra Business Solutions.
           </p>
 
           <h2 className="text-xl font-serif text-brand-plum-900 pt-4">
             2. Intellectual Property
           </h2>
           <p>
-            All content, including brand logos, editorial photography, typography, and website designs, are the property of Olenna Retail Private Limited or its licensors.
+            All content, including brand logos, editorial photography, typography, and application designs, are the property of Olenna StudioX | A Sahasra Business Solutions or its licensors.
           </p>
 
           <h2 className="text-xl font-serif text-brand-plum-900 pt-4">
-            3. Store Operating Timings
+            3. Contact & Support
           </h2>
           <p>
-            Store hours and availability listed on this directory may vary during regional holidays. We advise calling the local boutique number prior to travel for festive schedules.
+            For questions regarding these terms, please contact our support team at{" "}
+            <a href="mailto:support@olennastudiox.com" className="text-brand-plum-900 underline font-medium">
+              support@olennastudiox.com
+            </a>
+            .
           </p>
         </div>
       </Container>
