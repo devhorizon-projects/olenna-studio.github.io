@@ -23,7 +23,7 @@ export function Footer({ settings }: FooterProps) {
           <div className="lg:col-span-1 space-y-3">
             <Logo size="md" variant="horizontal" />
             <p className="text-xs font-medium tracking-wide text-brand-plum-900">
-              Olenna Studio | A Sahasra Business Solutions
+              Olenna StudioX | A Sahasra Business Solutions
             </p>
             <p className="text-xs sm:text-sm text-brand-text-secondary leading-relaxed max-w-xs font-light">
               {settings.tagline}

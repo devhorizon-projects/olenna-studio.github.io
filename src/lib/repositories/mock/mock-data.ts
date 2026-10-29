@@ -295,5 +295,5 @@ export const MOCK_SITE_SETTINGS: SiteSettings = {
       "Rajajinagar, Bangalore, Karnataka, India",
     isVerified: true,
   },
-  copyrightText: "© 2024 Olenna Studio | A Sahasra Business Solutions. All rights reserved.",
+  copyrightText: "© 2026 Olenna StudioX | A Sahasra Business Solutions. All rights reserved.",
 };

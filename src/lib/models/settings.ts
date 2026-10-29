@@ -36,7 +36,7 @@ export const SiteSettingsSchema = z.object({
   footerQuickLinks: z.array(NavigationItemSchema),
   socialLinks: z.array(SocialLinkSchema),
   contactDetails: ContactDetailsSchema,
-  copyrightText: z.string().default("© 2024 Olenna Studio | A Sahasra Business Solutions. All rights reserved."),
+  copyrightText: z.string().default("© 2026 Olenna StudioX | A Sahasra Business Solutions. All rights reserved."),
 });
 
 export interface NavigationItem {
