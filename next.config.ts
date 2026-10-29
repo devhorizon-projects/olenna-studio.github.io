@@ -1,9 +1,11 @@
 import type { NextConfig } from "next";
 
 const isExport = process.env.EXPORT === "true" || process.env.GITHUB_ACTIONS === "true";
+const rawBasePath = process.env.NEXT_PUBLIC_BASE_PATH;
 const basePath =
-  process.env.NEXT_PUBLIC_BASE_PATH ??
-  (process.env.GITHUB_ACTIONS === "true" ? "/olenna" : "");
+  rawBasePath && rawBasePath.trim() !== ""
+    ? rawBasePath
+    : (process.env.GITHUB_ACTIONS === "true" ? "/olenna-studio.github.io" : "");
 
 const nextConfig: NextConfig = {
   output: isExport ? "export" : undefined,
