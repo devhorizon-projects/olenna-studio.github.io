@@ -26,6 +26,16 @@ export interface ContactInquiryPayload {
   storeInterest?: string;
   subject?: string;
   message: string;
+  inquiryType?: string;
+  businessName?: string;
+  instagramHandle?: string;
+  productCategory?: string;
+  portfolioUrl?: string;
+  propertyAddress?: string;
+  carpetArea?: string;
+  commercialTerms?: string;
+  serviceCoverage?: string;
+  fleetCapabilities?: string;
 }
 
 export interface EmailRecipient {
@@ -72,15 +82,65 @@ export function formatContactMessage({
   phone = "",
   storeLocation = "",
   subject = "",
+  inquiryType = "",
+  businessName = "",
+  instagramHandle = "",
+  productCategory = "",
+  portfolioUrl = "",
+  propertyAddress = "",
+  carpetArea = "",
+  commercialTerms = "",
+  serviceCoverage = "",
+  fleetCapabilities = "",
 }: {
   message: string;
   phone?: string;
   storeLocation?: string;
   subject?: string;
+  inquiryType?: string;
+  businessName?: string;
+  instagramHandle?: string;
+  productCategory?: string;
+  portfolioUrl?: string;
+  propertyAddress?: string;
+  carpetArea?: string;
+  commercialTerms?: string;
+  serviceCoverage?: string;
+  fleetCapabilities?: string;
 }): string {
   let formattedMessage = message.trim();
   const metaDetails: string[] = [];
 
+  if (inquiryType.trim()) {
+    metaDetails.push(`• Inquiry Type: ${inquiryType.trim()}`);
+  }
+  if (businessName.trim()) {
+    metaDetails.push(`• Business / Brand Name: ${businessName.trim()}`);
+  }
+  if (instagramHandle.trim()) {
+    metaDetails.push(`• Instagram Profile: ${instagramHandle.trim()}`);
+  }
+  if (productCategory.trim()) {
+    metaDetails.push(`• Category / Specialization: ${productCategory.trim()}`);
+  }
+  if (portfolioUrl.trim()) {
+    metaDetails.push(`• Portfolio / Catalog: ${portfolioUrl.trim()}`);
+  }
+  if (propertyAddress.trim()) {
+    metaDetails.push(`• Property Address: ${propertyAddress.trim()}`);
+  }
+  if (carpetArea.trim()) {
+    metaDetails.push(`• Carpet Area (Ground + 1st Floor): ${carpetArea.trim()}`);
+  }
+  if (commercialTerms.trim()) {
+    metaDetails.push(`• Expected Commercials: ${commercialTerms.trim()}`);
+  }
+  if (serviceCoverage.trim()) {
+    metaDetails.push(`• Service Coverage: ${serviceCoverage.trim()}`);
+  }
+  if (fleetCapabilities.trim()) {
+    metaDetails.push(`• Fleet / Delivery Modes: ${fleetCapabilities.trim()}`);
+  }
   if (phone.trim()) {
     metaDetails.push(`• Phone: ${phone.trim()}`);
   }
@@ -127,6 +187,16 @@ export async function sendContactInquiry(
     phone,
     storeLocation,
     subject,
+    inquiryType: payload.inquiryType,
+    businessName: payload.businessName,
+    instagramHandle: payload.instagramHandle,
+    productCategory: payload.productCategory,
+    portfolioUrl: payload.portfolioUrl,
+    propertyAddress: payload.propertyAddress,
+    carpetArea: payload.carpetArea,
+    commercialTerms: payload.commercialTerms,
+    serviceCoverage: payload.serviceCoverage,
+    fleetCapabilities: payload.fleetCapabilities,
   });
 
   const endpoint = `${EMAIL_SERVICE_BASE_URL}/api/v1/emails`;
@@ -134,6 +204,10 @@ export async function sendContactInquiry(
     "Content-Type": "application/json",
     "X-API-Key": EMAIL_SERVICE_API_KEY,
   };
+
+  const emailSubject = payload.inquiryType && payload.inquiryType !== "General Inquiry"
+    ? `[${payload.inquiryType}] ${subject || fullName}`
+    : subject ? `[Contact Form] ${subject} - ${fullName}` : undefined;
 
   const supportPayload: EmailServiceRequestBody = {
     idempotencyKey: generateIdempotencyKey(),
@@ -148,7 +222,7 @@ export async function sendContactInquiry(
         name: CC_NAME,
       },
     ],
-    subject: subject ? `[Contact Form] ${subject} - ${fullName}` : undefined,
+    subject: emailSubject,
     templateId: "contact-inquiry-notification",
     variables: {
       senderName: fullName,

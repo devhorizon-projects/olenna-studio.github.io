@@ -139,10 +139,61 @@ export default async function ContactPage() {
               </div>
             </div>
 
+            {/* Commercial & Partnership Calls Card */}
+            <div className="bg-white p-6 sm:p-8 rounded-2xl border border-brand-plum-900/10 shadow-xs space-y-4">
+              <div className="border-b border-brand-plum-900/10 pb-3">
+                <span className="text-[10px] font-semibold tracking-wider text-brand-plum-700 uppercase bg-brand-mauve-200/40 px-2.5 py-0.5 rounded-full">
+                  Business Opportunities
+                </span>
+                <h4 className="font-serif text-lg text-brand-plum-900 mt-2">
+                  Partner with Olenna StudioX
+                </h4>
+              </div>
+
+              <div className="space-y-3.5 text-xs">
+                {/* 1. Delivery Partner */}
+                <div className="p-3 rounded-xl bg-blue-50/50 border border-blue-200/60 space-y-1">
+                  <div className="flex items-center gap-2 text-blue-950 font-semibold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                    <span>1. Delivery &amp; Logistics Partners</span>
+                  </div>
+                  <p className="text-blue-900/80 leading-relaxed pl-3.5">
+                    We are onboarding hyperlocal delivery partners and courier fleets for prompt customer order fulfillment.
+                  </p>
+                </div>
+
+                {/* 2. Shop for Rental */}
+                <div className="p-3 rounded-xl bg-amber-50/60 border border-amber-300/70 space-y-1">
+                  <div className="flex items-center gap-2 text-amber-950 font-semibold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
+                    <span>2. Commercial Space for Rental</span>
+                  </div>
+                  <p className="text-amber-900/80 leading-relaxed pl-3.5">
+                    <strong>Specific Requirement:</strong> Minimum <strong>2 Floors (Ground + 1st Floor)</strong> in prime commercial retail &amp; high-footfall corridors.
+                  </p>
+                </div>
+
+                {/* 3. Calling for Vendors */}
+                <div className="p-3 rounded-xl bg-purple-50/50 border border-purple-200/60 space-y-1">
+                  <div className="flex items-center gap-2 text-purple-950 font-semibold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-purple-600"></span>
+                    <span>3. Calling Vendors &amp; Manufacturers</span>
+                  </div>
+                  <p className="text-purple-900/80 leading-relaxed pl-3.5">
+                    Shortlisting designers, artisans, and manufacturers in jewellery, apparel, and lifestyle. Connect with your <strong>Instagram handle</strong> &amp; catalog.
+                  </p>
+                </div>
+              </div>
+
+              <p className="text-[11px] text-brand-text-muted italic pt-1">
+                Select your enquiry type on the form to submit your proposal directly to our team.
+              </p>
+            </div>
+
             {/* In-Store Styling Notice Card */}
             <div className="bg-[#FAF1F4] p-6 sm:p-8 rounded-2xl border border-brand-plum-900/10 space-y-3">
               <h4 className="font-serif text-lg text-brand-plum-900">
-                Store & Workspace In Progress
+                Store &amp; Workspace In Progress
               </h4>
               <p className="text-xs sm:text-sm text-brand-text-secondary leading-relaxed font-light">
                 Our physical store in Rajajinagar, Bangalore is currently in progress and opening soon. Once onboarded, our workspace and shop hours will be 10:00 AM to 10:00 PM, Monday to Sunday.
