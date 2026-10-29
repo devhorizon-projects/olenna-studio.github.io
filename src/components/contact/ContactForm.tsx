@@ -7,16 +7,9 @@ import {
   AlertCircle,
   CheckCircle2,
   Loader2,
-  Truck,
-  Building2,
-  Sparkles,
-  MessageSquare,
   X,
-  ArrowRight,
-  Handshake,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { InstagramIcon } from "@/components/ui/SocialIcons";
 import { sendContactInquiry } from "@/lib/services/emailService";
 
 const ContactFormSchema = z.object({
@@ -65,7 +58,6 @@ export interface InquiryOption {
   id: InquiryCategory;
   title: string;
   badge?: string;
-  icon: React.ComponentType<{ className?: string }>;
   description: string;
 }
 
@@ -73,29 +65,25 @@ export const INQUIRY_OPTIONS: InquiryOption[] = [
   {
     id: "general",
     title: "General Concierge",
-    icon: MessageSquare,
     description: "Collections, styling appointments, and inquiries",
   },
   {
     id: "logistics_partner",
     title: "Logistics Partner",
     badge: "Open Call",
-    icon: Truck,
     description: "Courier, fleet & order fulfillment collaboration",
   },
   {
     id: "shop_rental",
     title: "Rental Partner",
     badge: "2 Floors Req.",
-    icon: Building2,
     description: "Ground + 1st Floor commercial spaces in prime locations",
   },
   {
     id: "vendor_onboarding",
-    title: "Manufacturing & Vendor",
-    badge: "Open Call",
-    icon: Sparkles,
-    description: "Manufacturers & designers for jewelry, fashion & lifestyle",
+    title: "Product Manufacturers",
+    badge: "Sell With Us",
+    description: "Manufacturers of beauty products, skincare & lifestyle looking to sell",
   },
 ];
 
@@ -163,7 +151,7 @@ export function ContactForm({
       general: "General Inquiry",
       logistics_partner: "Logistics Partnership",
       shop_rental: "Commercial Space for Rental (2 Floors)",
-      vendor_onboarding: "Manufacturing & Vendor Onboarding",
+      vendor_onboarding: "Product Manufacturer (Sell With Us)",
     };
     setFormData((prev) => ({
       ...prev,
@@ -174,7 +162,7 @@ export function ContactForm({
           : cat === "shop_rental"
           ? "Commercial Property for Rent (Ground + 1st Floor)"
           : cat === "vendor_onboarding"
-          ? "Vendor / Manufacturer Collaboration Proposal"
+          ? "Product Manufacturer Retail Proposal (Beauty & Lifestyle)"
           : prev.subject,
     }));
   };
@@ -286,8 +274,7 @@ export function ContactForm({
 
             {/* Modal Header */}
             <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-mauve-200/50 text-brand-plum-900 text-xs font-medium mb-2.5">
-                <Handshake className="w-3.5 h-3.5 text-brand-plum-700" />
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-brand-mauve-200/50 text-brand-plum-900 text-xs font-medium mb-2.5">
                 <span>Now Open For Partnerships</span>
               </div>
               <h3 id="partnership-modal-title" className="font-serif text-2xl text-brand-plum-900">
@@ -304,81 +291,57 @@ export function ContactForm({
               <button
                 type="button"
                 onClick={() => handleSelectFromModal("logistics_partner")}
-                className="w-full text-left p-3.5 rounded-xl border border-blue-200/80 bg-blue-50/60 hover:bg-blue-50 hover:border-blue-400 transition-all flex items-start justify-between gap-3 group"
+                className="block w-full text-left p-4 rounded-xl border border-blue-200/80 bg-blue-50/60 hover:bg-blue-50 hover:border-blue-400 transition-all"
               >
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center shrink-0 mt-0.5">
-                    <Truck className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span className="font-semibold text-xs sm:text-sm text-blue-950">
-                        1. Logistics Partner
-                      </span>
-                      <span className="text-[10px] bg-blue-200/80 text-blue-900 px-1.5 py-0.2 rounded font-medium">
-                        Onboarding
-                      </span>
-                    </div>
-                    <p className="text-[11px] text-blue-900/80 mt-0.5 leading-relaxed">
-                      Hyperlocal delivery fleets, couriers, and regional order fulfillment partners.
-                    </p>
-                  </div>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-semibold text-xs sm:text-sm text-blue-950">
+                    1. Logistics Partner
+                  </span>
+                  <span className="text-[10px] bg-blue-200/80 text-blue-900 px-2 py-0.5 rounded font-medium">
+                    Onboarding
+                  </span>
                 </div>
-                <ArrowRight className="w-4 h-4 text-blue-600 shrink-0 mt-2 transition-transform group-hover:translate-x-1" />
+                <p className="text-[11px] sm:text-xs text-blue-900/80 mt-1 leading-relaxed">
+                  Hyperlocal delivery fleets, couriers, and regional order fulfillment partners.
+                </p>
               </button>
 
               {/* 2. Rental Partner */}
               <button
                 type="button"
                 onClick={() => handleSelectFromModal("shop_rental")}
-                className="w-full text-left p-3.5 rounded-xl border border-amber-300/80 bg-amber-50/70 hover:bg-amber-50 hover:border-amber-400 transition-all flex items-start justify-between gap-3 group"
+                className="block w-full text-left p-4 rounded-xl border border-amber-300/80 bg-amber-50/70 hover:bg-amber-50 hover:border-amber-400 transition-all"
               >
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-amber-600 text-white flex items-center justify-center shrink-0 mt-0.5">
-                    <Building2 className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span className="font-semibold text-xs sm:text-sm text-amber-950">
-                        2. Rental Partner
-                      </span>
-                      <span className="text-[10px] bg-amber-200 text-amber-900 px-1.5 py-0.2 rounded font-medium">
-                        2 Floors Req.
-                      </span>
-                    </div>
-                    <p className="text-[11px] text-amber-900/80 mt-0.5 leading-relaxed">
-                      Commercial space: <strong>Ground + 1st Floor</strong> in prime retail corridors.
-                    </p>
-                  </div>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-semibold text-xs sm:text-sm text-amber-950">
+                    2. Rental Partner (Commercial Space)
+                  </span>
+                  <span className="text-[10px] bg-amber-200 text-amber-900 px-2 py-0.5 rounded font-medium">
+                    2 Floors Req.
+                  </span>
                 </div>
-                <ArrowRight className="w-4 h-4 text-amber-700 shrink-0 mt-2 transition-transform group-hover:translate-x-1" />
+                <p className="text-[11px] sm:text-xs text-amber-900/80 mt-1 leading-relaxed">
+                  Commercial space: <strong>Ground + 1st Floor</strong> in prime retail corridors.
+                </p>
               </button>
 
-              {/* 3. Manufacturing & Vendor Partner */}
+              {/* 3. Product Manufacturers */}
               <button
                 type="button"
                 onClick={() => handleSelectFromModal("vendor_onboarding")}
-                className="w-full text-left p-3.5 rounded-xl border border-purple-200/80 bg-purple-50/60 hover:bg-purple-50 hover:border-purple-400 transition-all flex items-start justify-between gap-3 group"
+                className="block w-full text-left p-4 rounded-xl border border-purple-200/80 bg-purple-50/60 hover:bg-purple-50 hover:border-purple-400 transition-all"
               >
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center shrink-0 mt-0.5">
-                    <Sparkles className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span className="font-semibold text-xs sm:text-sm text-purple-950">
-                        3. Manufacturing &amp; Vendor Partner
-                      </span>
-                      <span className="text-[10px] bg-purple-200/80 text-purple-900 px-1.5 py-0.2 rounded font-medium">
-                        Open Call
-                      </span>
-                    </div>
-                    <p className="text-[11px] text-purple-900/80 mt-0.5 leading-relaxed">
-                      Shortlisting designers, tailors, and jewelry artisans. Connect with your Instagram handle.
-                    </p>
-                  </div>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-semibold text-xs sm:text-sm text-purple-950">
+                    3. Product Manufacturers (Sell With Us)
+                  </span>
+                  <span className="text-[10px] bg-purple-200/80 text-purple-900 px-2 py-0.5 rounded font-medium">
+                    Open Call
+                  </span>
                 </div>
-                <ArrowRight className="w-4 h-4 text-purple-700 shrink-0 mt-2 transition-transform group-hover:translate-x-1" />
+                <p className="text-[11px] sm:text-xs text-purple-900/80 mt-1 leading-relaxed">
+                  Manufacturers of products (beauty products, skincare, cosmetics &amp; lifestyle) willing to sell and retail through Olenna StudioX.
+                </p>
               </button>
             </div>
 
@@ -398,11 +361,10 @@ export function ContactForm({
 
       {/* Top Persistent Announcement Ribbon */}
       <div className="mb-6 p-4 rounded-xl bg-brand-ivory-50 border border-brand-plum-900/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-        <div className="flex items-center gap-2 text-xs text-brand-plum-900">
-          <Handshake className="w-4 h-4 text-brand-plum-700 shrink-0" />
+        <div className="text-xs text-brand-plum-900">
           <span>
             <strong>Now Open:</strong> We are accepting proposals for <strong>Logistics Partners</strong>,{" "}
-            <strong>Rental Partners (2 Floors)</strong>, and <strong>Manufacturing/Vendor Partners</strong>.
+            <strong>Rental Partners (2 Floors)</strong>, and <strong>Product Manufacturers (Beauty &amp; Lifestyle)</strong>.
           </span>
         </div>
         <button
@@ -420,7 +382,7 @@ export function ContactForm({
         </h3>
         <p className="text-sm text-brand-text-secondary font-light">
           Connect with our customer concierge, propose commercial retail properties, partner for logistics,
-          or submit your brand profile for vendor onboarding.
+          or submit your brand profile as a product manufacturer to retail with us.
         </p>
       </div>
 
@@ -431,43 +393,31 @@ export function ContactForm({
         </label>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
           {INQUIRY_OPTIONS.map((opt) => {
-            const Icon = opt.icon;
             const isSelected = selectedInquiry === opt.id;
             return (
               <button
                 key={opt.id}
                 type="button"
                 onClick={() => handleInquiryChange(opt.id)}
-                className={`p-3 rounded-xl border text-left transition-all flex items-start gap-3 ${
+                className={`p-3.5 rounded-xl border text-left transition-all ${
                   isSelected
                     ? "bg-brand-mauve-200/20 border-brand-plum-900 ring-1 ring-brand-plum-900 text-brand-plum-950"
                     : "bg-brand-ivory-50/70 border-brand-plum-900/15 hover:border-brand-plum-900/40 text-brand-text-secondary"
                 }`}
               >
-                <div
-                  className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 mt-0.5 ${
-                    isSelected
-                      ? "bg-brand-plum-900 text-white"
-                      : "bg-brand-mauve-200/50 text-brand-plum-900"
-                  }`}
-                >
-                  <Icon className="w-3.5 h-3.5" />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-center gap-1.5 flex-wrap">
-                    <span className="font-medium text-xs text-brand-plum-950">
-                      {opt.title}
+                <div className="flex items-center justify-between gap-1.5 flex-wrap">
+                  <span className="font-semibold text-xs sm:text-sm text-brand-plum-950">
+                    {opt.title}
+                  </span>
+                  {opt.badge && (
+                    <span className="text-[10px] font-medium px-2 py-0.5 rounded bg-brand-plum-900/10 text-brand-plum-900">
+                      {opt.badge}
                     </span>
-                    {opt.badge && (
-                      <span className="text-[10px] font-medium px-1.5 py-0.2 rounded bg-brand-plum-900/10 text-brand-plum-900">
-                        {opt.badge}
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-[11px] text-brand-text-muted mt-0.5 leading-tight line-clamp-1">
-                    {opt.description}
-                  </p>
+                  )}
                 </div>
+                <p className="text-[11px] sm:text-xs text-brand-text-muted mt-1 leading-normal">
+                  {opt.description}
+                </p>
               </button>
             );
           })}
@@ -476,45 +426,34 @@ export function ContactForm({
 
       {/* Dynamic Contextual Guidance Banner based on Selection */}
       {selectedInquiry === "logistics_partner" && (
-        <div className="mb-6 p-4 rounded-xl bg-blue-50/80 border border-blue-200/80 text-blue-950 flex items-start gap-3">
-          <Truck className="w-5 h-5 text-blue-800 shrink-0 mt-0.5" />
-          <div className="text-xs sm:text-sm">
-            <p className="font-semibold text-blue-950">Logistics Partnership</p>
-            <p className="text-blue-900/90 mt-0.5 leading-relaxed">
-              We are actively onboarding hyperlocal courier services, dedicated city fleet operators,
-              and express logistics partners to power store-to-door deliveries for Olenna StudioX.
-            </p>
-          </div>
+        <div className="mb-6 p-4 rounded-xl bg-blue-50/80 border border-blue-200/80 text-blue-950">
+          <p className="font-semibold text-xs sm:text-sm text-blue-950">Logistics Partnership</p>
+          <p className="text-xs sm:text-sm text-blue-900/90 mt-1 leading-relaxed">
+            We are actively onboarding hyperlocal courier services, dedicated city fleet operators,
+            and express logistics partners to power store-to-door deliveries for Olenna StudioX.
+          </p>
         </div>
       )}
 
       {selectedInquiry === "shop_rental" && (
-        <div className="mb-6 p-4 rounded-xl bg-amber-50/90 border border-amber-300/80 text-amber-950 flex items-start gap-3">
-          <Building2 className="w-5 h-5 text-amber-800 shrink-0 mt-0.5" />
-          <div className="text-xs sm:text-sm">
-            <p className="font-semibold text-amber-950">
-              Commercial Retail Space for Rent — Specific Requirements
-            </p>
-            <p className="text-amber-900/90 mt-0.5 leading-relaxed">
-              <strong>Requirement:</strong> Minimum <strong>2 Floors (Ground Floor + First Floor)</strong> in
-              prime commercial shopping corridors, high-street retail markets, or bustling hubs with prominent
-              facade visibility.
-            </p>
-          </div>
+        <div className="mb-6 p-4 rounded-xl bg-amber-50/90 border border-amber-300/80 text-amber-950">
+          <p className="font-semibold text-xs sm:text-sm text-amber-950">
+            Commercial Retail Space for Rent — Specific Requirements
+          </p>
+          <p className="text-xs sm:text-sm text-amber-900/90 mt-1 leading-relaxed">
+            <strong>Requirement:</strong> Minimum <strong>2 Floors (Ground Floor + First Floor)</strong> in
+            prime commercial shopping corridors, high-street retail markets, or bustling hubs with prominent
+            facade visibility.
+          </p>
         </div>
       )}
 
       {selectedInquiry === "vendor_onboarding" && (
-        <div className="mb-6 p-4 rounded-xl bg-purple-50/80 border border-purple-200/80 text-purple-950 flex items-start gap-3">
-          <Sparkles className="w-5 h-5 text-purple-800 shrink-0 mt-0.5" />
-          <div className="text-xs sm:text-sm">
-            <p className="font-semibold text-purple-950">Calling Vendors, Manufacturers &amp; Artisans</p>
-            <p className="text-purple-900/90 mt-0.5 leading-relaxed">
-              We are shortlisting suppliers, creators, master tailors, imitation jewellery ateliers, and
-              curated beauty/lifestyle brands. <strong>Please provide your Instagram profile</strong> and
-              catalog so our merchandising team can connect and review your collection.
-            </p>
-          </div>
+        <div className="mb-6 p-4 rounded-xl bg-purple-50/80 border border-purple-200/80 text-purple-950">
+          <p className="font-semibold text-xs sm:text-sm text-purple-950">Calling Product Manufacturers (Beauty, Cosmetics &amp; Lifestyle)</p>
+          <p className="text-xs sm:text-sm text-purple-900/90 mt-1 leading-relaxed">
+            Are you a manufacturer of beauty products, skincare, cosmetics, or lifestyle goods willing to sell and retail through Olenna StudioX? We are onboarding direct manufacturers and brand suppliers. Please share your manufactured product details, catalog, and Instagram profile below.
+          </p>
         </div>
       )}
 
@@ -785,11 +724,11 @@ export function ContactForm({
           </div>
         )}
 
-        {/* Dynamic Fields for Manufacturing & Vendor Partner */}
+        {/* Dynamic Fields for Product Manufacturers */}
         {selectedInquiry === "vendor_onboarding" && (
           <div className="p-4 rounded-xl bg-brand-ivory-50/80 border border-brand-plum-900/10 space-y-4">
             <h4 className="text-xs font-semibold tracking-wider text-brand-plum-900 uppercase">
-              Brand &amp; Instagram Portfolio Details
+              Product Manufacturer &amp; Brand Details
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
@@ -797,7 +736,7 @@ export function ContactForm({
                   htmlFor="businessName"
                   className="block text-xs font-semibold text-brand-plum-900 mb-1"
                 >
-                  Brand / Manufacturer Name
+                  Manufacturer / Brand Name
                 </label>
                 <input
                   id="businessName"
@@ -805,17 +744,16 @@ export function ContactForm({
                   type="text"
                   value={formData.businessName || ""}
                   onChange={handleChange}
-                  placeholder="Enter brand or manufacturer name"
+                  placeholder="Enter manufacturer or brand name"
                   className="w-full px-4 py-2 text-sm rounded-xl bg-white border border-brand-plum-900/15 focus:border-brand-plum-900 focus:outline-none text-brand-text-primary"
                 />
               </div>
               <div>
                 <label
                   htmlFor="instagramHandle"
-                  className="block text-xs font-semibold text-brand-plum-900 mb-1 flex items-center gap-1.5"
+                  className="block text-xs font-semibold text-brand-plum-900 mb-1"
                 >
-                  <InstagramIcon className="w-3.5 h-3.5 text-brand-plum-900" />
-                  <span>Instagram Handle / Profile Link</span>
+                  Instagram Handle / Profile Link
                 </label>
                 <input
                   id="instagramHandle"
@@ -823,7 +761,7 @@ export function ContactForm({
                   type="text"
                   value={formData.instagramHandle || ""}
                   onChange={handleChange}
-                  placeholder="@username or Instagram link"
+                  placeholder="@brand or instagram.com/brand"
                   className="w-full px-4 py-2 text-sm rounded-xl bg-white border border-brand-plum-900/15 focus:border-brand-plum-900 focus:outline-none text-brand-text-primary"
                 />
               </div>
@@ -834,7 +772,7 @@ export function ContactForm({
                   htmlFor="productCategory"
                   className="block text-xs font-semibold text-brand-plum-900 mb-1"
                 >
-                  Product Category / Specialization
+                  Manufactured Product Categories
                 </label>
                 <input
                   id="productCategory"
@@ -842,7 +780,7 @@ export function ContactForm({
                   type="text"
                   value={formData.productCategory || ""}
                   onChange={handleChange}
-                  placeholder="Enter product category or specialization"
+                  placeholder="e.g. Beauty Products, Skincare, Cosmetics, Lifestyle"
                   className="w-full px-4 py-2 text-sm rounded-xl bg-white border border-brand-plum-900/15 focus:border-brand-plum-900 focus:outline-none text-brand-text-primary"
                 />
               </div>
@@ -851,7 +789,7 @@ export function ContactForm({
                   htmlFor="portfolioUrl"
                   className="block text-xs font-semibold text-brand-plum-900 mb-1"
                 >
-                  Catalog / Lookbook / Website Link <span className="text-brand-text-muted text-[10px] font-normal lowercase">(optional)</span>
+                  Catalog / Price List / Website Link <span className="text-brand-text-muted text-[10px] font-normal lowercase">(optional)</span>
                 </label>
                 <input
                   id="portfolioUrl"
@@ -859,7 +797,7 @@ export function ContactForm({
                   type="url"
                   value={formData.portfolioUrl || ""}
                   onChange={handleChange}
-                  placeholder="Paste portfolio or catalog URL"
+                  placeholder="Paste catalog, price list, or website URL"
                   className="w-full px-4 py-2 text-sm rounded-xl bg-white border border-brand-plum-900/15 focus:border-brand-plum-900 focus:outline-none text-brand-text-primary"
                 />
               </div>

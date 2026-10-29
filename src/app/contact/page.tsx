@@ -173,14 +173,14 @@ export default async function ContactPage() {
                   </p>
                 </div>
 
-                {/* 3. Calling for Vendors */}
+                {/* 3. Product Manufacturers */}
                 <div className="p-3 rounded-xl bg-purple-50/50 border border-purple-200/60 space-y-1">
                   <div className="flex items-center gap-2 text-purple-950 font-semibold">
                     <span className="w-1.5 h-1.5 rounded-full bg-purple-600"></span>
-                    <span>3. Calling Vendors &amp; Manufacturers</span>
+                    <span>3. Product Manufacturers (Sell With Us)</span>
                   </div>
                   <p className="text-purple-900/80 leading-relaxed pl-3.5">
-                    Shortlisting designers, artisans, and manufacturers in jewellery, apparel, and lifestyle. Connect with your <strong>Instagram handle</strong> &amp; catalog.
+                    We are onboarding direct manufacturers of products (beauty products, skincare, cosmetics, and lifestyle goods) willing to sell and retail through Olenna StudioX. Connect with your catalog &amp; <strong>Instagram handle</strong>.
                   </p>
                 </div>
               </div>
