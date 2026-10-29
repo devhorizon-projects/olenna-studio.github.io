@@ -5,13 +5,16 @@ import Link from "next/link";
 import { X } from "lucide-react";
 
 export function PartnershipPopup() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     // Check if dismissed in this session
     const hasSeen = typeof window !== "undefined" ? sessionStorage.getItem("olenna_partnership_popup_dismissed") : null;
-    if (hasSeen) {
-      setIsOpen(false);
+    if (!hasSeen) {
+      const timer = setTimeout(() => {
+        setIsOpen(true);
+      }, 300);
+      return () => clearTimeout(timer);
     }
   }, []);
 

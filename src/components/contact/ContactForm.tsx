@@ -87,6 +87,43 @@ export const INQUIRY_OPTIONS: InquiryOption[] = [
   },
 ];
 
+const INQUIRY_LABEL_MAP: Record<InquiryCategory, string> = {
+  general: "General Inquiry",
+  logistics_partner: "Logistics Partnership",
+  shop_rental: "Commercial Space for Rental (2 Floors)",
+  vendor_onboarding: "Product Manufacturer (Sell With Us)",
+};
+
+function getDefaultSubject(cat: InquiryCategory): string {
+  switch (cat) {
+    case "logistics_partner":
+      return "Logistics Partner Onboarding Proposal";
+    case "shop_rental":
+      return "Commercial Property for Rent (Ground + 1st Floor)";
+    case "vendor_onboarding":
+      return "Product Manufacturer Retail Proposal (Beauty & Lifestyle)";
+    default:
+      return "";
+  }
+}
+
+function getInitialInquiryType(fallback: InquiryCategory): InquiryCategory {
+  if (typeof window !== "undefined") {
+    const params = new URLSearchParams(window.location.search);
+    const typeParam = params.get("type") as InquiryCategory | null;
+    if (
+      typeParam &&
+      (typeParam === "logistics_partner" ||
+        typeParam === "shop_rental" ||
+        typeParam === "vendor_onboarding" ||
+        typeParam === "general")
+    ) {
+      return typeParam;
+    }
+  }
+  return fallback;
+}
+
 interface ContactFormProps {
   stores?: { id: string; name: string }[];
   initialInquiryType?: InquiryCategory;
@@ -96,50 +133,31 @@ export function ContactForm({
   stores = [],
   initialInquiryType = "general",
 }: ContactFormProps) {
-  const [selectedInquiry, setSelectedInquiry] = useState<InquiryCategory>(initialInquiryType);
+  const [selectedInquiry, setSelectedInquiry] = useState<InquiryCategory>(() =>
+    getInitialInquiryType(initialInquiryType)
+  );
   const [showModal, setShowModal] = useState<boolean>(false);
 
-  // Trigger announcement popup or listen to query param on mount
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const params = new URLSearchParams(window.location.search);
-      const typeParam = params.get("type") as InquiryCategory | null;
-      if (
-        typeParam &&
-        (typeParam === "logistics_partner" ||
-          typeParam === "shop_rental" ||
-          typeParam === "vendor_onboarding" ||
-          typeParam === "general")
-      ) {
-        handleInquiryChange(typeParam);
-        setShowModal(false);
-        return;
-      }
-    }
-
-    const timer = setTimeout(() => {
-      setShowModal(true);
-    }, 400);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const [formData, setFormData] = useState<ContactFormData>({
-    fullName: "",
-    email: "",
-    phone: "",
-    storeInterest: "",
-    subject: "",
-    message: "",
-    inquiryType: "General Inquiry",
-    businessName: "",
-    instagramHandle: "",
-    productCategory: "",
-    portfolioUrl: "",
-    propertyAddress: "",
-    carpetArea: "",
-    commercialTerms: "",
-    serviceCoverage: "",
-    fleetCapabilities: "",
+  const [formData, setFormData] = useState<ContactFormData>(() => {
+    const initialCat = getInitialInquiryType(initialInquiryType);
+    return {
+      fullName: "",
+      email: "",
+      phone: "",
+      storeInterest: "",
+      subject: getDefaultSubject(initialCat),
+      message: "",
+      inquiryType: INQUIRY_LABEL_MAP[initialCat],
+      businessName: "",
+      instagramHandle: "",
+      productCategory: "",
+      portfolioUrl: "",
+      propertyAddress: "",
+      carpetArea: "",
+      commercialTerms: "",
+      serviceCoverage: "",
+      fleetCapabilities: "",
+    };
   });
 
   const [errors, setErrors] = useState<Partial<Record<keyof ContactFormData, string>>>({});
@@ -147,23 +165,10 @@ export function ContactForm({
 
   const handleInquiryChange = (cat: InquiryCategory) => {
     setSelectedInquiry(cat);
-    const labelMap: Record<InquiryCategory, string> = {
-      general: "General Inquiry",
-      logistics_partner: "Logistics Partnership",
-      shop_rental: "Commercial Space for Rental (2 Floors)",
-      vendor_onboarding: "Product Manufacturer (Sell With Us)",
-    };
     setFormData((prev) => ({
       ...prev,
-      inquiryType: labelMap[cat],
-      subject:
-        cat === "logistics_partner"
-          ? "Logistics Partner Onboarding Proposal"
-          : cat === "shop_rental"
-          ? "Commercial Property for Rent (Ground + 1st Floor)"
-          : cat === "vendor_onboarding"
-          ? "Product Manufacturer Retail Proposal (Beauty & Lifestyle)"
-          : prev.subject,
+      inquiryType: INQUIRY_LABEL_MAP[cat],
+      subject: getDefaultSubject(cat) || prev.subject,
     }));
   };
 
@@ -175,6 +180,20 @@ export function ContactForm({
       formElement.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  // Trigger announcement popup if not arriving via direct inquiry link
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const hasTypeParam = params.has("type");
+    if (hasTypeParam) {
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      setShowModal(true);
+    }, 400);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
