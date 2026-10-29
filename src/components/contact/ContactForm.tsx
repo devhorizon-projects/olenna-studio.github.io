@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { z } from "zod";
 import {
   Send,
@@ -11,9 +11,9 @@ import {
   Building2,
   Sparkles,
   MessageSquare,
-  HelpCircle,
-  MapPin,
-  ExternalLink,
+  X,
+  ArrowRight,
+  Handshake,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { InstagramIcon } from "@/components/ui/SocialIcons";
@@ -57,7 +57,7 @@ export type ContactFormData = z.infer<typeof ContactFormSchema>;
 
 export type InquiryCategory =
   | "general"
-  | "delivery_partner"
+  | "logistics_partner"
   | "shop_rental"
   | "vendor_onboarding";
 
@@ -77,22 +77,22 @@ export const INQUIRY_OPTIONS: InquiryOption[] = [
     description: "Collections, styling appointments, and inquiries",
   },
   {
-    id: "delivery_partner",
-    title: "Delivery Partner",
-    badge: "Logistics",
+    id: "logistics_partner",
+    title: "Logistics Partner",
+    badge: "Open Call",
     icon: Truck,
     description: "Courier, fleet & order fulfillment collaboration",
   },
   {
     id: "shop_rental",
-    title: "Shop for Rental",
+    title: "Rental Partner",
     badge: "2 Floors Req.",
     icon: Building2,
     description: "Ground + 1st Floor commercial spaces in prime locations",
   },
   {
     id: "vendor_onboarding",
-    title: "Calling for Vendors",
+    title: "Manufacturing & Vendor",
     badge: "Open Call",
     icon: Sparkles,
     description: "Manufacturers & designers for jewelry, fashion & lifestyle",
@@ -109,6 +109,16 @@ export function ContactForm({
   initialInquiryType = "general",
 }: ContactFormProps) {
   const [selectedInquiry, setSelectedInquiry] = useState<InquiryCategory>(initialInquiryType);
+  const [showModal, setShowModal] = useState<boolean>(false);
+
+  // Trigger announcement popup on mount
+  useEffect(() => {
+    // Show modal once on initial mount
+    const timer = setTimeout(() => {
+      setShowModal(true);
+    }, 400);
+    return () => clearTimeout(timer);
+  }, []);
 
   const [formData, setFormData] = useState<ContactFormData>({
     fullName: "",
@@ -136,22 +146,31 @@ export function ContactForm({
     setSelectedInquiry(cat);
     const labelMap: Record<InquiryCategory, string> = {
       general: "General Inquiry",
-      delivery_partner: "Delivery & Logistics Partnership",
+      logistics_partner: "Logistics Partnership",
       shop_rental: "Commercial Space for Rental (2 Floors)",
-      vendor_onboarding: "Vendor & Manufacturer Onboarding",
+      vendor_onboarding: "Manufacturing & Vendor Onboarding",
     };
     setFormData((prev) => ({
       ...prev,
       inquiryType: labelMap[cat],
       subject:
-        cat === "delivery_partner"
-          ? "Delivery Partner Onboarding Proposal"
+        cat === "logistics_partner"
+          ? "Logistics Partner Onboarding Proposal"
           : cat === "shop_rental"
           ? "Commercial Property for Rent (Ground + 1st Floor)"
           : cat === "vendor_onboarding"
           ? "Vendor / Manufacturer Collaboration Proposal"
           : prev.subject,
     }));
+  };
+
+  const handleSelectFromModal = (cat: InquiryCategory) => {
+    handleInquiryChange(cat);
+    setShowModal(false);
+    const formElement = document.getElementById("contact-form-card");
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const handleChange = (
@@ -230,7 +249,156 @@ export function ContactForm({
   };
 
   return (
-    <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-2xl border border-brand-plum-900/10 shadow-xs">
+    <div id="contact-form-card" className="bg-white p-6 sm:p-8 lg:p-10 rounded-2xl border border-brand-plum-900/10 shadow-xs relative">
+      {/* Partnership Announcement Modal / Popup */}
+      {showModal && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="partnership-modal-title"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-brand-plum-950/60 backdrop-blur-xs transition-opacity animate-in fade-in duration-200"
+        >
+          <div className="bg-white max-w-lg w-full rounded-2xl p-6 sm:p-8 shadow-2xl border border-brand-plum-900/15 relative space-y-5 animate-in zoom-in-95 duration-200 max-h-[90vh] overflow-y-auto">
+            {/* Close Button */}
+            <button
+              type="button"
+              onClick={() => setShowModal(false)}
+              aria-label="Close partnership announcement"
+              className="absolute top-4 right-4 p-2 rounded-full text-brand-text-muted hover:text-brand-plum-900 hover:bg-brand-mauve-200/30 transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* Modal Header */}
+            <div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-mauve-200/50 text-brand-plum-900 text-xs font-medium mb-2.5">
+                <Handshake className="w-3.5 h-3.5 text-brand-plum-700" />
+                <span>Now Open For Partnerships</span>
+              </div>
+              <h3 id="partnership-modal-title" className="font-serif text-2xl text-brand-plum-900">
+                Partner with Olenna StudioX
+              </h3>
+              <p className="text-xs sm:text-sm text-brand-text-secondary mt-1">
+                We are actively onboarding commercial partners across three key divisions. Select your area of interest to proceed:
+              </p>
+            </div>
+
+            {/* 3 Partnership Opportunities */}
+            <div className="space-y-3">
+              {/* 1. Logistics Partner */}
+              <button
+                type="button"
+                onClick={() => handleSelectFromModal("logistics_partner")}
+                className="w-full text-left p-3.5 rounded-xl border border-blue-200/80 bg-blue-50/60 hover:bg-blue-50 hover:border-blue-400 transition-all flex items-start justify-between gap-3 group"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center shrink-0 mt-0.5">
+                    <Truck className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-xs sm:text-sm text-blue-950">
+                        1. Logistics Partner
+                      </span>
+                      <span className="text-[10px] bg-blue-200/80 text-blue-900 px-1.5 py-0.2 rounded font-medium">
+                        Onboarding
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-blue-900/80 mt-0.5 leading-relaxed">
+                      Hyperlocal delivery fleets, couriers, and regional order fulfillment partners.
+                    </p>
+                  </div>
+                </div>
+                <ArrowRight className="w-4 h-4 text-blue-600 shrink-0 mt-2 transition-transform group-hover:translate-x-1" />
+              </button>
+
+              {/* 2. Rental Partner */}
+              <button
+                type="button"
+                onClick={() => handleSelectFromModal("shop_rental")}
+                className="w-full text-left p-3.5 rounded-xl border border-amber-300/80 bg-amber-50/70 hover:bg-amber-50 hover:border-amber-400 transition-all flex items-start justify-between gap-3 group"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-amber-600 text-white flex items-center justify-center shrink-0 mt-0.5">
+                    <Building2 className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-xs sm:text-sm text-amber-950">
+                        2. Rental Partner
+                      </span>
+                      <span className="text-[10px] bg-amber-200 text-amber-900 px-1.5 py-0.2 rounded font-medium">
+                        2 Floors Req.
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-amber-900/80 mt-0.5 leading-relaxed">
+                      Commercial space: <strong>Ground + 1st Floor</strong> in prime retail corridors.
+                    </p>
+                  </div>
+                </div>
+                <ArrowRight className="w-4 h-4 text-amber-700 shrink-0 mt-2 transition-transform group-hover:translate-x-1" />
+              </button>
+
+              {/* 3. Manufacturing & Vendor Partner */}
+              <button
+                type="button"
+                onClick={() => handleSelectFromModal("vendor_onboarding")}
+                className="w-full text-left p-3.5 rounded-xl border border-purple-200/80 bg-purple-50/60 hover:bg-purple-50 hover:border-purple-400 transition-all flex items-start justify-between gap-3 group"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center shrink-0 mt-0.5">
+                    <Sparkles className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-xs sm:text-sm text-purple-950">
+                        3. Manufacturing &amp; Vendor Partner
+                      </span>
+                      <span className="text-[10px] bg-purple-200/80 text-purple-900 px-1.5 py-0.2 rounded font-medium">
+                        Open Call
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-purple-900/80 mt-0.5 leading-relaxed">
+                      Shortlisting designers, tailors, and jewelry artisans. Connect with your Instagram handle.
+                    </p>
+                  </div>
+                </div>
+                <ArrowRight className="w-4 h-4 text-purple-700 shrink-0 mt-2 transition-transform group-hover:translate-x-1" />
+              </button>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="pt-2 text-center">
+              <button
+                type="button"
+                onClick={() => setShowModal(false)}
+                className="text-xs text-brand-text-muted hover:text-brand-plum-900 underline transition-colors"
+              >
+                Continue to General Customer Enquiry
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Top Persistent Announcement Ribbon */}
+      <div className="mb-6 p-4 rounded-xl bg-brand-ivory-50 border border-brand-plum-900/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <div className="flex items-center gap-2 text-xs text-brand-plum-900">
+          <Handshake className="w-4 h-4 text-brand-plum-700 shrink-0" />
+          <span>
+            <strong>Now Open:</strong> We are accepting proposals for <strong>Logistics Partners</strong>,{" "}
+            <strong>Rental Partners (2 Floors)</strong>, and <strong>Manufacturing/Vendor Partners</strong>.
+          </span>
+        </div>
+        <button
+          type="button"
+          onClick={() => setShowModal(true)}
+          className="text-xs font-semibold text-brand-plum-900 underline whitespace-nowrap hover:text-brand-plum-950"
+        >
+          View Details &rarr;
+        </button>
+      </div>
+
       <div className="mb-6">
         <h3 className="font-serif text-2xl text-brand-plum-900 mb-2">
           Contact &amp; Business Enquiries
@@ -292,13 +460,13 @@ export function ContactForm({
       </div>
 
       {/* Dynamic Contextual Guidance Banner based on Selection */}
-      {selectedInquiry === "delivery_partner" && (
+      {selectedInquiry === "logistics_partner" && (
         <div className="mb-6 p-4 rounded-xl bg-blue-50/80 border border-blue-200/80 text-blue-950 flex items-start gap-3">
           <Truck className="w-5 h-5 text-blue-800 shrink-0 mt-0.5" />
           <div className="text-xs sm:text-sm">
-            <p className="font-semibold text-blue-950">Delivery &amp; Logistics Partnership</p>
+            <p className="font-semibold text-blue-950">Logistics Partnership</p>
             <p className="text-blue-900/90 mt-0.5 leading-relaxed">
-              We are actively onboarding hyperlocal 2-wheeler courier services, dedicated city fleet operators,
+              We are actively onboarding hyperlocal courier services, dedicated city fleet operators,
               and express logistics partners to power store-to-door deliveries for Olenna StudioX.
             </p>
           </div>
@@ -395,7 +563,7 @@ export function ContactForm({
             aria-describedby={errors.fullName ? "fullName-error" : undefined}
             value={formData.fullName}
             onChange={handleChange}
-            placeholder="e.g. Radhika Sharma"
+            placeholder="Enter your full name"
             className={`w-full px-4 py-2.5 text-sm rounded-xl bg-brand-ivory-50 border ${
               errors.fullName
                 ? "border-red-400 focus:border-red-500"
@@ -429,7 +597,7 @@ export function ContactForm({
               aria-describedby={errors.email ? "email-error" : undefined}
               value={formData.email}
               onChange={handleChange}
-              placeholder="e.g. radhika@example.com"
+              placeholder="Enter your email address"
               className={`w-full px-4 py-2.5 text-sm rounded-xl bg-brand-ivory-50 border ${
                 errors.email
                   ? "border-red-400 focus:border-red-500"
@@ -457,7 +625,7 @@ export function ContactForm({
               type="tel"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="e.g. +91 98765 43210"
+              placeholder="Enter your phone number"
               className={`w-full px-4 py-2.5 text-sm rounded-xl bg-brand-ivory-50 border ${
                 errors.phone
                   ? "border-red-400 focus:border-red-500"
@@ -473,11 +641,11 @@ export function ContactForm({
           </div>
         </div>
 
-        {/* Dynamic Fields for Delivery Partner */}
-        {selectedInquiry === "delivery_partner" && (
+        {/* Dynamic Fields for Logistics Partner */}
+        {selectedInquiry === "logistics_partner" && (
           <div className="p-4 rounded-xl bg-brand-ivory-50/80 border border-brand-plum-900/10 space-y-4">
             <h4 className="text-xs font-semibold tracking-wider text-brand-plum-900 uppercase">
-              Logistics &amp; Delivery Details
+              Logistics &amp; Fleet Details
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
@@ -493,7 +661,7 @@ export function ContactForm({
                   type="text"
                   value={formData.businessName || ""}
                   onChange={handleChange}
-                  placeholder="e.g. FastTrack Logistics"
+                  placeholder="Enter agency or company name"
                   className="w-full px-4 py-2 text-sm rounded-xl bg-white border border-brand-plum-900/15 focus:border-brand-plum-900 focus:outline-none text-brand-text-primary"
                 />
               </div>
@@ -510,7 +678,7 @@ export function ContactForm({
                   type="text"
                   value={formData.serviceCoverage || ""}
                   onChange={handleChange}
-                  placeholder="e.g. Bangalore West, Rajajinagar, Malleshwaram"
+                  placeholder="Enter operational cities / areas"
                   className="w-full px-4 py-2 text-sm rounded-xl bg-white border border-brand-plum-900/15 focus:border-brand-plum-900 focus:outline-none text-brand-text-primary"
                 />
               </div>
@@ -528,7 +696,7 @@ export function ContactForm({
                 type="text"
                 value={formData.fleetCapabilities || ""}
                 onChange={handleChange}
-                placeholder="e.g. 2-Wheeler Hyperlocal, Same-Day Van Delivery, 24h Express"
+                placeholder="Enter fleet types and delivery modes"
                 className="w-full px-4 py-2 text-sm rounded-xl bg-white border border-brand-plum-900/15 focus:border-brand-plum-900 focus:outline-none text-brand-text-primary"
               />
             </div>
@@ -560,7 +728,7 @@ export function ContactForm({
                   type="text"
                   value={formData.propertyAddress || ""}
                   onChange={handleChange}
-                  placeholder="e.g. Main Road, Rajajinagar 2nd Stage, Bangalore"
+                  placeholder="Enter commercial property address"
                   className="w-full px-4 py-2 text-sm rounded-xl bg-white border border-brand-plum-900/15 focus:border-brand-plum-900 focus:outline-none text-brand-text-primary"
                 />
               </div>
@@ -577,7 +745,7 @@ export function ContactForm({
                   type="text"
                   value={formData.carpetArea || ""}
                   onChange={handleChange}
-                  placeholder="e.g. 1,800 sq.ft (900 GF + 900 1F)"
+                  placeholder="Total carpet area across Ground & 1st Floor"
                   className="w-full px-4 py-2 text-sm rounded-xl bg-white border border-brand-plum-900/15 focus:border-brand-plum-900 focus:outline-none text-brand-text-primary"
                 />
               </div>
@@ -595,14 +763,14 @@ export function ContactForm({
                 type="text"
                 value={formData.commercialTerms || ""}
                 onChange={handleChange}
-                placeholder="e.g. ₹1.2 Lakhs/month, 10 months deposit, negotiable"
+                placeholder="Expected rent and commercial terms"
                 className="w-full px-4 py-2 text-sm rounded-xl bg-white border border-brand-plum-900/15 focus:border-brand-plum-900 focus:outline-none text-brand-text-primary"
               />
             </div>
           </div>
         )}
 
-        {/* Dynamic Fields for Vendor / Manufacturer Onboarding */}
+        {/* Dynamic Fields for Manufacturing & Vendor Partner */}
         {selectedInquiry === "vendor_onboarding" && (
           <div className="p-4 rounded-xl bg-brand-ivory-50/80 border border-brand-plum-900/10 space-y-4">
             <h4 className="text-xs font-semibold tracking-wider text-brand-plum-900 uppercase">
@@ -622,7 +790,7 @@ export function ContactForm({
                   type="text"
                   value={formData.businessName || ""}
                   onChange={handleChange}
-                  placeholder="e.g. Saffron Silk Artisans"
+                  placeholder="Enter brand or manufacturer name"
                   className="w-full px-4 py-2 text-sm rounded-xl bg-white border border-brand-plum-900/15 focus:border-brand-plum-900 focus:outline-none text-brand-text-primary"
                 />
               </div>
@@ -640,7 +808,7 @@ export function ContactForm({
                   type="text"
                   value={formData.instagramHandle || ""}
                   onChange={handleChange}
-                  placeholder="e.g. @saffronsilk or instagram.com/saffronsilk"
+                  placeholder="@username or Instagram link"
                   className="w-full px-4 py-2 text-sm rounded-xl bg-white border border-brand-plum-900/15 focus:border-brand-plum-900 focus:outline-none text-brand-text-primary"
                 />
               </div>
@@ -659,7 +827,7 @@ export function ContactForm({
                   type="text"
                   value={formData.productCategory || ""}
                   onChange={handleChange}
-                  placeholder="e.g. Imitation Jewellery, Sarees, Cosmetics, Tailoring"
+                  placeholder="Enter product category or specialization"
                   className="w-full px-4 py-2 text-sm rounded-xl bg-white border border-brand-plum-900/15 focus:border-brand-plum-900 focus:outline-none text-brand-text-primary"
                 />
               </div>
@@ -676,7 +844,7 @@ export function ContactForm({
                   type="url"
                   value={formData.portfolioUrl || ""}
                   onChange={handleChange}
-                  placeholder="e.g. https://drive.google.com/... or your website"
+                  placeholder="Paste portfolio or catalog URL"
                   className="w-full px-4 py-2 text-sm rounded-xl bg-white border border-brand-plum-900/15 focus:border-brand-plum-900 focus:outline-none text-brand-text-primary"
                 />
               </div>
@@ -722,7 +890,7 @@ export function ContactForm({
               type="text"
               value={formData.subject}
               onChange={handleChange}
-              placeholder="e.g. Partnership Proposal / Product Inquiry"
+              placeholder="Enter subject"
               className={`w-full px-4 py-2.5 text-sm rounded-xl bg-brand-ivory-50 border ${
                 errors.subject
                   ? "border-red-400 focus:border-red-500"
@@ -757,12 +925,12 @@ export function ContactForm({
             value={formData.message}
             onChange={handleChange}
             placeholder={
-              selectedInquiry === "delivery_partner"
-                ? "Provide an overview of your delivery fleet, average turnaround time, and current operating hubs..."
+              selectedInquiry === "logistics_partner"
+                ? "Provide an overview of your delivery fleet, turnaround times, and operational hubs..."
                 : selectedInquiry === "shop_rental"
-                ? "Share property highlights, floor plan details (Ground + 1st floor), parking availability, and lease timeline..."
+                ? "Share property details (Ground + 1st floor), frontage, parking, and lease terms..."
                 : selectedInquiry === "vendor_onboarding"
-                ? "Introduce your brand, production capacity, pricing ranges, and craftsmanship details..."
+                ? "Introduce your brand, production capacity, pricing, and craftsmanship..."
                 : "Share details about what you're looking for..."
             }
             className={`w-full px-4 py-2.5 text-sm rounded-xl bg-brand-ivory-50 border ${

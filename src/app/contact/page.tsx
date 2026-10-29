@@ -151,14 +151,14 @@ export default async function ContactPage() {
               </div>
 
               <div className="space-y-3.5 text-xs">
-                {/* 1. Delivery Partner */}
+                {/* 1. Logistics Partner */}
                 <div className="p-3 rounded-xl bg-blue-50/50 border border-blue-200/60 space-y-1">
                   <div className="flex items-center gap-2 text-blue-950 font-semibold">
                     <span className="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-                    <span>1. Delivery &amp; Logistics Partners</span>
+                    <span>1. Logistics Partners</span>
                   </div>
                   <p className="text-blue-900/80 leading-relaxed pl-3.5">
-                    We are onboarding hyperlocal delivery partners and courier fleets for prompt customer order fulfillment.
+                    We are onboarding hyperlocal courier fleets, two-wheeler dispatch services, and regional logistics partners for customer order fulfillment.
                   </p>
                 </div>
 
