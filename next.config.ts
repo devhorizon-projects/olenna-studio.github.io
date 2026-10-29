@@ -1,15 +1,19 @@
+
 import type { NextConfig } from "next";
 
-const isExport = process.env.EXPORT === "true" || process.env.GITHUB_ACTIONS === "true";
+const isExport =
+  process.env.EXPORT === "true" ||
+  process.env.GITHUB_ACTIONS === "true";
+
 const rawBasePath = process.env.NEXT_PUBLIC_BASE_PATH;
-const basePath =
-  rawBasePath && rawBasePath.trim() !== ""
-    ? rawBasePath
-    : (process.env.GITHUB_ACTIONS === "true" ? "/olenna-studio.github.io" : "");
+
+// Use a repository subpath only when explicitly configured.
+// For a custom domain, leave NEXT_PUBLIC_BASE_PATH empty.
+const basePath = rawBasePath?.trim() || "";
 
 const nextConfig: NextConfig = {
   output: isExport ? "export" : undefined,
-  basePath: basePath || undefined,
+  ...(basePath ? { basePath } : {}),
   trailingSlash: true,
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
