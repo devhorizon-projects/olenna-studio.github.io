@@ -111,9 +111,24 @@ export function ContactForm({
   const [selectedInquiry, setSelectedInquiry] = useState<InquiryCategory>(initialInquiryType);
   const [showModal, setShowModal] = useState<boolean>(false);
 
-  // Trigger announcement popup on mount
+  // Trigger announcement popup or listen to query param on mount
   useEffect(() => {
-    // Show modal once on initial mount
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const typeParam = params.get("type") as InquiryCategory | null;
+      if (
+        typeParam &&
+        (typeParam === "logistics_partner" ||
+          typeParam === "shop_rental" ||
+          typeParam === "vendor_onboarding" ||
+          typeParam === "general")
+      ) {
+        handleInquiryChange(typeParam);
+        setShowModal(false);
+        return;
+      }
+    }
+
     const timer = setTimeout(() => {
       setShowModal(true);
     }, 400);

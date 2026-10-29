@@ -9,6 +9,7 @@ import { CategoryGrid } from "@/components/home/CategoryGrid";
 import { BrandStory } from "@/components/home/BrandStory";
 import { StoreDiscovery } from "@/components/home/StoreDiscovery";
 import { CustomerPwaBanner } from "@/components/home/CustomerPwaBanner";
+import { PartnershipPopup } from "@/components/home/PartnershipPopup";
 import { OrganizationJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ export default async function HomePage() {
   return (
     <>
       <OrganizationJsonLd />
+      <PartnershipPopup />
       <HeroSection content={homepageContent.heroSection} />
       <CategoryGrid
         categories={activeCategories}
