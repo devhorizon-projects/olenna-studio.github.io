@@ -31,7 +31,7 @@ export function useContactInquiry(): UseContactInquiryReturn {
       return result;
     } catch {
       const msg =
-        "Something went wrong. Please try again or email us directly at support@devhorizontech.com";
+        "Something went wrong. Please try again or email us directly at support@olennastudiox.com";
       setErrorMessage(msg);
       throw new Error(msg);
     } finally {

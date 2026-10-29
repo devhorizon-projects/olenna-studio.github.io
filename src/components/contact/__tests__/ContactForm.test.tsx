@@ -138,9 +138,9 @@ describe("ContactForm component", () => {
       expect(
         screen.getByText(/Something went wrong\. Please try again or email us directly at/i)
       ).toBeInTheDocument();
-      expect(screen.getByRole("link", { name: "support@devhorizontech.com" })).toHaveAttribute(
+      expect(screen.getByRole("link", { name: "support@olennastudiox.com" })).toHaveAttribute(
         "href",
-        "mailto:support@devhorizontech.com"
+        "mailto:support@olennastudiox.com"
       );
     });
 

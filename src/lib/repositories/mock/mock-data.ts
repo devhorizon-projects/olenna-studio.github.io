@@ -289,11 +289,11 @@ export const MOCK_SITE_SETTINGS: SiteSettings = {
     primaryPhone: "+919741424695",
     phoneDisplay: "9741424695 | 08754443777",
     primaryEmail: "olennastudiox@gmail.com",
-    technicalEmail: "support@devhorizontech.com",
+    technicalEmail: "support@olennastudiox.com",
     supportHours: "Monday to Sunday, 10:00 AM – 10:00 PM IST",
     headquartersAddress:
       "Rajajinagar, Bangalore, Karnataka, India",
     isVerified: true,
   },
-  copyrightText: "© 2024 Olenna. All rights reserved.",
+  copyrightText: "© 2024 Olenna Studio | A Sahasra Business Solutions. All rights reserved.",
 };

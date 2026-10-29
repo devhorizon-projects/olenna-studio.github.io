@@ -10,7 +10,7 @@ export const EMAIL_SERVICE_API_KEY =
   process.env.NEXT_PUBLIC_EMAIL_SERVICE_API_KEY || "9eRK1AxMdJkiFBSXzAYxBFz6o+4IySEkc8AjTwW1Yi0=";
 
 export const SUPPORT_EMAIL =
-  process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "support@devhorizontech.com";
+  process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "support@olennastudiox.com";
 
 export const SUPPORT_NAME = "DevHorizon Support";
 

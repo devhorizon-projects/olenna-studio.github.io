@@ -140,10 +140,10 @@ export function ContactForm({ stores = [] }: ContactFormProps) {
             <p className="text-xs sm:text-sm text-red-700 mt-0.5">
               Something went wrong. Please try again or email us directly at{" "}
               <a
-                href="mailto:support@devhorizontech.com"
+                href="mailto:support@olennastudiox.com"
                 className="underline font-medium hover:text-red-900"
               >
-                support@devhorizontech.com
+                support@olennastudiox.com
               </a>
               .
             </p>

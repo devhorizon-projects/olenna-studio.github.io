@@ -22,6 +22,9 @@ export function Footer({ settings }: FooterProps) {
           {/* Brand Info */}
           <div className="lg:col-span-1 space-y-3">
             <Logo size="md" variant="horizontal" />
+            <p className="text-xs font-medium tracking-wide text-brand-plum-900">
+              Olenna Studio | A Sahasra Business Solutions
+            </p>
             <p className="text-xs sm:text-sm text-brand-text-secondary leading-relaxed max-w-xs font-light">
               {settings.tagline}
             </p>
@@ -171,7 +174,7 @@ export function Footer({ settings }: FooterProps) {
         </div>
 
         <p className="pt-4 text-center text-xs text-brand-text-muted">
-          Developed By <a href="https://www.devhorizontech.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-plum-900 transition-colors">DevHorizon Technologies Private Limited</a> | Tech Support: <a href="mailto:support@devhorizontech.com" className="hover:text-brand-plum-900 transition-colors">support@devhorizontech.com</a> | Visit Us <a href="https://www.devhorizontech.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-plum-900 transition-colors">www.devhorizontech.com</a>
+          Developed By <a href="https://www.devhorizontech.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-plum-900 transition-colors">DevHorizon Technologies Private Limited</a> | Tech Support: <a href="mailto:support@olennastudiox.com" className="hover:text-brand-plum-900 transition-colors">support@olennastudiox.com</a> | Visit Us <a href="https://www.devhorizontech.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-plum-900 transition-colors">www.devhorizontech.com</a>
         </p>
       </div>
     </footer>

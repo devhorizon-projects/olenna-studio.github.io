@@ -66,7 +66,7 @@ describe("useContactInquiry hook", () => {
     expect(result.current.isSubmitting).toBe(false);
     expect(result.current.isSuccess).toBe(false);
     expect(result.current.errorMessage).toBe(
-      "Something went wrong. Please try again or email us directly at support@devhorizontech.com"
+      "Something went wrong. Please try again or email us directly at support@olennastudiox.com"
     );
   });
 });
