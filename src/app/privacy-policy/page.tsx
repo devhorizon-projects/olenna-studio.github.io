@@ -1,12 +1,10 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ShieldCheck, Mail, MapPin, Trash2, Phone, AlertCircle } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Olenna StudioX",
-  description:
-    "Comprehensive Privacy Policy and Data Safety disclosures for the Olenna StudioX mobile application and web services, compliant with Google Play Store Developer Policies.",
+  title: "Privacy Policy — Olenna",
+  description: "Privacy policy and personal data protection principles for Olenna.",
   alternates: {
     canonical: "/privacy-policy",
   },
@@ -17,366 +15,274 @@ export default function PrivacyPolicyPage() {
     <div className="bg-brand-ivory-50 py-12 sm:py-16 min-h-screen">
       <Container size="narrow">
         {/* Header */}
-        <div className="border-b border-brand-plum-900/10 pb-8 mb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-mauve-200/50 text-brand-plum-900 text-xs font-medium mb-3">
-            <ShieldCheck className="w-4 h-4 text-brand-plum-700" />
-            <span>Google Play Store Compliant Policy</span>
-          </div>
+        <div className="border-b border-brand-plum-900/10 pb-6 mb-8">
           <h1 className="text-3xl sm:text-4xl font-serif text-brand-plum-900 tracking-tight">
-            Privacy Policy
+            Privacy Policy — Olenna
           </h1>
-          <p className="text-xs sm:text-sm text-brand-text-muted mt-2">
-            <strong>Entity:</strong> Olenna StudioX | A Sahasra Business Solutions &bull;{" "}
-            <strong>Last Updated & Effective:</strong> October 2026
+          <p className="text-xs sm:text-sm text-brand-text-muted mt-2 font-medium">
+            Last Updated: October 29, 2026
           </p>
         </div>
 
         {/* Content Body */}
-        <div className="text-brand-text-secondary text-sm sm:text-base space-y-8 leading-relaxed">
-          {/* Introduction */}
-          <section className="space-y-3">
-            <p>
-              Welcome to <strong>Olenna StudioX</strong>. This Privacy Policy governs your use of the
-              Olenna StudioX mobile application (available on Google Play) and our associated digital
-              platforms (collectively, the &ldquo;App&rdquo; or &ldquo;Services&rdquo;), operated by{" "}
-              <strong>Olenna StudioX | A Sahasra Business Solutions</strong> (&ldquo;Olenna StudioX&rdquo;,
-              &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;).
-            </p>
-            <p>
-              We are committed to safeguarding your privacy and ensuring transparency in how personal and
-              sensitive user data is collected, handled, and protected. This policy is designed in strict
-              compliance with applicable privacy legislation and the{" "}
-              <strong>Google Play Developer Program Policies (including the User Data and Data Safety standards)</strong>.
-            </p>
-          </section>
+        <div className="text-brand-text-secondary text-sm sm:text-base space-y-6 leading-relaxed">
+          <p>
+            Olenna Retail Private Limited (&ldquo;Olenna,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;)
+            operates the Olenna website, customer app/PWA, and online shopping services. This Privacy Policy
+            explains what information we collect, how we use and protect it, and the choices available to you.
+          </p>
 
-          {/* Quick Notice: Account & Data Deletion Highlight Box */}
-          <div className="p-5 rounded-2xl bg-amber-50/80 border border-amber-200/80 text-amber-950 flex items-start gap-3.5">
-            <Trash2 className="w-5 h-5 text-amber-800 shrink-0 mt-0.5" />
-            <div className="text-xs sm:text-sm space-y-1">
-              <p className="font-semibold text-amber-900">
-                Google Play Data Safety &amp; Account Deletion Notice
-              </p>
-              <p className="text-amber-900/90 leading-relaxed">
-                You retain full control over your personal data. You may request the deletion of your account
-                and all associated personal data at any time either within the App settings or by sending an
-                email to{" "}
-                <a
-                  href="mailto:support@olennastudiox.com?subject=Account%20and%20Data%20Deletion%20Request"
-                  className="underline font-semibold hover:text-amber-950"
-                >
-                  support@olennastudiox.com
-                </a>
-                . Please review{" "}
-                <a href="#data-deletion" className="underline font-semibold hover:text-amber-950">
-                  Section 7 (Account &amp; Data Deletion)
-                </a>{" "}
-                for full step-by-step instructions.
-              </p>
-            </div>
-          </div>
+          <p className="font-medium text-brand-plum-950">
+            By using the Olenna app or website, you agree to this Privacy Policy.
+          </p>
 
-          {/* 1. Information We Collect */}
-          <section className="space-y-4">
-            <h2 className="text-xl font-serif text-brand-plum-900 pt-2 border-b border-brand-plum-900/10 pb-2">
-              1. Information We Collect
+          {/* Information We Collect */}
+          <section className="space-y-3 pt-2">
+            <h2 className="text-xl font-serif text-brand-plum-900 border-b border-brand-plum-900/10 pb-2">
+              Information We Collect
             </h2>
-            <p>
-              Depending on how you interact with our App and Services, we may collect the following
-              categories of personal information:
-            </p>
-            <div className="space-y-3 pl-2 sm:pl-4 text-xs sm:text-sm">
-              <div>
-                <strong className="text-brand-plum-950">A. Personal Identification &amp; Contact Details:</strong>
-                <p className="mt-0.5">
-                  Name, email address, mobile phone number, shipping address, and billing address provided
-                  when you create an account, place an order, or reach out to our customer concierge.
-                </p>
-              </div>
-              <div>
-                <strong className="text-brand-plum-950">B. Location Information:</strong>
-                <p className="mt-0.5">
-                  With your explicit permission, we may access approximate (coarse) or precise location data to
-                  help you identify nearby Olenna physical boutiques, calculate estimated delivery times, or
-                  provide accurate regional collection availability. You can disable location access at any
-                  time through your device system settings.
-                </p>
-              </div>
-              <div>
-                <strong className="text-brand-plum-950">C. Financial &amp; Payment Data:</strong>
-                <p className="mt-0.5">
-                  All digital payments are processed through certified, PCI-DSS compliant payment gateways
-                  (such as Razorpay / UPI / NetBanking providers). Olenna StudioX does <strong>not</strong>{" "}
-                  store your complete credit/debit card numbers or bank credentials on our servers.
-                </p>
-              </div>
-              <div>
-                <strong className="text-brand-plum-950">D. Technical &amp; Device Information:</strong>
-                <p className="mt-0.5">
-                  Device model, operating system version, unique device identifiers, IP address, network
-                  carrier, app version, crash diagnostic logs, and performance metrics collected automatically
-                  to ensure smooth app performance.
-                </p>
-              </div>
-              <div>
-                <strong className="text-brand-plum-950">E. Customer Communications:</strong>
-                <p className="mt-0.5">
-                  Records of your communications with our team, such as enquiries sent via our concierge
-                  contact form, feedback, or appointment scheduling requests.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* 2. Device Permissions */}
-          <section className="space-y-3">
-            <h2 className="text-xl font-serif text-brand-plum-900 pt-2 border-b border-brand-plum-900/10 pb-2">
-              2. Mobile App Device Permissions
-            </h2>
-            <p>
-              Our Android app may request specific system permissions to deliver core functionality. Each
-              permission is requested dynamically with clear rationale:
-            </p>
+            <p>We may collect the following information:</p>
             <ul className="list-disc pl-5 space-y-2 text-xs sm:text-sm">
               <li>
-                <strong>Location (ACCESS_COARSE_LOCATION / ACCESS_FINE_LOCATION):</strong> Used strictly to
-                locate the closest Olenna Studio boutique and show store directions.
+                <strong className="text-brand-plum-950">Account information:</strong> name, email address,
+                phone number, password, and profile details.
               </li>
               <li>
-                <strong>Notifications (POST_NOTIFICATIONS):</strong> Used to notify you about order status
-                updates, delivery alerts, appointment confirmations, and important service announcements. You
-                may opt out anytime via your device notification preferences.
+                <strong className="text-brand-plum-950">Order and payment information:</strong> delivery
+                address, order history, preferred products, and transaction details. We do not store full card
+                numbers, CVV, UPI PINs, or other sensitive payment credentials on our servers; payments are
+                processed through secure third-party payment providers.
               </li>
               <li>
-                <strong>Camera / Media (Optional):</strong> If you choose to upload images for custom tailoring
-                measurement requests, bridal styling references, or customer support documentation.
+                <strong className="text-brand-plum-950">Contact/enquiry information:</strong> name, email,
+                phone number, and message when you contact us.
+              </li>
+              <li>
+                <strong className="text-brand-plum-950">Device and usage information:</strong> device model,
+                operating system, app version, IP address, browser type, language, approximate location based
+                on IP, pages viewed, and interactions with the app.
+              </li>
+              <li>
+                <strong className="text-brand-plum-950">Permissions information:</strong> only if you grant
+                permission, such as access to camera/gallery for profile photos or product images, notifications
+                for order updates, and location for delivery or nearby-store features.
+              </li>
+              <li>
+                <strong className="text-brand-plum-950">Cookies and similar technologies:</strong> to remember
+                preferences, improve performance, analyse traffic, and support marketing where permitted.
               </li>
             </ul>
           </section>
 
-          {/* 3. How We Use Your Information */}
-          <section className="space-y-3">
-            <h2 className="text-xl font-serif text-brand-plum-900 pt-2 border-b border-brand-plum-900/10 pb-2">
-              3. Purpose and Legal Grounds of Processing
+          {/* How We Use Information */}
+          <section className="space-y-3 pt-2">
+            <h2 className="text-xl font-serif text-brand-plum-900 border-b border-brand-plum-900/10 pb-2">
+              How We Use Information
             </h2>
-            <p>We process collected information strictly for legitimate business and service purposes:</p>
+            <p>We use your information to:</p>
             <ul className="list-disc pl-5 space-y-1.5 text-xs sm:text-sm">
-              <li>To create and manage your customer account across our mobile app and digital storefront.</li>
-              <li>To process, fulfill, and ship retail orders, custom tailoring, and accessories.</li>
-              <li>To send transactional notifications, invoices, order confirmations, and dispatch tracking.</li>
-              <li>To provide responsive customer support and respond to customer concierge inquiries.</li>
-              <li>To detect and prevent fraudulent activities, unauthorized access, and security breaches.</li>
-              <li>To optimize app responsiveness, fix software bugs, and enhance UI/UX stability.</li>
-              <li>To comply with statutory financial, taxation, and legal requirements.</li>
+              <li>Create and manage your Olenna account.</li>
+              <li>Process orders, payments, deliveries, returns, refunds, and customer support requests.</li>
+              <li>Send order confirmations, delivery updates, service notices, and security alerts.</li>
+              <li>Respond to enquiries and improve our products, services, and customer experience.</li>
+              <li>Personalise content, recommendations, offers, and promotions where you have consented.</li>
+              <li>Detect fraud, prevent misuse, enforce our terms, and comply with legal obligations.</li>
+              <li>Analyse app usage and website performance.</li>
             </ul>
           </section>
 
-          {/* 4. Third-Party Sharing & Disclosure */}
-          <section className="space-y-3">
-            <h2 className="text-xl font-serif text-brand-plum-900 pt-2 border-b border-brand-plum-900/10 pb-2">
-              4. Data Sharing &amp; Third-Party Services
+          {/* Legal Bases for Processing */}
+          <section className="space-y-3 pt-2">
+            <h2 className="text-xl font-serif text-brand-plum-900 border-b border-brand-plum-900/10 pb-2">
+              Legal Bases for Processing
             </h2>
-            <p>
-              <strong>We do not sell, rent, lease, or monetize your personal information to third parties.</strong>
-            </p>
-            <p>
-              We only disclose necessary data to verified service partners bound by strict data confidentiality
-              agreements, solely to enable App functionality:
-            </p>
+            <p>Where applicable, we process personal data based on:</p>
+            <ul className="list-disc pl-5 space-y-1.5 text-xs sm:text-sm">
+              <li>Your consent, such as for marketing communications or optional permissions.</li>
+              <li>Performance of a contract, such as fulfilling an order.</li>
+              <li>Legitimate business interests, such as improving services and preventing fraud.</li>
+              <li>Compliance with legal or regulatory requirements.</li>
+            </ul>
+          </section>
+
+          {/* Sharing of Information */}
+          <section className="space-y-3 pt-2">
+            <h2 className="text-xl font-serif text-brand-plum-900 border-b border-brand-plum-900/10 pb-2">
+              Sharing of Information
+            </h2>
+            <p>We do not sell your personal information. We may share it only with:</p>
             <ul className="list-disc pl-5 space-y-2 text-xs sm:text-sm">
               <li>
-                <strong>Google Play Services:</strong> Core Android runtime support, app updates, and crash
-                diagnostics.
+                <strong className="text-brand-plum-950">Service providers:</strong> payment gateways,
+                delivery/logistics partners, cloud hosting, analytics, communication, and customer-support
+                providers.
               </li>
               <li>
-                <strong>Payment Gateways:</strong> Certified PCI-DSS payment partners that facilitate encrypted
-                online financial transactions.
+                <strong className="text-brand-plum-950">Business partners:</strong> only where necessary to
+                provide a requested service.
               </li>
               <li>
-                <strong>Logistics &amp; Courier Partners:</strong> Delivery carriers (for shipping addresses and
-                contact phone numbers for dispatch communication).
+                <strong className="text-brand-plum-950">Authorities:</strong> when required by law, court
+                order, government request, or to protect rights, safety, and property.
               </li>
               <li>
-                <strong>Transactional Email &amp; Cloud Infrastructure:</strong> Cloud hosting (Render / AWS)
-                and email dispatch systems for sending customer receipts and inquiry responses.
-              </li>
-              <li>
-                <strong>Legal Authorities:</strong> Disclosed only if compelled by law, subpoena, or lawful
-                request from law enforcement or judicial bodies.
+                <strong className="text-brand-plum-950">Corporate transactions:</strong> in connection with a
+                merger, acquisition, or sale of assets, subject to appropriate safeguards.
               </li>
             </ul>
+            <p className="text-xs sm:text-sm text-brand-text-secondary pt-1">
+              All third parties are expected to use the information only to provide services to Olenna and to
+              maintain appropriate confidentiality and security.
+            </p>
           </section>
 
-          {/* 5. Data Security */}
-          <section className="space-y-3">
-            <h2 className="text-xl font-serif text-brand-plum-900 pt-2 border-b border-brand-plum-900/10 pb-2">
-              5. Data Security Safeguards
+          {/* Data Retention */}
+          <section className="space-y-3 pt-2">
+            <h2 className="text-xl font-serif text-brand-plum-900 border-b border-brand-plum-900/10 pb-2">
+              Data Retention
             </h2>
-            <p>
-              We deploy industry-standard technical and organizational security controls to safeguard your
-              data against unauthorized alteration, disclosure, destruction, or interception:
+            <p className="text-xs sm:text-sm">
+              We retain personal information only as long as necessary to provide services, fulfil orders,
+              handle support and returns, comply with tax/accounting/legal requirements, and resolve disputes.
+              When no longer required, we delete or anonymise it using reasonable measures.
             </p>
+          </section>
+
+          {/* Data Security */}
+          <section className="space-y-3 pt-2">
+            <h2 className="text-xl font-serif text-brand-plum-900 border-b border-brand-plum-900/10 pb-2">
+              Data Security
+            </h2>
+            <p className="text-xs sm:text-sm">
+              We use reasonable technical and organisational safeguards, including encrypted connections,
+              access controls, and secure payment processing. No method of transmission or storage is completely
+              secure, so we cannot guarantee absolute security.
+            </p>
+          </section>
+
+          {/* Your Rights and Choices */}
+          <section className="space-y-3 pt-2">
+            <h2 className="text-xl font-serif text-brand-plum-900 border-b border-brand-plum-900/10 pb-2">
+              Your Rights and Choices
+            </h2>
+            <p>Depending on your location and applicable law, you may request:</p>
             <ul className="list-disc pl-5 space-y-1.5 text-xs sm:text-sm">
-              <li>End-to-end transport layer encryption (HTTPS / TLS 1.3) for all network communication.</li>
-              <li>Secure tokenized authentication for accounts and APIs.</li>
-              <li>Role-based access controls limiting internal access solely to authorized personnel.</li>
-              <li>Continuous monitoring and regular security patching of server infrastructure.</li>
+              <li>Access to the personal information we hold about you.</li>
+              <li>Correction of inaccurate or incomplete information.</li>
+              <li>Deletion of your account or personal data, subject to legal retention requirements.</li>
+              <li>Withdrawal of consent for marketing or optional data processing.</li>
+              <li>Objection to or restriction of certain processing activities.</li>
+              <li>A copy of your data in a portable format, where applicable.</li>
             </ul>
-          </section>
-
-          {/* 6. Data Retention */}
-          <section className="space-y-3">
-            <h2 className="text-xl font-serif text-brand-plum-900 pt-2 border-b border-brand-plum-900/10 pb-2">
-              6. Data Retention Period
-            </h2>
-            <p>
-              We retain your personal information only for as long as your account remains active or as needed
-              to fulfill the purposes outlined in this policy. When data is no longer necessary for customer
-              service or compliance with legal, tax, or auditing obligations, it is securely deleted or
-              permanently anonymized.
+            <p className="text-xs sm:text-sm text-brand-text-secondary pt-1">
+              To exercise these rights, contact us using the details below. We may verify your identity before
+              processing a request.
             </p>
           </section>
 
-          {/* 7. Account & Data Deletion (Google Play Mandatory) */}
-          <section id="data-deletion" className="space-y-4 scroll-mt-20">
-            <h2 className="text-xl font-serif text-brand-plum-900 pt-2 border-b border-brand-plum-900/10 pb-2">
-              7. Account &amp; Data Deletion Policy
+          {/* Children’s Privacy */}
+          <section className="space-y-3 pt-2">
+            <h2 className="text-xl font-serif text-brand-plum-900 border-b border-brand-plum-900/10 pb-2">
+              Children&rsquo;s Privacy
             </h2>
-            <p>
-              In accordance with <strong>Google Play&rsquo;s Account Deletion Policy</strong>, you have the
-              right to request the permanent deletion of your user account and associated personal data at any
-              time.
-            </p>
-            <div className="bg-white p-5 rounded-2xl border border-brand-plum-900/10 space-y-3 text-xs sm:text-sm">
-              <h3 className="font-medium text-brand-plum-950 text-base">
-                How to Request Account &amp; Data Deletion:
-              </h3>
-              <ol className="list-decimal pl-5 space-y-2">
-                <li>
-                  <strong>Direct In-App Deletion:</strong> Navigate to{" "}
-                  <em>App Settings &gt; Account &gt; Delete Account</em> within the Olenna StudioX mobile app
-                  and confirm your request.
-                </li>
-                <li>
-                  <strong>Email Request:</strong> Send an email from your registered email address to:
-                  <div className="mt-1 font-mono text-xs text-brand-plum-900 bg-brand-ivory-50 p-2 rounded border border-brand-plum-900/10 inline-block">
-                    support@olennastudiox.com
-                  </div>
-                  <p className="mt-1 text-xs text-brand-text-muted">
-                    Subject Line: <strong>&ldquo;Account and Data Deletion Request&rdquo;</strong>
-                  </p>
-                </li>
-              </ol>
-
-              <h4 className="font-medium text-brand-plum-950 pt-2">What Happens Upon Deletion:</h4>
-              <ul className="list-disc pl-5 space-y-1 text-xs text-brand-text-secondary">
-                <li>Your profile, saved addresses, authentication records, and preferences are permanently deleted.</li>
-                <li>We fulfill deletion requests within <strong>30 calendar days</strong> of receiving your verified request.</li>
-                <li>
-                  Certain historical transaction data (such as tax invoices) may be retained strictly as required
-                  by applicable financial and tax laws.
-                </li>
-              </ul>
-            </div>
-          </section>
-
-          {/* 8. Children's Privacy */}
-          <section className="space-y-3">
-            <h2 className="text-xl font-serif text-brand-plum-900 pt-2 border-b border-brand-plum-900/10 pb-2">
-              8. Children&rsquo;s Privacy
-            </h2>
-            <p>
-              Our App and retail services are designed for a general audience and are not directed to children
-              under the age of 13 (or under the age of 18 without parental consent). We do not knowingly collect
-              or solicit personal data from children. If we discover that a minor under 13 has provided personal
-              information, we promptly delete such data from our systems. Parents or guardians who believe a
-              child has submitted data may contact us immediately at{" "}
-              <a href="mailto:support@olennastudiox.com" className="text-brand-plum-900 underline">
-                support@olennastudiox.com
-              </a>
-              .
+            <p className="text-xs sm:text-sm">
+              Olenna services are not directed to children under 13 (or the minimum age required by local law).
+              We do not knowingly collect personal information from children. If you believe a child has provided
+              us with personal information, contact us and we will delete it.
             </p>
           </section>
 
-          {/* 9. Your Rights */}
-          <section className="space-y-3">
-            <h2 className="text-xl font-serif text-brand-plum-900 pt-2 border-b border-brand-plum-900/10 pb-2">
-              9. Your Rights &amp; Choices
+          {/* Permissions */}
+          <section className="space-y-3 pt-2">
+            <h2 className="text-xl font-serif text-brand-plum-900 border-b border-brand-plum-900/10 pb-2">
+              Permissions
             </h2>
-            <p>Subject to applicable law, you possess the right to:</p>
+            <p>The app may request permissions only when needed:</p>
             <ul className="list-disc pl-5 space-y-1.5 text-xs sm:text-sm">
-              <li>Access and receive a copy of your personal data stored with us.</li>
-              <li>Request correction or updating of inaccurate or incomplete information.</li>
-              <li>Withdraw consent for optional processing activities (such as marketing notifications).</li>
-              <li>Request erasure of your personal data (as detailed in Section 7).</li>
+              <li>
+                <strong className="text-brand-plum-950">Notifications:</strong> order updates, offers, and
+                account alerts.
+              </li>
+              <li>
+                <strong className="text-brand-plum-950">Camera/gallery:</strong> uploading profile pictures or
+                product-related images.
+              </li>
+              <li>
+                <strong className="text-brand-plum-950">Location:</strong> delivery, store discovery, or
+                location-based services.
+              </li>
+              <li>
+                <strong className="text-brand-plum-950">Storage:</strong> saving or uploading files where
+                required.
+              </li>
             </ul>
-          </section>
-
-          {/* 10. Changes to This Policy */}
-          <section className="space-y-3">
-            <h2 className="text-xl font-serif text-brand-plum-900 pt-2 border-b border-brand-plum-900/10 pb-2">
-              10. Changes &amp; Updates to This Privacy Policy
-            </h2>
-            <p>
-              We may update this Privacy Policy periodically to reflect enhancements to our App, legal updates,
-              or modifications to Google Play policies. When changes are made, we will revise the &ldquo;Last
-              Updated&rdquo; date at the top of this page. We encourage you to review this policy periodically.
+            <p className="text-xs sm:text-sm text-brand-text-secondary pt-1">
+              You can change or revoke permissions in your device settings at any time.
             </p>
           </section>
 
-          {/* 11. Grievance Officer & Contact Information */}
-          <section className="space-y-4 pt-4">
-            <h2 className="text-xl font-serif text-brand-plum-900 pt-2 border-b border-brand-plum-900/10 pb-2">
-              11. Grievance Officer &amp; Contact Information
+          {/* Third-Party Links and Services */}
+          <section className="space-y-3 pt-2">
+            <h2 className="text-xl font-serif text-brand-plum-900 border-b border-brand-plum-900/10 pb-2">
+              Third-Party Links and Services
             </h2>
-            <p>
-              For questions, privacy grievances, or requests regarding this Privacy Policy or your personal
-              data, please contact our designated Grievance &amp; Privacy Officer:
+            <p className="text-xs sm:text-sm">
+              Our app or website may contain links to third-party websites, payment services, or social
+              platforms. Their privacy practices are governed by their own policies, and we encourage you to
+              review them.
             </p>
+          </section>
 
-            <div className="bg-white p-6 rounded-2xl border border-brand-plum-900/10 space-y-3 text-xs sm:text-sm">
+          {/* Changes to This Policy */}
+          <section className="space-y-3 pt-2">
+            <h2 className="text-xl font-serif text-brand-plum-900 border-b border-brand-plum-900/10 pb-2">
+              Changes to This Policy
+            </h2>
+            <p className="text-xs sm:text-sm">
+              We may update this Privacy Policy from time to time. We will post the updated version on this
+              page and update the &ldquo;Last Updated&rdquo; date. Continued use of the app after changes means
+              you accept the revised policy.
+            </p>
+          </section>
+
+          {/* Contact Us */}
+          <section className="space-y-3 pt-2">
+            <h2 className="text-xl font-serif text-brand-plum-900 border-b border-brand-plum-900/10 pb-2">
+              Contact Us
+            </h2>
+            <p className="text-xs sm:text-sm">
+              For privacy questions, data access, correction, deletion requests, or complaints, contact:
+            </p>
+            <div className="bg-white p-6 rounded-2xl border border-brand-plum-900/10 space-y-2 text-xs sm:text-sm">
               <p className="font-semibold text-brand-plum-950 text-base">
-                Olenna StudioX | A Sahasra Business Solutions
+                Olenna Retail Private Limited
               </p>
-              <div className="space-y-2 text-brand-text-secondary">
-                <div className="flex items-start gap-2.5">
-                  <MapPin className="w-4 h-4 text-brand-plum-700 shrink-0 mt-0.5" />
-                  <span>
-                    <strong>Registered Boutique &amp; Studio:</strong> Rajajinagar, Bangalore, Karnataka,
-                    India
-                  </span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <Mail className="w-4 h-4 text-brand-plum-700 shrink-0" />
-                  <span>
-                    <strong>Technical &amp; Privacy Support:</strong>{" "}
-                    <a
-                      href="mailto:support@olennastudiox.com"
-                      className="text-brand-plum-900 underline font-medium"
-                    >
-                      support@olennastudiox.com
-                    </a>
-                  </span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <Mail className="w-4 h-4 text-brand-plum-700 shrink-0" />
-                  <span>
-                    <strong>General Concierge:</strong>{" "}
-                    <a
-                      href="mailto:olennastudiox@gmail.com"
-                      className="text-brand-plum-900 underline font-medium"
-                    >
-                      olennastudiox@gmail.com
-                    </a>
-                  </span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <Phone className="w-4 h-4 text-brand-plum-700 shrink-0" />
-                  <span>
-                    <strong>Concierge Helpline:</strong> +91 9741424695 | 08754443777
-                  </span>
-                </div>
-              </div>
+              <p>
+                <strong>Email:</strong>{" "}
+                <a
+                  href="mailto:info@olennastudiox.com"
+                  className="text-brand-plum-900 underline font-medium hover:text-brand-plum-950"
+                >
+                  info@olennastudiox.com
+                </a>
+              </p>
+              <p>
+                <strong>Website:</strong>{" "}
+                <a
+                  href="https://olennastudiox.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand-plum-900 underline font-medium hover:text-brand-plum-950"
+                >
+                  https://olennastudiox.com/
+                </a>
+              </p>
+              <p>
+                <strong>Address:</strong> Rajajinagar, Bangalore, Karnataka, India
+              </p>
+              <p className="pt-2 text-brand-text-muted text-xs">
+                We aim to respond to privacy-related requests within a reasonable period and in accordance with applicable law.
+              </p>
             </div>
           </section>
 
@@ -386,7 +292,7 @@ export default function PrivacyPolicyPage() {
               href="/"
               className="text-brand-plum-900 font-medium hover:underline inline-flex items-center gap-1"
             >
-              &larr; Return to Olenna StudioX Home
+              &larr; Return to Olenna Home
             </Link>
             <Link
               href="/terms"
