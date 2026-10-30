@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none" role="img" aria-label="Olenna Emblem">
+  <defs>
+    <linearGradient id="olenna-plum-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6D4C5E"/>
+      <stop offset="60%" stop-color="#493541"/>
+      <stop offset="100%" stop-color="#33232D"/>
+    </linearGradient>
+    <linearGradient id="olenna-champagne-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DFC7B0"/>
+      <stop offset="100%" stop-color="#C4A181"/>
+    </linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="74" stroke="url(#olenna-champagne-grad)" stroke-width="2" stroke-opacity="0.6" stroke-dasharray="2 3"/>
+  <!-- Elegant Outer Oval -->
+  <path d="M80 18 C115 18 140 46 140 80 C140 114 115 142 80 142 C45 142 20 114 20 80 C20 46 45 18 80 18 Z" stroke="url(#olenna-plum-grad)" stroke-width="3" fill="none"/>
+  <!-- Central Botanical O Monogram -->
+  <path d="M80 32 C104 32 120 54 120 80 C120 106 104 128 80 128 C56 128 40 106 40 80 C40 54 56 32 80 32 Z M80 44 C66 44 56 60 56 80 C56 100 66 116 80 116 C94 116 104 100 104 80 C104 60 94 44 80 44 Z" fill="url(#olenna-plum-grad)"/>
+  <!-- Flourish Petal Accent -->
+  <path d="M80 50 C83 62 92 70 100 72 C90 76 84 86 80 94 C76 86 70 76 60 72 C68 70 77 62 80 50 Z" fill="url(#olenna-champagne-grad)"/>
+</svg>
