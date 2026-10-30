@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://olenna.in/sitemap.xml",
+    sitemap: "https://olennastudiox.com/sitemap.xml",
   };
 }
