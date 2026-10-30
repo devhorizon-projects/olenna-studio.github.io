@@ -165,6 +165,13 @@ export function Footer({ settings }: FooterProps) {
             </Link>
             <span>|</span>
             <Link
+              href="/delete-account"
+              className="hover:text-brand-plum-900 transition-colors"
+            >
+              Delete Account
+            </Link>
+            <span>|</span>
+            <Link
               href="/terms"
               className="hover:text-brand-plum-900 transition-colors"
             >
