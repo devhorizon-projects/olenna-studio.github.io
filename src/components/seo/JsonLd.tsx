@@ -8,18 +8,25 @@ interface OrganizationJsonLdProps {
 }
 
 export function OrganizationJsonLd({
-  url = "https://olenna.in",
-  name = "Olenna",
-  logo = "https://olenna.in/images/logo/olenna-logo-full.png",
+  url = "https://olennastudiox.com",
+  name = "Olenna StudioX",
+  logo = "https://olennastudiox.com/images/logo/olenna-logo-full.png",
 }: OrganizationJsonLdProps) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "RetailStore",
     name,
+    legalName: "Sahasra Business Solutions",
+    alternateName: "Olenna StudioX, a Brand of Sahasra Business Solutions",
+    parentOrganization: {
+      "@type": "Organization",
+      name: "Sahasra Business Solutions",
+      description: "Sahasra Business Solutions partnership firm operates Olenna StudioX as its brand.",
+    },
     url,
     logo,
     description:
-      "A premium multi-category retail brand and workspace celebrating ladies & women's beauty, timeless fashion, ethnic wear, imitation jewellery, accessories, personal care, and tailoring supplies.",
+      "Olenna StudioX, a Brand of Sahasra Business Solutions — A premium multi-category retail brand celebrating beauty, timeless fashion, ethnic wear, imitation jewellery, accessories, personal care, and tailoring supplies.",
   };
 
   return (

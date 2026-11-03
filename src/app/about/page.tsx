@@ -65,6 +65,9 @@ export default async function AboutPage() {
                 <p>
                   Whether you are getting ready for your wedding festivities, picking out an everyday work tote, or seeking fine silk threads for custom couture, Olenna bridges the gap between traditional Indian craftsmanship and contemporary lifestyle desires.
                 </p>
+                <p className="text-xs sm:text-sm text-brand-plum-900 font-medium">
+                  Olenna StudioX is proudly owned and operated by Sahasra Business Solutions, a partnership firm committed to delivering curated quality, artisanal integrity, and exceptional retail experiences.
+                </p>
               </div>
 
               <div className="pt-2 flex flex-wrap gap-4">

@@ -27,13 +27,13 @@ export default function PrivacyPolicyPage() {
         {/* Content Body */}
         <div className="text-brand-text-secondary text-sm sm:text-base space-y-6 leading-relaxed">
           <p>
-            Olenna Retail Private Limited (&ldquo;Olenna,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;)
-            operates the Olenna website, customer app/PWA, and online shopping services. This Privacy Policy
+            Sahasra Business Solutions, a partnership firm operating the brand Olenna StudioX (&ldquo;Olenna StudioX, a Brand of Sahasra Business Solutions,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;),
+            operates the Olenna StudioX website, customer app/PWA, and online shopping services. This Privacy Policy
             explains what information we collect, how we use and protect it, and the choices available to you.
           </p>
 
           <p className="font-medium text-brand-plum-950">
-            By using the Olenna app or website, you agree to this Privacy Policy.
+            By using the Olenna StudioX app or website, you agree to this Privacy Policy.
           </p>
 
           {/* Information We Collect */}
@@ -255,7 +255,10 @@ export default function PrivacyPolicyPage() {
             </p>
             <div className="bg-white p-6 rounded-2xl border border-brand-plum-900/10 space-y-2 text-xs sm:text-sm">
               <p className="font-semibold text-brand-plum-950 text-base">
-                Olenna Retail Private Limited
+                Sahasra Business Solutions (Partnership Firm)
+              </p>
+              <p className="text-xs text-brand-plum-900 font-medium">
+                Olenna StudioX, a Brand of Sahasra Business Solutions
               </p>
               <p>
                 <strong>Email:</strong>{" "}

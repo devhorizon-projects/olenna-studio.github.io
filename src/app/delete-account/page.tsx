@@ -42,7 +42,7 @@ export default function DeleteAccountPage() {
               Overview
             </h2>
             <p className="text-xs sm:text-sm leading-relaxed">
-              At Olenna (&ldquo;Olenna StudioX&rdquo;), we respect your right to control your personal data. If you have registered an account on the <strong>Olenna Android Application</strong> or <strong>Customer PWA</strong>, you can permanently delete your login credentials and associated personal information at any time.
+              At Olenna StudioX (&ldquo;Olenna StudioX, a Brand of Sahasra Business Solutions,&rdquo; operated by Sahasra Business Solutions partnership firm), we respect your right to control your personal data. If you have registered an account on the <strong>Olenna Android Application</strong> or <strong>Customer PWA</strong>, you can permanently delete your login credentials and associated personal information at any time.
             </p>
           </div>
 
@@ -74,7 +74,7 @@ export default function DeleteAccountPage() {
             </p>
             <div className="bg-[#FAF1F4] p-5 rounded-xl border border-brand-plum-900/10 space-y-2 text-xs sm:text-sm">
               <p>
-                <strong>Email:</strong> <a href="mailto:privacy@olenna.in" className="text-brand-plum-900 underline font-medium">privacy@olenna.in</a> (or <a href="mailto:support@olenna.in" className="text-brand-plum-900 underline font-medium">support@olenna.in</a>)
+                <strong>Email:</strong> <a href="mailto:support@olennastudiox.com" className="text-brand-plum-900 underline font-medium">support@olennastudiox.com</a> (or <a href="mailto:olennastudiox@gmail.com" className="text-brand-plum-900 underline font-medium">olennastudiox@gmail.com</a>)
               </p>
               <p>
                 <strong>Subject line:</strong> Account Deletion Request — [Your Registered Email]

@@ -28,14 +28,14 @@ export default function TermsOfUsePage() {
             1. Platform & Store Services
           </h2>
           <p>
-            Olenna StudioX provides brand showcases, physical boutique directories, curated luxury collections, and online shopping services operated by Olenna StudioX | A Sahasra Business Solutions.
+            Olenna StudioX provides brand showcases, physical boutique directories, curated luxury collections, and online shopping services. Sahasra Business Solutions partnership firm operates Olenna StudioX as its brand (Olenna StudioX, a Brand of Sahasra Business Solutions).
           </p>
 
           <h2 className="text-xl font-serif text-brand-plum-900 pt-4">
             2. Intellectual Property
           </h2>
           <p>
-            All content, including brand logos, editorial photography, typography, and application designs, are the property of Olenna StudioX | A Sahasra Business Solutions or its licensors.
+            All content, including brand logos, editorial photography, typography, and application designs, are the property of Olenna StudioX, a Brand of Sahasra Business Solutions (operated by Sahasra Business Solutions partnership firm) or its licensors.
           </p>
 
           <h2 className="text-xl font-serif text-brand-plum-900 pt-4">
