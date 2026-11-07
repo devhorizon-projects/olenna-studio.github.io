@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
 export const metadata: Metadata = {
   title: "Official Soft Launch Celebration | Olenna StudioX - A Sahasra Business Solutions",
   description:
-    "Celebrating the official soft launch of Olenna StudioX — A Sahasra Business Solutions. Discover our curated collections across beauty, ethnic fashion, imitation jewellery, accessories, personal care, and tailoring supplies.",
+    "Celebrating the official soft launch of Olenna StudioX — A Sahasra Business Solutions. Discover our curated collections across beauty, ethnic fashion, imitation jewellery, accessories, and personal care.",
   alternates: {
     canonical: "/soft-launch",
   },

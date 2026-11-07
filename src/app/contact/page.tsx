@@ -36,7 +36,7 @@ export default async function ContactPage() {
           as="h1"
           overline="Get In Touch"
           title="We'd Love to Hear From You"
-          subtitle="Have questions about our collections, customized tailoring, or bridal styling? Our team is at your service."
+          subtitle="Have questions about our collections, styling consultations, or orders? Our team is at your service."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">

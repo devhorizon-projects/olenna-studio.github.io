@@ -145,7 +145,7 @@ export function SoftLaunchPopup() {
                   Olenna StudioX — A Sahasra Business Solutions
                 </strong>
                 . Conceived as a sanctuary for modern women, bringing together
-                beauty, ethnic grace, celebratory jewellery, and bespoke tailoring craftsmanship.
+                beauty, ethnic grace, celebratory jewellery, and curated accessories.
               </p>
               <div className="h-px w-20 bg-brand-champagne-400/50 mx-auto" />
               <p className="text-xs italic text-brand-plum-800 font-serif">
@@ -163,7 +163,7 @@ export function SoftLaunchPopup() {
                     6 Curated Collections
                   </h4>
                   <p className="text-[11px] text-brand-text-muted leading-tight mt-0.5">
-                    Beauty, sarees, Kundan ornaments, bags &amp; tailoring.
+                    Beauty, sarees, Kundan ornaments &amp; accessories.
                   </p>
                 </div>
               </div>

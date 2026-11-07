@@ -230,7 +230,7 @@ export default async function StoreDetailPage({ params }: StorePageProps) {
                 </ul>
               ) : (
                 <p className="text-xs text-brand-text-muted italic">
-                  In-store consultations, tailoring services, and beauty assistance available.
+                  In-store styling consultations, product recommendations, and beauty assistance available.
                 </p>
               )}
             </div>

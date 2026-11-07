@@ -38,7 +38,7 @@ export default async function StoresPage() {
               as="h1"
               overline="Store Directory"
               title="Find an Olenna StudioX Boutique Near You"
-              subtitle="Experience our curated collections in person. Visit our stores for custom bridal styling, jewellery consultations, and master tailoring advice."
+              subtitle="Experience our curated collections in person. Visit our stores for custom bridal styling, jewellery consultations, and personal styling advice."
               align="left"
             />
             <Suspense
@@ -78,7 +78,7 @@ export default async function StoresPage() {
                     Olenna StudioX - A Sahasra Business Solutions Studio & Creative Workspace
                   </h2>
                   <p className="text-sm sm:text-base text-brand-text-secondary leading-relaxed font-light">
-                    Our physical shop is currently in progress. Once onboarded, our Bangalore destination will serve as an open workspace and boutique lounge celebrating women&apos;s lifestyle, bespoke tailoring, jewellery, and beauty essentials.
+                    Our physical shop is currently in progress. Once onboarded, our Bangalore destination will serve as an open workspace and boutique lounge celebrating women&apos;s lifestyle, curated fashion, jewellery, and beauty essentials.
                   </p>
                 </div>
 

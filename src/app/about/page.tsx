@@ -32,7 +32,7 @@ export default async function AboutPage() {
             Where Everyday Elegance Meets Thoughtful Curation.
           </h1>
           <p className="text-base sm:text-lg text-brand-text-secondary font-light leading-relaxed max-w-2xl mx-auto">
-            Olenna StudioX - A Sahasra Business Solutions was born from a singular conviction: that modern women deserve a refined, welcoming sanctuary where beauty, fashion, personal care, and tailoring craftsmanship come together under one roof.
+            Olenna StudioX - A Sahasra Business Solutions was born from a singular conviction: that modern women deserve a refined, welcoming sanctuary where beauty, fashion, personal care, and lifestyle essentials come together under one roof.
           </p>
         </Container>
       </section>
@@ -60,10 +60,10 @@ export default async function AboutPage() {
               </h2>
               <div className="space-y-4 text-sm sm:text-base text-brand-text-secondary font-light leading-relaxed">
                 <p>
-                  In a world of overwhelming endless aisles and impersonal shopping, Olenna StudioX - A Sahasra Business Solutions is an antidote. Every product on our shelves — from delicate Kundan jhumkas to master tailoring threads and dermatologically tested skincare — is chosen with intention.
+                  In a world of overwhelming endless aisles and impersonal shopping, Olenna StudioX - A Sahasra Business Solutions is an antidote. Every product on our shelves — from delicate Kundan jhumkas to artisanal sarees and dermatologically tested skincare — is chosen with intention.
                 </p>
                 <p>
-                  Whether you are getting ready for your wedding festivities, picking out an everyday work tote, or seeking fine silk threads for custom couture, Olenna StudioX - A Sahasra Business Solutions bridges the gap between traditional Indian craftsmanship and contemporary lifestyle desires.
+                  Whether you are getting ready for your wedding festivities, picking out an everyday work tote, or seeking celebratory ethnic wear, Olenna StudioX - A Sahasra Business Solutions bridges the gap between traditional Indian craftsmanship and contemporary lifestyle desires.
                 </p>
               </div>
 

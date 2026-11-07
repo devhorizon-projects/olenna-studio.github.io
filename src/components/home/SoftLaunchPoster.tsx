@@ -144,7 +144,7 @@ export function SoftLaunchPoster() {
                 <strong className="font-medium text-brand-plum-900">
                   Olenna StudioX — A Sahasra Business Solutions
                 </strong>
-                . Curated beauty, ethnic fashion, jewellery, and bespoke tailoring in Bangalore.
+                . Curated beauty, ethnic fashion, and jewellery in Bangalore.
               </p>
             </div>
 
@@ -215,10 +215,10 @@ export function SoftLaunchPoster() {
               </div>
             </div>
 
-            {/* 4 Feature Highlights Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-left">
+            {/* 3 Feature Highlights Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2 text-left">
               {/* Highlight 1 */}
-              <div className="p-3.5 rounded-xl bg-white/95 border border-brand-plum-900/10 shadow-2xs space-y-1">
+              <div className="p-4 rounded-xl bg-white/95 border border-brand-plum-900/10 shadow-2xs space-y-1">
                 <h4 className="font-serif text-sm font-medium text-brand-plum-900">
                   Beauty &amp; Cosmetics
                 </h4>
@@ -228,7 +228,7 @@ export function SoftLaunchPoster() {
               </div>
 
               {/* Highlight 2 */}
-              <div className="p-3.5 rounded-xl bg-white/95 border border-brand-plum-900/10 shadow-2xs space-y-1">
+              <div className="p-4 rounded-xl bg-white/95 border border-brand-plum-900/10 shadow-2xs space-y-1">
                 <h4 className="font-serif text-sm font-medium text-brand-plum-900">
                   Ethnic Wear &amp; Jewellery
                 </h4>
@@ -238,17 +238,7 @@ export function SoftLaunchPoster() {
               </div>
 
               {/* Highlight 3 */}
-              <div className="p-3.5 rounded-xl bg-white/95 border border-brand-plum-900/10 shadow-2xs space-y-1">
-                <h4 className="font-serif text-sm font-medium text-brand-plum-900">
-                  Master Tailoring Studio
-                </h4>
-                <p className="text-xs text-brand-text-muted leading-relaxed">
-                  Custom stitching &amp; alterations.
-                </p>
-              </div>
-
-              {/* Highlight 4 */}
-              <div className="p-3.5 rounded-xl bg-white/95 border border-brand-plum-900/10 shadow-2xs space-y-1">
+              <div className="p-4 rounded-xl bg-white/95 border border-brand-plum-900/10 shadow-2xs space-y-1">
                 <h4 className="font-serif text-sm font-medium text-brand-plum-900">
                   Bangalore Workspace
                 </h4>
