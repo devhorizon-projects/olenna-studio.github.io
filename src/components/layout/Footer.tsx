@@ -23,7 +23,7 @@ export function Footer({ settings }: FooterProps) {
           <div className="lg:col-span-1 space-y-3">
             <Logo size="md" variant="horizontal" />
             <p className="text-xs font-medium tracking-wide text-brand-plum-900">
-              Olenna StudioX | A Sahasra Business Solutions
+              Olenna StudioX - A Sahasra Business Solutions
             </p>
             <p className="text-xs sm:text-sm text-brand-text-secondary leading-relaxed max-w-xs font-light">
               {settings.tagline}
@@ -133,7 +133,7 @@ export function Footer({ settings }: FooterProps) {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Olenna on ${social.label}`}
+                    aria-label={`Olenna StudioX - A Sahasra Business Solutions on ${social.label}`}
                     className="w-8 h-8 rounded-full bg-brand-mauve-200/50 flex items-center justify-center text-brand-plum-900 hover:bg-brand-plum-900 hover:text-white transition-colors"
                   >
                     {social.platform === "instagram" && (

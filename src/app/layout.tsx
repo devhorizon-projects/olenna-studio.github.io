@@ -22,13 +22,16 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://olenna.in"),
   title: {
-    default: "Olenna — Everyday Elegance, Thoughtfully Curated",
-    template: "%s | Olenna",
+    default: "Olenna StudioX - A Sahasra Business Solutions — Everyday Elegance, Thoughtfully Curated",
+    template: "%s | Olenna StudioX - A Sahasra Business Solutions",
   },
   description:
-    "Discover Olenna — a premium retail destination celebrating beauty, fashion, ethnic wear, imitation jewellery, accessories, personal care, and tailoring supplies.",
+    "Discover Olenna StudioX - A Sahasra Business Solutions — a premium retail destination celebrating beauty, fashion, ethnic wear, imitation jewellery, accessories, personal care, and tailoring supplies.",
   keywords: [
+    "Olenna StudioX - A Sahasra Business Solutions",
+    "Olenna StudioX",
     "Olenna",
+    "Sahasra Business Solutions",
     "premium retail",
     "ethnic wear",
     "beauty cosmetics",
@@ -38,11 +41,11 @@ export const metadata: Metadata = {
     "tailoring supplies",
   ],
   openGraph: {
-    title: "Olenna — Everyday Elegance, Thoughtfully Curated",
+    title: "Olenna StudioX - A Sahasra Business Solutions — Everyday Elegance, Thoughtfully Curated",
     description:
-      "A premium multi-category retail brand celebrating beauty, timeless fashion, and lifestyle essentials.",
+      "A premium multi-category retail brand celebrating beauty, timeless fashion, and lifestyle essentials by Olenna StudioX - A Sahasra Business Solutions.",
     url: "https://olenna.in",
-    siteName: "Olenna",
+    siteName: "Olenna StudioX - A Sahasra Business Solutions",
     locale: "en_IN",
     type: "website",
     images: [
@@ -50,7 +53,7 @@ export const metadata: Metadata = {
         url: "/images/logo/olenna-logo-full.png",
         width: 1057,
         height: 853,
-        alt: "Olenna Studiox — Luxury Beauty, Fashion & Lifestyle",
+        alt: "Olenna StudioX - A Sahasra Business Solutions — Luxury Beauty, Fashion & Lifestyle",
       },
     ],
   },

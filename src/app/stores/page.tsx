@@ -9,9 +9,9 @@ import { Button } from "@/components/ui/Button";
 import { StoreDirectoryClient } from "@/components/stores/StoreDirectoryClient";
 
 export const metadata: Metadata = {
-  title: "Our Store — Olenna Studio & Workspace | Opening Soon",
+  title: "Our Store — Olenna StudioX - A Sahasra Business Solutions | Opening Soon",
   description:
-    "Olenna physical store and workspace is in progress in Rajajinagar, Bangalore. Opening soon! Operating hours: 10:00 AM to 10:00 PM, Monday to Sunday.",
+    "Olenna StudioX - A Sahasra Business Solutions physical store and workspace is in progress in Bangalore. Opening soon! Store timings and launch date will be announced shortly.",
   alternates: {
     canonical: "/stores",
   },
@@ -37,7 +37,7 @@ export default async function StoresPage() {
             <SectionHeader
               as="h1"
               overline="Store Directory"
-              title="Find an Olenna Boutique Near You"
+              title="Find an Olenna StudioX Boutique Near You"
               subtitle="Experience our curated collections in person. Visit our stores for custom bridal styling, jewellery consultations, and master tailoring advice."
               align="left"
             />
@@ -57,7 +57,7 @@ export default async function StoresPage() {
               as="h1"
               overline="Store & Workspace"
               title="Store In Progress — Opening Soon!"
-              subtitle="We are currently preparing our exclusive workspace and retail studio in Rajajinagar, Bangalore. Stay tuned for our grand opening."
+              subtitle="We are currently preparing our exclusive workspace and retail studio in Bangalore. Stay tuned for our grand opening."
               align="left"
             />
 
@@ -69,16 +69,16 @@ export default async function StoresPage() {
                     <Sparkles className="w-3.5 h-3.5 text-brand-champagne-300" />
                     <span className="font-medium">Opening Soon</span>
                   </Badge>
-                  <Badge variant="blush">Bangalore Rajajinagar</Badge>
+                  <Badge variant="blush">Bangalore</Badge>
                   <Badge variant="outline">Ladies / Women Corner</Badge>
                 </div>
 
                 <div className="space-y-3 max-w-2xl">
                   <h2 className="font-serif text-2xl sm:text-3xl text-brand-plum-900 leading-snug">
-                    Olenna Studio & Creative Workspace
+                    Olenna StudioX - A Sahasra Business Solutions Studio & Creative Workspace
                   </h2>
                   <p className="text-sm sm:text-base text-brand-text-secondary leading-relaxed font-light">
-                    Our physical shop is currently in progress. Once onboarded, our Rajajinagar destination will serve as an open workspace and boutique lounge celebrating women&apos;s lifestyle, bespoke tailoring, jewellery, and beauty essentials.
+                    Our physical shop is currently in progress. Once onboarded, our Bangalore destination will serve as an open workspace and boutique lounge celebrating women&apos;s lifestyle, bespoke tailoring, jewellery, and beauty essentials.
                   </p>
                 </div>
 
@@ -93,7 +93,7 @@ export default async function StoresPage() {
                         Location
                       </p>
                       <p className="text-sm text-brand-text-secondary mt-0.5">
-                        Rajajinagar, Bangalore
+                        Bangalore
                       </p>
                       <p className="text-xs text-brand-text-muted">Karnataka, India</p>
                     </div>
@@ -106,12 +106,12 @@ export default async function StoresPage() {
                     </div>
                     <div>
                       <p className="text-xs uppercase tracking-wider font-semibold text-brand-plum-900">
-                        Workspace & Shop Hours
+                        Workspace & Shop Status
                       </p>
                       <p className="text-sm text-brand-text-secondary mt-0.5 font-medium text-brand-plum-900">
-                        10:00 AM to 10:00 PM
+                        Opening Soon in Bangalore
                       </p>
-                      <p className="text-xs text-brand-text-muted">Monday to Sunday (Daily)</p>
+                      <p className="text-xs text-brand-text-muted">Operating hours will be announced upon launch</p>
                     </div>
                   </div>
 

@@ -9,7 +9,7 @@ test.describe("Olenna Website Key Journeys", () => {
     await expect(page.getByRole("link", { name: /olenna/i }).first()).toBeVisible();
 
     // Check Announcement Bar
-    await expect(page.locator("text=Discover Olenna").first()).toBeVisible();
+    await expect(page.locator("text=Soft Launch Celebration").first()).toBeVisible();
 
     // Check Hero Section
     await expect(page.locator("h1")).toContainText(/Everyday elegance/i);
@@ -23,7 +23,7 @@ test.describe("Olenna Website Key Journeys", () => {
     await expect(page.locator("text=Imitation Jewellery").first()).toBeVisible();
 
     // Check Brand Story
-    await expect(page.locator("text=THE OLENNA EXPERIENCE")).toBeVisible();
+    await expect(page.locator("text=THE OLENNA STUDIOX EXPERIENCE")).toBeVisible();
     await expect(page.locator("text=Curated Selections")).toBeVisible();
 
     // Check Store Discovery Section

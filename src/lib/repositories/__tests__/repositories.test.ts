@@ -163,7 +163,7 @@ describe("Site Settings Repository", () => {
     const repo = new MockSiteSettingsRepository();
     const settings = await repo.getSiteSettings();
 
-    expect(settings.brandName).toBe("Olenna");
+    expect(settings.brandName).toBe("Olenna StudioX - A Sahasra Business Solutions");
     expect(settings.customerPwaUrl).toMatch(/^https?:\/\//);
     expect(settings.mainNavigation.length).toBe(4);
     expect(settings.contactDetails.primaryEmail).toBe("olennastudiox@gmail.com");

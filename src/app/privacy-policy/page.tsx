@@ -3,8 +3,8 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Olenna",
-  description: "Privacy policy and personal data protection principles for Olenna.",
+  title: "Privacy Policy — Olenna StudioX - A Sahasra Business Solutions",
+  description: "Privacy policy and personal data protection principles for Olenna StudioX - A Sahasra Business Solutions.",
   alternates: {
     canonical: "/privacy-policy",
   },
@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
         {/* Header */}
         <div className="border-b border-brand-plum-900/10 pb-6 mb-8">
           <h1 className="text-3xl sm:text-4xl font-serif text-brand-plum-900 tracking-tight">
-            Privacy Policy — Olenna
+            Privacy Policy — Olenna StudioX - A Sahasra Business Solutions
           </h1>
           <p className="text-xs sm:text-sm text-brand-text-muted mt-2 font-medium">
             Last Updated: October 29, 2026
@@ -27,13 +27,13 @@ export default function PrivacyPolicyPage() {
         {/* Content Body */}
         <div className="text-brand-text-secondary text-sm sm:text-base space-y-6 leading-relaxed">
           <p>
-            Olenna Retail Private Limited (&ldquo;Olenna,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;)
-            operates the Olenna website, customer app/PWA, and online shopping services. This Privacy Policy
+            Olenna StudioX - A Sahasra Business Solutions (&ldquo;Olenna StudioX,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;)
+            operates the Olenna StudioX - A Sahasra Business Solutions website, customer app/PWA, and online shopping services. This Privacy Policy
             explains what information we collect, how we use and protect it, and the choices available to you.
           </p>
 
           <p className="font-medium text-brand-plum-950">
-            By using the Olenna app or website, you agree to this Privacy Policy.
+            By using the Olenna StudioX - A Sahasra Business Solutions app or website, you agree to this Privacy Policy.
           </p>
 
           {/* Information We Collect */}
@@ -81,7 +81,7 @@ export default function PrivacyPolicyPage() {
             </h2>
             <p>We use your information to:</p>
             <ul className="list-disc pl-5 space-y-1.5 text-xs sm:text-sm">
-              <li>Create and manage your Olenna account.</li>
+              <li>Create and manage your Olenna StudioX - A Sahasra Business Solutions account.</li>
               <li>Process orders, payments, deliveries, returns, refunds, and customer support requests.</li>
               <li>Send order confirmations, delivery updates, service notices, and security alerts.</li>
               <li>Respond to enquiries and improve our products, services, and customer experience.</li>
@@ -131,7 +131,7 @@ export default function PrivacyPolicyPage() {
               </li>
             </ul>
             <p className="text-xs sm:text-sm text-brand-text-secondary pt-1">
-              All third parties are expected to use the information only to provide services to Olenna and to
+              All third parties are expected to use the information only to provide services to Olenna StudioX - A Sahasra Business Solutions and to
               maintain appropriate confidentiality and security.
             </p>
           </section>
@@ -186,7 +186,7 @@ export default function PrivacyPolicyPage() {
               Children&rsquo;s Privacy
             </h2>
             <p className="text-xs sm:text-sm">
-              Olenna services are not directed to children under 13 (or the minimum age required by local law).
+              Olenna StudioX - A Sahasra Business Solutions services are not directed to children under 13 (or the minimum age required by local law).
               We do not knowingly collect personal information from children. If you believe a child has provided
               us with personal information, contact us and we will delete it.
             </p>
@@ -255,7 +255,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <div className="bg-white p-6 rounded-2xl border border-brand-plum-900/10 space-y-2 text-xs sm:text-sm">
               <p className="font-semibold text-brand-plum-950 text-base">
-                Olenna Retail Private Limited
+                Olenna StudioX - A Sahasra Business Solutions
               </p>
               <p>
                 <strong>Email:</strong>{" "}
@@ -278,7 +278,7 @@ export default function PrivacyPolicyPage() {
                 </a>
               </p>
               <p>
-                <strong>Address:</strong> Rajajinagar, Bangalore, Karnataka, India
+                <strong>Address:</strong> Bangalore, Karnataka, India
               </p>
               <p className="pt-2 text-brand-text-muted text-xs">
                 We aim to respond to privacy-related requests within a reasonable period and in accordance with applicable law.
@@ -292,7 +292,7 @@ export default function PrivacyPolicyPage() {
               href="/"
               className="text-brand-plum-900 font-medium hover:underline inline-flex items-center gap-1"
             >
-              &larr; Return to Olenna Home
+              &larr; Return to Olenna StudioX - A Sahasra Business Solutions Home
             </Link>
             <Link
               href="/terms"

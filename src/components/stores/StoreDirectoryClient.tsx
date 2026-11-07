@@ -151,7 +151,7 @@ export function StoreDirectoryClient({
             Store In Progress — Opening Soon!
           </h3>
           <p className="text-sm text-brand-text-secondary font-light leading-relaxed">
-            Our physical store and workspace in <strong>Rajajinagar, Bangalore</strong> is currently under preparation. Once open, timings will be <strong>10:00 AM to 10:00 PM (Monday to Sunday)</strong>.
+            Our physical store and workspace in <strong>Bangalore</strong> is currently under preparation. Store hours and official opening date will be announced soon.
           </p>
           <p className="text-xs text-brand-text-muted">
             For questions or styling enquiries, please email{" "}

@@ -37,7 +37,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: category.metaTitle || `${category.name} | Olenna`,
+    title: category.metaTitle || `${category.name} | Olenna StudioX - A Sahasra Business Solutions`,
     description: category.metaDescription || category.description,
     alternates: {
       canonical: `/collections/${category.slug}`,
@@ -147,7 +147,7 @@ export default async function CategoryDetailPage({ params }: CategoryPageProps) 
         <div className="bg-[#F6E6ED] p-8 rounded-3xl border border-brand-plum-900/10 text-center max-w-3xl mx-auto space-y-3">
           <Sparkles className="w-6 h-6 text-brand-plum-700 mx-auto" />
           <h2 className="font-serif text-2xl text-brand-plum-900">
-            Available at Olenna Boutiques
+            Available at Olenna StudioX Boutiques
           </h2>
           <p className="text-sm text-brand-text-secondary font-light max-w-xl mx-auto">
             Experience the rich texture, craftsmanship, and custom fittings of our {category.name} range in person. Our boutique stylists are delighted to guide your selection.

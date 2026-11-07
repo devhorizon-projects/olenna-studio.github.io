@@ -8,9 +8,9 @@ import { getSiteSettingsRepository } from "@/lib/repositories";
 import { assetPath } from "@/lib/utils/assetPath";
 
 export const metadata: Metadata = {
-  title: "About Olenna — Our Philosophy & Retail Story",
+  title: "About Olenna StudioX - A Sahasra Business Solutions — Our Philosophy & Retail Story",
   description:
-    "Learn about Olenna, our heritage of everyday elegance, curated retail sanctuary, and commitment to quality beauty, ethnic wear, jewellery, and craftsmanship.",
+    "Learn about Olenna StudioX - A Sahasra Business Solutions, our heritage of everyday elegance, curated retail sanctuary, and commitment to quality beauty, ethnic wear, jewellery, and craftsmanship.",
   alternates: {
     canonical: "/about",
   },
@@ -32,7 +32,7 @@ export default async function AboutPage() {
             Where Everyday Elegance Meets Thoughtful Curation.
           </h1>
           <p className="text-base sm:text-lg text-brand-text-secondary font-light leading-relaxed max-w-2xl mx-auto">
-            Olenna was born from a singular conviction: that modern women deserve a refined, welcoming sanctuary where beauty, fashion, personal care, and tailoring craftsmanship come together under one roof.
+            Olenna StudioX - A Sahasra Business Solutions was born from a singular conviction: that modern women deserve a refined, welcoming sanctuary where beauty, fashion, personal care, and tailoring craftsmanship come together under one roof.
           </p>
         </Container>
       </section>
@@ -44,7 +44,7 @@ export default async function AboutPage() {
             <div className="lg:col-span-6 relative aspect-[4/3] sm:aspect-[16/11] rounded-3xl overflow-hidden shadow-md bg-brand-blush-100">
               <Image
                 src={assetPath("/images/hero/hero-model.webp")}
-                alt="Olenna Brand Narrative"
+                alt="Olenna StudioX - A Sahasra Business Solutions Brand Narrative"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover object-center"
@@ -60,10 +60,10 @@ export default async function AboutPage() {
               </h2>
               <div className="space-y-4 text-sm sm:text-base text-brand-text-secondary font-light leading-relaxed">
                 <p>
-                  In a world of overwhelming endless aisles and impersonal shopping, Olenna is an antidote. Every product on our shelves — from delicate Kundan jhumkas to master tailoring threads and dermatologically tested skincare — is chosen with intention.
+                  In a world of overwhelming endless aisles and impersonal shopping, Olenna StudioX - A Sahasra Business Solutions is an antidote. Every product on our shelves — from delicate Kundan jhumkas to master tailoring threads and dermatologically tested skincare — is chosen with intention.
                 </p>
                 <p>
-                  Whether you are getting ready for your wedding festivities, picking out an everyday work tote, or seeking fine silk threads for custom couture, Olenna bridges the gap between traditional Indian craftsmanship and contemporary lifestyle desires.
+                  Whether you are getting ready for your wedding festivities, picking out an everyday work tote, or seeking fine silk threads for custom couture, Olenna StudioX - A Sahasra Business Solutions bridges the gap between traditional Indian craftsmanship and contemporary lifestyle desires.
                 </p>
               </div>
 
@@ -91,8 +91,8 @@ export default async function AboutPage() {
         <Container>
           <SectionHeader
             overline="Guiding Principles"
-            title="The Olenna Standard"
-            subtitle="The uncompromising standards that guide every boutique experience and collection."
+            title="The Olenna StudioX Standard"
+            subtitle="The uncompromising standards that guide every boutique experience and collection at Olenna StudioX - A Sahasra Business Solutions."
             align="center"
           />
 
@@ -157,10 +157,10 @@ export default async function AboutPage() {
                 Physical Experience
               </span>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif leading-tight">
-                Experience Olenna Studio in Rajajinagar, Bangalore.
+                Experience Olenna StudioX - A Sahasra Business Solutions in Bangalore.
               </h2>
               <p className="text-sm sm:text-base text-brand-mauve-100 font-light leading-relaxed">
-                Our physical store and workspace is currently in progress and opening soon! Designed for modern women, with workspace and store hours from 10:00 AM to 10:00 PM, Monday to Sunday.
+                Our physical store and workspace is currently in progress and opening soon in Bangalore! Designed for modern women, celebrating everyday elegance. Official hours and opening updates will be shared shortly.
               </p>
               <div className="pt-4">
                 <Button

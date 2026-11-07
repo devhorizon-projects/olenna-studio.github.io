@@ -8,9 +8,9 @@ interface OrganizationJsonLdProps {
 }
 
 export function OrganizationJsonLd({
-  url = "https://olenna.in",
-  name = "Olenna",
-  logo = "https://olenna.in/images/logo/olenna-logo-full.png",
+  url = "https://olennastudiox.com",
+  name = "Olenna StudioX - A Sahasra Business Solutions",
+  logo = "https://olennastudiox.com/images/logo/olenna-logo-full.png",
 }: OrganizationJsonLdProps) {
   const schema = {
     "@context": "https://schema.org",
@@ -19,7 +19,7 @@ export function OrganizationJsonLd({
     url,
     logo,
     description:
-      "A premium multi-category retail brand and workspace celebrating ladies & women's beauty, timeless fashion, ethnic wear, imitation jewellery, accessories, personal care, and tailoring supplies.",
+      "Olenna StudioX - A Sahasra Business Solutions: A premium multi-category retail brand and workspace celebrating ladies & women's beauty, timeless fashion, ethnic wear, imitation jewellery, accessories, personal care, and tailoring supplies.",
   };
 
   return (

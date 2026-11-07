@@ -60,12 +60,12 @@ export function Logo({
         "group inline-flex flex-col items-start focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-plum-900 rounded-sm transition-opacity hover:opacity-95",
         className
       )}
-      aria-label="Olenna — Everyday Elegance, Thoughtfully Curated"
+      aria-label="Olenna StudioX - A Sahasra Business Solutions — Everyday Elegance, Thoughtfully Curated"
     >
       <div className="relative flex items-center">
         <Image
           src={src}
-          alt="Olenna Luxury Beauty, Fashion & Lifestyle"
+          alt="Olenna StudioX - A Sahasra Business Solutions Luxury Beauty, Fashion & Lifestyle"
           width={currentDim.width}
           height={currentDim.height}
           priority={priority}

@@ -25,8 +25,11 @@ export function AnnouncementBar({
       className="bg-[#6B4B5E] text-brand-blush-50 text-[11px] sm:text-xs py-2 px-4 transition-all"
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-        {/* Mobile: Centered message */}
-        <div className="w-full md:w-auto flex items-center justify-center md:justify-start gap-2 tracking-wide font-medium">
+        {/* Mobile & Desktop: Centered message */}
+        <div className="w-full md:w-auto flex items-center justify-center md:justify-start gap-2 tracking-wide font-medium flex-wrap">
+          <span className="text-[10px] bg-brand-champagne-400 text-brand-plum-950 px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider shrink-0 shadow-2xs">
+            Official Soft Launch Edition
+          </span>
           <span className="text-[10px] text-brand-mauve-200">✦</span>
           <span>{announcement.message}</span>
         </div>
@@ -51,7 +54,7 @@ export function AnnouncementBar({
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Follow Olenna on ${social.label}`}
+                    aria-label={`Follow Olenna StudioX - A Sahasra Business Solutions on ${social.label}`}
                     className="hover:text-white transition-colors"
                   >
                     {social.platform === "instagram" && (

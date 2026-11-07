@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 
 export const metadata: Metadata = {
-  title: "Terms of Use | Olenna",
-  description: "Terms and conditions of use for Olenna's public brand website.",
+  title: "Terms of Use | Olenna StudioX - A Sahasra Business Solutions",
+  description: "Terms and conditions of use for Olenna StudioX - A Sahasra Business Solutions's public brand website.",
   alternates: {
     canonical: "/terms",
   },
@@ -21,21 +21,21 @@ export default function TermsOfUsePage() {
             Last Updated: October 2026
           </p>
           <p>
-            Welcome to Olenna StudioX. By accessing or using our mobile application and brand website, you agree to comply with and be bound by these terms of use.
+            Welcome to Olenna StudioX - A Sahasra Business Solutions. By accessing or using our mobile application and brand website, you agree to comply with and be bound by these terms of use.
           </p>
 
           <h2 className="text-xl font-serif text-brand-plum-900 pt-4">
             1. Platform & Store Services
           </h2>
           <p>
-            Olenna StudioX provides brand showcases, physical boutique directories, curated luxury collections, and online shopping services operated by Olenna StudioX | A Sahasra Business Solutions.
+            Olenna StudioX provides brand showcases, physical boutique directories, curated luxury collections, and online shopping services operated by Olenna StudioX - A Sahasra Business Solutions.
           </p>
 
           <h2 className="text-xl font-serif text-brand-plum-900 pt-4">
             2. Intellectual Property
           </h2>
           <p>
-            All content, including brand logos, editorial photography, typography, and application designs, are the property of Olenna StudioX | A Sahasra Business Solutions or its licensors.
+            All content, including brand logos, editorial photography, typography, and application designs, are the property of Olenna StudioX - A Sahasra Business Solutions or its licensors.
           </p>
 
           <h2 className="text-xl font-serif text-brand-plum-900 pt-4">

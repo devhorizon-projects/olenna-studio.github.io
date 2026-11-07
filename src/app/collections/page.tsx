@@ -6,9 +6,9 @@ import { CategoryCard } from "@/components/home/CategoryCard";
 import { CustomerPwaBanner } from "@/components/home/CustomerPwaBanner";
 
 export const metadata: Metadata = {
-  title: "Curated Collections — Beauty, Fashion, Jewellery & Essentials | Olenna",
+  title: "Curated Collections — Beauty, Fashion, Jewellery & Essentials | Olenna StudioX - A Sahasra Business Solutions",
   description:
-    "Explore Olenna's thoughtfully curated retail collections across beauty, ethnic fashion, imitation jewellery, accessories, personal care, and tailoring supplies.",
+    "Explore Olenna StudioX - A Sahasra Business Solutions's thoughtfully curated retail collections across beauty, ethnic fashion, imitation jewellery, accessories, personal care, and tailoring supplies.",
   alternates: {
     canonical: "/collections",
   },
@@ -29,7 +29,7 @@ export default async function CollectionsPage() {
         <SectionHeader
           overline="Our Categories"
           title="Curated Collections for Every Moment"
-          subtitle="Discover high-quality essentials handpicked for grace, elegance, and longevity. Available in our physical boutiques and via the Olenna Customer App."
+          subtitle="Discover high-quality essentials handpicked for grace, elegance, and longevity. Available in our physical boutiques and via the Olenna StudioX - A Sahasra Business Solutions Customer App."
         />
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">

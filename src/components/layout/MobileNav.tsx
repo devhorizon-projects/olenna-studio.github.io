@@ -126,7 +126,7 @@ export function MobileNav({ settings }: MobileNavProps) {
           <div className="text-xs text-brand-text-secondary space-y-2 pt-1 font-normal">
             <div className="flex items-center gap-2">
               <MapPin className="w-3.5 h-3.5 text-brand-plum-800 shrink-0" />
-              <span className="text-brand-plum-950 font-medium">Boutique & Studio: Rajajinagar, Bangalore</span>
+              <span className="text-brand-plum-950 font-medium">Boutique & Studio: Bangalore</span>
             </div>
             {settings.contactDetails.primaryPhone && (
               <a

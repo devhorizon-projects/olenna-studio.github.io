@@ -45,24 +45,24 @@ export const BrandPillarSchema = z.object({
 
 export const BrandStoryContentSchema = z.object({
   isVisible: z.boolean().default(true),
-  overline: z.string().default("THE OLENNA EXPERIENCE"),
+  overline: z.string().default("THE OLENNA STUDIOX EXPERIENCE"),
   headline: z.string(),
   description: z.string(),
-  ctaLabel: z.string().default("Learn About Olenna"),
+  ctaLabel: z.string().default("Learn About Olenna StudioX - A Sahasra Business Solutions"),
   ctaUrl: z.string().default("/about"),
   pillars: z.array(BrandPillarSchema).default([]),
 });
 
 export const StoreDiscoveryContentSchema = z.object({
   isVisible: z.boolean().default(true),
-  headline: z.string().default("Find Olenna near you"),
+  headline: z.string().default("Find Olenna StudioX - A Sahasra Business Solutions near you"),
   subheadline: z
     .string()
     .default("Visit our stores and experience our collections in person."),
   ctaLabel: z.string().default("Explore Our Stores"),
   ctaUrl: z.string().default("/stores"),
   image: z.string(),
-  imageAlt: z.string().default("Olenna Luxury Retail Store Interior"),
+  imageAlt: z.string().default("Olenna StudioX - A Sahasra Business Solutions Luxury Retail Store Interior"),
 });
 
 export const CustomerPwaBannerContentSchema = z.object({
@@ -70,11 +70,11 @@ export const CustomerPwaBannerContentSchema = z.object({
   headline: z.string().default("Your next favourite find awaits"),
   subheadline: z
     .string()
-    .default("Explore our full range on the Olenna Customer App."),
+    .default("Explore our full range on the Olenna StudioX - A Sahasra Business Solutions Customer App."),
   ctaLabel: z.string().default("Shop Online"),
   ctaUrl: z.string(),
   image: z.string(),
-  imageAlt: z.string().default("Olenna Luxury Gift Packaging"),
+  imageAlt: z.string().default("Olenna StudioX - A Sahasra Business Solutions Luxury Gift Packaging"),
 });
 
 export const HomepageContentSchema = z.object({

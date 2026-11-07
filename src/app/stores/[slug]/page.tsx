@@ -50,8 +50,8 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${store.name} — Olenna ${store.city}`,
-    description: `Visit ${store.name} in ${store.locality}, ${store.city}. View store hours, contact details, directions and in-store amenities.`,
+    title: `${store.name} — Olenna StudioX - A Sahasra Business Solutions ${store.city}`,
+    description: `Visit ${store.name} in ${store.locality}, ${store.city}. View store hours, contact details, directions and in-store amenities at Olenna StudioX - A Sahasra Business Solutions.`,
     alternates: {
       canonical: `/stores/${store.slug}`,
     },
@@ -187,7 +187,9 @@ export default async function StoreDetailPage({ params }: StorePageProps) {
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center bg-brand-mauve-100 text-brand-plum-900">
-                  <span className="font-serif text-2xl tracking-widest">OLENNA</span>
+                  <span className="font-serif text-xl sm:text-2xl tracking-widest text-center px-4">
+                    OLENNA STUDIOX - A SAHASRA BUSINESS SOLUTIONS
+                  </span>
                 </div>
               )}
             </div>

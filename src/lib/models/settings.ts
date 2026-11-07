@@ -27,7 +27,7 @@ export const ContactDetailsSchema = z.object({
 });
 
 export const SiteSettingsSchema = z.object({
-  brandName: z.string().default("Olenna"),
+  brandName: z.string().default("Olenna StudioX - A Sahasra Business Solutions"),
   logoText: z.string().default("OLENNA"),
   tagline: z.string().default("Everyday elegance, thoughtfully curated."),
   customerPwaUrl: z.string().url(),
@@ -36,7 +36,7 @@ export const SiteSettingsSchema = z.object({
   footerQuickLinks: z.array(NavigationItemSchema),
   socialLinks: z.array(SocialLinkSchema),
   contactDetails: ContactDetailsSchema,
-  copyrightText: z.string().default("© 2026 Olenna StudioX | A Sahasra Business Solutions. All rights reserved."),
+  copyrightText: z.string().default("© 2026 Olenna StudioX - A Sahasra Business Solutions. All rights reserved."),
 });
 
 export interface NavigationItem {
