@@ -177,7 +177,7 @@ export const MOCK_HOMEPAGE_CONTENT: HomepageContent = {
         primaryCtaUrl: "/#collections",
         secondaryCtaLabel: "Partner With Us",
         secondaryCtaUrl: "/contact?type=vendor_onboarding",
-        image: "/images/diwali/diwali-festive-model.jpg",
+        image: "/images/diwali/diwali-festive-model-landscape.jpg",
         imageAlt: "Olenna StudioX - A Sahasra Business Solutions Official Soft Launch Edition",
       },
       {

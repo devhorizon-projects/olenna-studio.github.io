@@ -13,7 +13,7 @@ export function SoftLaunchPoster() {
 
   const festiveGallery = [
     {
-      src: "/images/diwali/diwali-festive-model.jpg",
+      src: "/images/diwali/diwali-festive-model-landscape.jpg",
       tag: "✦ Auspicious Soft Launch ✦",
       title: "Festive Silk Attire & Kundan Ornaments",
       subtitle: "Celebrating grace, tradition, and modern feminine confidence",
@@ -166,7 +166,7 @@ export function SoftLaunchPoster() {
                   sizes="(max-width: 768px) 100vw, 700px"
                   className="object-cover object-center transition-all duration-700 animate-in fade-in zoom-in-95"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-plum-950/85 via-transparent to-black/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-plum-950/60 via-transparent to-black/15" />
 
                 {/* Top Badge */}
                 <div className="absolute top-3 left-3">
