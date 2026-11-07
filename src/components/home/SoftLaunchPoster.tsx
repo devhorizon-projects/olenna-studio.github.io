@@ -164,7 +164,7 @@ export function SoftLaunchPoster() {
                   alt={festiveGallery[activeImageIndex].alt}
                   fill
                   sizes="(max-width: 768px) 100vw, 700px"
-                  className="object-cover object-top transition-all duration-700 animate-in fade-in zoom-in-95"
+                  className="object-cover object-center transition-all duration-700 animate-in fade-in zoom-in-95"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-plum-950/85 via-transparent to-black/20" />
 
