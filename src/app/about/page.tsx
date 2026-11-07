@@ -160,7 +160,7 @@ export default async function AboutPage() {
                 Experience Olenna StudioX - A Sahasra Business Solutions in Bangalore.
               </h2>
               <p className="text-sm sm:text-base text-brand-mauve-100 font-light leading-relaxed">
-                Our physical store and workspace is currently in progress and opening soon in Bangalore! Designed for modern women, celebrating everyday elegance. Official hours and opening updates will be shared shortly.
+                Our physical store is currently in progress and opening soon in Bangalore! Designed for modern women, celebrating everyday elegance. Official hours and opening updates will be shared shortly.
               </p>
               <div className="pt-4">
                 <Button

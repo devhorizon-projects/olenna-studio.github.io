@@ -239,7 +239,7 @@ export function SoftLaunchPoster() {
               {/* Highlight 3 */}
               <div className="p-4 rounded-xl bg-white/95 border border-brand-plum-900/10 shadow-2xs space-y-1">
                 <h4 className="font-serif text-sm font-medium text-brand-plum-900">
-                  Bangalore Workspace
+                  Bangalore Boutique
                 </h4>
                 <p className="text-xs text-brand-text-muted leading-relaxed">
                   Physical store opening soon.

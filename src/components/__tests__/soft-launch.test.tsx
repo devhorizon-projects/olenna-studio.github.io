@@ -22,7 +22,7 @@ describe("SoftLaunchPoster component", () => {
     // Key pillars
     expect(screen.getByText("Beauty & Cosmetics")).toBeInTheDocument();
     expect(screen.getByText("Ethnic Wear & Jewellery")).toBeInTheDocument();
-    expect(screen.getByText("Bangalore Workspace")).toBeInTheDocument();
+    expect(screen.getByText("Bangalore Boutique")).toBeInTheDocument();
 
     // Call to action buttons
     expect(

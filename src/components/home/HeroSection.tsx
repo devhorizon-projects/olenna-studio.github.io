@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { ArrowRight, ChevronLeft, ChevronRight, Sparkles, MapPin } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 import { HeroSectionContent } from "@/lib/models/content";
 import { Button } from "@/components/ui/Button";
 import { assetPath } from "@/lib/utils/assetPath";
@@ -90,16 +90,9 @@ export function HeroSection({ content }: HeroSectionProps) {
               )}
             </h1>
 
-            <p className="text-sm sm:text-base text-brand-text-secondary leading-relaxed font-light max-w-lg mb-4">
+            <p className="text-sm sm:text-base text-brand-text-secondary leading-relaxed font-light max-w-lg mb-8">
               {currentSlide.subheadline}
             </p>
-
-            {isSoftLaunchSlide && (
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/95 border border-brand-champagne-400/50 text-xs sm:text-sm text-brand-plum-950 mb-6 font-medium shadow-2xs">
-                <MapPin className="w-4 h-4 text-brand-champagne-600 shrink-0" />
-                <span>Bangalore • Physical Store &amp; Workspace Opening Soon</span>
-              </div>
-            )}
 
             <div className="flex flex-wrap items-center gap-4 mb-10">
               <Button

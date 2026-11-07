@@ -11,7 +11,7 @@ import { StoreDirectoryClient } from "@/components/stores/StoreDirectoryClient";
 export const metadata: Metadata = {
   title: "Our Store — Olenna StudioX - A Sahasra Business Solutions | Opening Soon",
   description:
-    "Olenna StudioX - A Sahasra Business Solutions physical store and workspace is in progress in Bangalore. Opening soon! Store timings and launch date will be announced shortly.",
+    "Olenna StudioX - A Sahasra Business Solutions physical store is in progress in Bangalore. Opening soon! Store timings and launch date will be announced shortly.",
   alternates: {
     canonical: "/stores",
   },
@@ -55,13 +55,13 @@ export default async function StoresPage() {
           <div className="space-y-10">
             <SectionHeader
               as="h1"
-              overline="Store & Workspace"
+              overline="Our Boutique"
               title="Store In Progress — Opening Soon!"
-              subtitle="We are currently preparing our exclusive workspace and retail studio in Bangalore. Stay tuned for our grand opening."
+              subtitle="We are currently preparing our exclusive retail boutique in Bangalore. Stay tuned for our grand opening."
               align="left"
             />
 
-            {/* Upcoming Store / Workspace Hero Card */}
+            {/* Upcoming Store Hero Card */}
             <div className="bg-white rounded-3xl border border-brand-plum-900/10 shadow-sm overflow-hidden">
               <div className="p-8 sm:p-12 lg:p-14 space-y-8">
                 <div className="flex flex-wrap items-center gap-2.5">
@@ -75,10 +75,10 @@ export default async function StoresPage() {
 
                 <div className="space-y-3 max-w-2xl">
                   <h2 className="font-serif text-2xl sm:text-3xl text-brand-plum-900 leading-snug">
-                    Olenna StudioX - A Sahasra Business Solutions Studio & Creative Workspace
+                    Olenna StudioX - A Sahasra Business Solutions Boutique Store
                   </h2>
                   <p className="text-sm sm:text-base text-brand-text-secondary leading-relaxed font-light">
-                    Our physical shop is currently in progress. Once onboarded, our Bangalore destination will serve as an open workspace and boutique lounge celebrating women&apos;s lifestyle, curated fashion, jewellery, and beauty essentials.
+                    Our physical store is currently in progress. Once onboarded, our Bangalore destination will serve as a boutique lounge celebrating women&apos;s lifestyle, curated fashion, jewellery, and beauty essentials.
                   </p>
                 </div>
 
@@ -106,7 +106,7 @@ export default async function StoresPage() {
                     </div>
                     <div>
                       <p className="text-xs uppercase tracking-wider font-semibold text-brand-plum-900">
-                        Workspace & Shop Status
+                        Store Status
                       </p>
                       <p className="text-sm text-brand-text-secondary mt-0.5 font-medium text-brand-plum-900">
                         Opening Soon in Bangalore

@@ -172,10 +172,10 @@ export function SoftLaunchPopup() {
                 <Store className="w-4 h-4 text-brand-champagne-600 shrink-0 mt-0.5" />
                 <div>
                   <h4 className="text-xs font-semibold text-brand-plum-900">
-                    Bangalore Boutique Studio
+                    Bangalore Boutique Store
                   </h4>
                   <p className="text-[11px] text-brand-text-muted leading-tight mt-0.5">
-                    Physical store &amp; workspace opening soon in Bangalore! Stay tuned for launch updates.
+                    Physical store opening soon in Bangalore! Stay tuned for launch updates.
                   </p>
                 </div>
               </div>

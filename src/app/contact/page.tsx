@@ -135,7 +135,7 @@ export default async function ContactPage() {
               {/* Verified Status Tag */}
               <div className="pt-4 border-t border-brand-plum-900/10 text-xs text-brand-text-muted flex items-center gap-1.5">
                 <Compass className="w-3.5 h-3.5 text-brand-plum-700" />
-                <span>Physical store &amp; workspace in progress in Bangalore. Opening soon!</span>
+                <span>Physical store in progress in Bangalore. Opening soon!</span>
               </div>
             </div>
 
@@ -193,7 +193,7 @@ export default async function ContactPage() {
             {/* In-Store Styling Notice Card */}
             <div className="bg-[#FAF1F4] p-6 sm:p-8 rounded-2xl border border-brand-plum-900/10 space-y-3">
               <h4 className="font-serif text-lg text-brand-plum-900">
-                Store &amp; Workspace In Progress
+                Store In Progress
               </h4>
               <p className="text-xs sm:text-sm text-brand-text-secondary leading-relaxed font-light">
                 Our physical store in Bangalore is currently in progress and opening soon. Official store hours and launch updates will be announced upon opening.

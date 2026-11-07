@@ -19,7 +19,7 @@ export function OrganizationJsonLd({
     url,
     logo,
     description:
-      "Olenna StudioX - A Sahasra Business Solutions: A premium multi-category retail brand and workspace celebrating ladies & women's beauty, timeless fashion, ethnic wear, imitation jewellery, accessories, personal care, and tailoring supplies.",
+      "Olenna StudioX - A Sahasra Business Solutions: A premium multi-category retail brand celebrating ladies & women's beauty, timeless fashion, ethnic wear, imitation jewellery, accessories, and personal care.",
   };
 
   return (

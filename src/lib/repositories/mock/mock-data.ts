@@ -116,8 +116,8 @@ export const MOCK_STORES: Store[] = [
   {
     id: "store-bangalore",
     slug: "bangalore",
-    name: "Olenna StudioX - A Sahasra Business Solutions Studio & Workspace — Bangalore",
-    tagline: "Ladies / women corner — Workspace & retail studio (Opening Soon)",
+    name: "Olenna StudioX - A Sahasra Business Solutions Boutique Store — Bangalore",
+    tagline: "Ladies / women corner — Boutique store (Opening Soon)",
     addressLines: ["Bangalore"],
     locality: "Bangalore",
     city: "Bangalore",
@@ -147,7 +147,6 @@ export const MOCK_STORES: Store[] = [
     displayOrder: 1,
     amenities: [
       "Ladies / Women's Corner",
-      "Creative Workspace",
       "Personal Styling Consultations",
     ],
     createdAt: "2024-10-17T00:00:00Z",
@@ -171,7 +170,7 @@ export const MOCK_HOMEPAGE_CONTENT: HomepageContent = {
         overline: "OFFICIAL SOFT LAUNCH EDITION ✦ BANGALORE",
         headline: "Warm wishes on our soft launch, everyday elegance.",
         subheadline:
-          "Olenna StudioX — A Sahasra Business Solutions is delighted to announce our soft launch! Conceived as a refined sanctuary for modern women celebrating beauty, ethnic wear, Kundan jewellery, and curated accessories. Physical store & workspace opening soon in Bangalore.",
+          "Olenna StudioX — A Sahasra Business Solutions is delighted to announce our soft launch! Conceived as a refined sanctuary for modern women celebrating beauty, ethnic wear, Kundan jewellery, and curated accessories.",
         primaryCtaLabel: "Explore Curated Collections",
         primaryCtaUrl: "/#collections",
         secondaryCtaLabel: "Partner With Us",
@@ -200,7 +199,7 @@ export const MOCK_HOMEPAGE_CONTENT: HomepageContent = {
           "From dermatologically tested beauty formulations to timeless handcrafted sarees and lifestyle essentials, discover styles made for you.",
         primaryCtaLabel: "Explore All Categories",
         primaryCtaUrl: "/#collections",
-        secondaryCtaLabel: "Bangalore Workspace",
+        secondaryCtaLabel: "Our Stores",
         secondaryCtaUrl: "/stores",
         image: "/images/hero/hero-model.webp",
         imageAlt: "Olenna StudioX - A Sahasra Business Solutions Model in Elegant Pink Ethnic Wear",
@@ -258,11 +257,11 @@ export const MOCK_HOMEPAGE_CONTENT: HomepageContent = {
     isVisible: true,
     headline: "Our store is opening soon",
     subheadline:
-      "We are setting up our exclusive workspace and retail studio in Bangalore. Official opening hours and launch dates will be announced shortly.",
+      "We are setting up our exclusive retail boutique store in Bangalore. Official opening hours and launch dates will be announced shortly.",
     ctaLabel: "View Store Updates",
     ctaUrl: "/stores",
     image: "/images/stores/store-flagship.webp",
-    imageAlt: "Olenna StudioX - A Sahasra Business Solutions Studio & Workspace Bangalore",
+    imageAlt: "Olenna StudioX - A Sahasra Business Solutions Boutique Store Bangalore",
   },
   pwaBanner: {
     isVisible: true,

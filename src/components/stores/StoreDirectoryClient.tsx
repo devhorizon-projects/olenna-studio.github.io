@@ -151,7 +151,7 @@ export function StoreDirectoryClient({
             Store In Progress — Opening Soon!
           </h3>
           <p className="text-sm text-brand-text-secondary font-light leading-relaxed">
-            Our physical store and workspace in <strong>Bangalore</strong> is currently under preparation. Store hours and official opening date will be announced soon.
+            Our physical store in <strong>Bangalore</strong> is currently under preparation. Store hours and official opening date will be announced soon.
           </p>
           <p className="text-xs text-brand-text-muted">
             For questions or styling enquiries, please email{" "}
