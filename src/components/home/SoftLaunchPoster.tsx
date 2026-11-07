@@ -133,25 +133,18 @@ export function SoftLaunchPoster() {
               <span className="h-px w-16 sm:w-24 bg-gradient-to-l from-transparent to-brand-champagne-400" />
             </div>
 
-            {/* Main Festive Soft Launch Proclamation & Wishes */}
-            <div className="space-y-4">
-              <h3 className="font-serif text-2xl sm:text-3xl text-brand-plum-900 italic font-normal">
+            {/* Main Soft Launch Wishes */}
+            <div className="space-y-3">
+              <h3 className="font-serif text-2xl sm:text-3xl text-brand-plum-900 font-normal">
                 Wishing You Joy, Grace &amp; Everyday Elegance
               </h3>
 
-              <p className="text-sm sm:text-base text-brand-text-secondary leading-relaxed font-light max-w-2xl mx-auto">
-                We are profoundly honoured to announce the soft launch of{" "}
+              <p className="text-sm sm:text-base text-brand-text-secondary leading-relaxed font-light max-w-xl mx-auto">
+                Welcome to the soft launch of{" "}
                 <strong className="font-medium text-brand-plum-900">
                   Olenna StudioX — A Sahasra Business Solutions
                 </strong>
-                . Conceived with love for the discerning modern woman, Olenna StudioX
-                unites luxurious skincare, bespoke fashion textiles, heirloom jewellery,
-                and master tailoring artistry under one welcoming destination.
-              </p>
-
-              <p className="text-xs sm:text-sm text-brand-plum-800 font-serif italic max-w-xl mx-auto">
-                &ldquo;May the radiant glow of Diwali and this auspicious soft launch illuminate your
-                homes with boundless prosperity, timeless beauty, and cherished elegance.&rdquo;
+                . Curated beauty, ethnic fashion, jewellery, and bespoke tailoring in Bangalore.
               </p>
             </div>
 
@@ -223,48 +216,44 @@ export function SoftLaunchPoster() {
             </div>
 
             {/* 4 Feature Highlights Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-2 text-left">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-left">
               {/* Highlight 1 */}
-              <div className="p-4 rounded-2xl bg-white/90 border border-brand-plum-900/10 shadow-2xs space-y-1">
-                <span className="text-lg">🌸</span>
+              <div className="p-3.5 rounded-xl bg-white/95 border border-brand-plum-900/10 shadow-2xs space-y-1">
                 <h4 className="font-serif text-sm font-medium text-brand-plum-900">
                   Beauty &amp; Cosmetics
                 </h4>
-                <p className="text-[11px] text-brand-text-muted leading-relaxed">
-                  Skin-safe, dermatologically curated botanical skincare and radiant cosmetics.
+                <p className="text-xs text-brand-text-muted leading-relaxed">
+                  Skincare, makeup &amp; daily essentials.
                 </p>
               </div>
 
               {/* Highlight 2 */}
-              <div className="p-4 rounded-2xl bg-white/90 border border-brand-plum-900/10 shadow-2xs space-y-1">
-                <span className="text-lg">👑</span>
+              <div className="p-3.5 rounded-xl bg-white/95 border border-brand-plum-900/10 shadow-2xs space-y-1">
                 <h4 className="font-serif text-sm font-medium text-brand-plum-900">
                   Ethnic Wear &amp; Jewellery
                 </h4>
-                <p className="text-[11px] text-brand-text-muted leading-relaxed">
-                  Artisanal sarees, regal Kundan ornaments, and timeless celebratory attire.
+                <p className="text-xs text-brand-text-muted leading-relaxed">
+                  Sarees, festive wear &amp; jewellery.
                 </p>
               </div>
 
               {/* Highlight 3 */}
-              <div className="p-4 rounded-2xl bg-white/90 border border-brand-plum-900/10 shadow-2xs space-y-1">
-                <span className="text-lg">🪡</span>
+              <div className="p-3.5 rounded-xl bg-white/95 border border-brand-plum-900/10 shadow-2xs space-y-1">
                 <h4 className="font-serif text-sm font-medium text-brand-plum-900">
                   Master Tailoring Studio
                 </h4>
-                <p className="text-[11px] text-brand-text-muted leading-relaxed">
-                  Bespoke couture finishing, silk threads, zardozi trims &amp; design supplies.
+                <p className="text-xs text-brand-text-muted leading-relaxed">
+                  Custom stitching &amp; alterations.
                 </p>
               </div>
 
               {/* Highlight 4 */}
-              <div className="p-4 rounded-2xl bg-white/90 border border-brand-plum-900/10 shadow-2xs space-y-1">
-                <span className="text-lg">📍</span>
+              <div className="p-3.5 rounded-xl bg-white/95 border border-brand-plum-900/10 shadow-2xs space-y-1">
                 <h4 className="font-serif text-sm font-medium text-brand-plum-900">
                   Bangalore Workspace
                 </h4>
-                <p className="text-[11px] text-brand-text-muted leading-relaxed">
-                  Physical store &amp; workspace opening soon. Operating hours will be announced upon launch.
+                <p className="text-xs text-brand-text-muted leading-relaxed">
+                  Physical store opening soon.
                 </p>
               </div>
             </div>
