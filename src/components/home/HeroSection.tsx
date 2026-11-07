@@ -166,14 +166,14 @@ export function HeroSection({ content }: HeroSectionProps) {
 
           {/* Right Column: Hero Visual Model */}
           <div className="lg:col-span-6 order-1 lg:order-2 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-lg lg:max-w-none aspect-[4/3] sm:aspect-[16/11] lg:aspect-[5/4] rounded-2xl overflow-hidden shadow-xl ring-1 ring-brand-plum-900/10 bg-brand-blush-100">
+            <div className="relative w-full max-w-md aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] rounded-2xl overflow-hidden shadow-xl ring-1 ring-brand-plum-900/10 bg-brand-blush-100 mx-auto lg:ml-auto">
               <Image
                 key={currentSlide.image}
                 src={assetPath(currentSlide.image)}
                 alt={currentSlide.imageAlt}
                 fill
                 priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
                 className="object-cover object-center transition-all duration-700 animate-in fade-in zoom-in-95 hover:scale-[1.02]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />

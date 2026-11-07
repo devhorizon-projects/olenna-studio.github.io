@@ -13,15 +13,8 @@ export function SoftLaunchPoster() {
 
   const festiveGallery = [
     {
-      src: "/images/diwali/diwali-festive-model-landscape.jpg",
-      tag: "✦ Auspicious Soft Launch ✦",
-      title: "Festive Silk Attire & Kundan Ornaments",
-      subtitle: "Celebrating grace, tradition, and modern feminine confidence",
-      alt: "Diwali Festive Celebration Model — Olenna StudioX - A Sahasra Business Solutions",
-    },
-    {
       src: "/images/diwali/diwali-diya-luxury.jpg",
-      tag: "✦ Celebration of Lights ✦",
+      tag: "✦ Auspicious Soft Launch ✦",
       title: "Handcrafted Golden Diyas & Jasmine Buds",
       subtitle: "Deep plum velvet and liquid champagne silks bathed in festive glow",
       alt: "Traditional Glowing Diyas & Jasmine Celebration — Olenna StudioX",
@@ -32,6 +25,13 @@ export function SoftLaunchPoster() {
       title: "Bespoke Packaging & Curated Collections",
       subtitle: "Thoughtfully curated gifts, accessories, and Banarasi textiles",
       alt: "Luxury Festive Packaging and Silk Textiles — Olenna StudioX",
+    },
+    {
+      src: "/images/hero/hero-model.webp",
+      tag: "✦ Everyday Elegance ✦",
+      title: "Festive Silk Attire & Kundan Ornaments",
+      subtitle: "Celebrating grace, tradition, and modern feminine confidence",
+      alt: "Festive Celebration Model — Olenna StudioX - A Sahasra Business Solutions",
     },
   ];
 
