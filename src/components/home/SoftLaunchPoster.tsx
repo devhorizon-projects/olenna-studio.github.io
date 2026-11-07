@@ -2,8 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { Sparkles, ArrowRight, Heart, Share2, Check, MapPin, Store, ChevronLeft, ChevronRight } from "lucide-react";
+import { Sparkles, ArrowRight, Share2, Check, Store, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { assetPath } from "@/lib/utils/assetPath";
 
