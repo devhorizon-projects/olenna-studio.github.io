@@ -12,14 +12,14 @@ export function SoftLaunchPoster() {
 
   const festiveGallery = [
     {
-      src: "/images/diwali/diwali-diya-luxury.jpg",
+      src: "/images/diwali/diwali-diya-luxury.webp",
       tag: "✦ Auspicious Soft Launch ✦",
       title: "Handcrafted Golden Diyas & Jasmine Buds",
       subtitle: "Deep plum velvet and liquid champagne silks bathed in festive glow",
       alt: "Traditional Glowing Diyas & Jasmine Celebration — Olenna StudioX",
     },
     {
-      src: "/images/diwali/diwali-boutique-banner.jpg",
+      src: "/images/diwali/diwali-boutique-banner.webp",
       tag: "✦ Curated Luxury Finds ✦",
       title: "Bespoke Packaging & Curated Collections",
       subtitle: "Thoughtfully curated gifts, accessories, and Banarasi textiles",

@@ -56,9 +56,9 @@ describe("SoftLaunchPopup component", () => {
   it("renders popup with soft launch wishes and switches to partnerships tab", async () => {
     render(<SoftLaunchPopup />);
 
-    // Fast forward the 350ms timer
+    // Fast forward the delayed timer
     act(() => {
-      vi.advanceTimersByTime(400);
+      vi.advanceTimersByTime(4000);
     });
 
     // Check modal appears

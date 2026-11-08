@@ -18,9 +18,10 @@ export function SoftLaunchPopup() {
         : null;
 
     if (!hasSeen) {
+      // Delay popup trigger so it does not block Core Web Vitals (FCP, LCP, CLS) or interrupt mobile users on load
       const timer = setTimeout(() => {
         setIsOpen(true);
-      }, 350);
+      }, 3500);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -80,12 +81,11 @@ export function SoftLaunchPopup() {
           {/* Festive Diwali Image Banner */}
           <div className="relative w-full h-32 sm:h-36 rounded-2xl overflow-hidden mb-3 border border-brand-champagne-400/40 shadow-xs">
             <Image
-              src={assetPath("/images/diwali/diwali-diya-luxury.jpg")}
+              src={assetPath("/images/diwali/diwali-diya-luxury.webp")}
               alt="Diwali Celebration Diya Lighting"
               fill
               sizes="(max-width: 640px) 100vw, 540px"
               className="object-cover object-center"
-              priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-plum-950/80 via-transparent to-black/20" />
             <div className="absolute bottom-2 left-0 right-0 text-center">

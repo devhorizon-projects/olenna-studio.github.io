@@ -175,7 +175,7 @@ export const MOCK_HOMEPAGE_CONTENT: HomepageContent = {
         primaryCtaUrl: "/#collections",
         secondaryCtaLabel: "Partner With Us",
         secondaryCtaUrl: "/contact?type=vendor_onboarding",
-        image: "/images/diwali/diwali-festive-model.jpg",
+        image: "/images/diwali/diwali-festive-model.webp",
         imageAlt: "Olenna StudioX - A Sahasra Business Solutions Official Soft Launch Edition",
       },
       {
@@ -188,7 +188,7 @@ export const MOCK_HOMEPAGE_CONTENT: HomepageContent = {
         primaryCtaUrl: "/collections/imitation-jewellery",
         secondaryCtaLabel: "Store Updates",
         secondaryCtaUrl: "/stores",
-        image: "/images/diwali/diwali-diya-luxury.jpg",
+        image: "/images/diwali/diwali-diya-luxury.webp",
         imageAlt: "Olenna StudioX - A Sahasra Business Solutions Diwali Celebration of Lights",
       },
       {
@@ -214,7 +214,7 @@ export const MOCK_HOMEPAGE_CONTENT: HomepageContent = {
         primaryCtaUrl: "/collections/handbags-accessories",
         secondaryCtaLabel: "Contact Concierge",
         secondaryCtaUrl: "/contact",
-        image: "/images/diwali/diwali-boutique-banner.jpg",
+        image: "/images/diwali/diwali-boutique-banner.webp",
         imageAlt: "Olenna StudioX - A Sahasra Business Solutions Handbags & Accessories Collection",
       },
     ],

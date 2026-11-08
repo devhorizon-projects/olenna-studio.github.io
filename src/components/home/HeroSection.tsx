@@ -165,8 +165,8 @@ export function HeroSection({ content }: HeroSectionProps) {
                 src={assetPath(currentSlide.image)}
                 alt={currentSlide.imageAlt}
                 fill
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
+                priority={currentSlideIndex === 0}
+                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 450px, 500px"
                 className="object-cover object-center transition-all duration-700 animate-in fade-in zoom-in-95 hover:scale-[1.02]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
