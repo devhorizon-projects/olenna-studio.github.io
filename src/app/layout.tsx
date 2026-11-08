@@ -20,7 +20,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://olenna.in"),
+  metadataBase: new URL("https://olennastudiox.com"),
   title: {
     default: "Olenna StudioX - A Sahasra Business Solutions — Everyday Elegance, Thoughtfully Curated",
     template: "%s | Olenna StudioX - A Sahasra Business Solutions",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Olenna StudioX - A Sahasra Business Solutions — Everyday Elegance, Thoughtfully Curated",
     description:
       "A premium multi-category retail brand celebrating beauty, timeless fashion, and lifestyle essentials by Olenna StudioX - A Sahasra Business Solutions.",
-    url: "https://olenna.in",
+    url: "https://olennastudiox.com",
     siteName: "Olenna StudioX - A Sahasra Business Solutions",
     locale: "en_IN",
     type: "website",
@@ -60,8 +60,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-16x16.png", type: "image/png", sizes: "16x16" },
       { url: "/icon-32x32.png", type: "image/png", sizes: "32x32" },
       { url: "/icon-48x48.png", type: "image/png", sizes: "48x48" },
+      { url: "/icon-192x192.png", type: "image/png", sizes: "192x192" },
       { url: "/icon.png", type: "image/png", sizes: "512x512" },
     ],
     apple: [
