@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { ShieldAlert, Trash2, Mail, ExternalLink, CheckCircle2 } from "lucide-react";
+import { ShieldAlert, Trash2, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Account & Data Deletion Request — Olenna",

@@ -281,7 +281,7 @@ export default function PrivacyPolicyPage() {
                 </a>
               </p>
               <p>
-                <strong>Address:</strong> Rajajinagar, Bangalore, Karnataka, India
+                <strong>Address:</strong> Bangalore, Karnataka, India
               </p>
               <p className="pt-2 text-brand-text-muted text-xs">
                 We aim to respond to privacy-related requests within a reasonable period and in accordance with applicable law.

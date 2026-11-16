@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { HeroSectionContent } from "@/lib/models/content";
@@ -13,24 +13,42 @@ interface HeroSectionProps {
 
 export function HeroSection({ content }: HeroSectionProps) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  if (!content.isVisible || !content.slides.length) {
+  const slides = content.slides || [];
+  const totalSlides = slides.length;
+
+  useEffect(() => {
+    if (totalSlides <= 1 || isPaused) return;
+
+    const timer = setInterval(() => {
+      setCurrentSlideIndex((prev) => (prev + 1) % totalSlides);
+    }, 6000);
+
+    return () => clearInterval(timer);
+  }, [totalSlides, isPaused]);
+
+  if (!content.isVisible || !slides.length) {
     return null;
   }
 
-  const slides = content.slides;
   const currentSlide = slides[currentSlideIndex] || slides[0];
 
   const handlePrev = () => {
-    setCurrentSlideIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    setCurrentSlideIndex((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
   };
 
   const handleNext = () => {
-    setCurrentSlideIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    setCurrentSlideIndex((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
   };
 
   return (
-    <section className="relative bg-[#FAF1F4] overflow-hidden">
+    <section
+      className="relative bg-[#FAF1F4] overflow-hidden"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      aria-label="Featured Carousel"
+    >
       {/* Decorative subtle background gradient */}
       <div className="absolute inset-0 bg-radial-[at_top_right] from-brand-blush-100/60 via-transparent to-transparent pointer-events-none" />
 
@@ -44,7 +62,7 @@ export function HeroSection({ content }: HeroSectionProps) {
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-serif font-normal text-brand-plum-900 leading-[1.15] tracking-tight mb-5">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-serif font-normal text-brand-plum-900 leading-[1.15] tracking-tight mb-5">
               {currentSlide.headline.split(",").length > 1 ? (
                 <>
                   {currentSlide.headline.split(",")[0]},<br />
@@ -85,16 +103,23 @@ export function HeroSection({ content }: HeroSectionProps) {
 
             {/* Slider Indicator & Navigation Controls */}
             <div className="flex items-center gap-6 pt-4 border-t border-brand-plum-900/10">
-              <div className="flex items-center gap-3 text-xs tracking-wider text-brand-plum-900 font-medium">
-                <span className="font-semibold">
-                  {String(currentSlideIndex + 1).padStart(2, "0")}
-                </span>
-                <span className="w-10 h-0.5 bg-brand-plum-900/40 rounded-full" />
-                <span className="text-brand-text-muted">
-                  {slides
-                    .map((_, i) => String(i + 1).padStart(2, "0"))
-                    .filter((_, i) => i !== currentSlideIndex)
-                    .join(" ")}
+              {/* Clickable Slide Dots & Numbers */}
+              <div className="flex items-center gap-2">
+                {slides.map((_, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => setCurrentSlideIndex(i)}
+                    aria-label={`Go to slide ${i + 1}`}
+                    className={`transition-all rounded-full ${
+                      i === currentSlideIndex
+                        ? "w-8 h-2 bg-brand-plum-900"
+                        : "w-2 h-2 bg-brand-plum-900/25 hover:bg-brand-plum-900/50"
+                    }`}
+                  />
+                ))}
+                <span className="text-xs font-semibold text-brand-plum-900 ml-2">
+                  {String(currentSlideIndex + 1).padStart(2, "0")} / {String(totalSlides).padStart(2, "0")}
                 </span>
               </div>
 
@@ -102,14 +127,14 @@ export function HeroSection({ content }: HeroSectionProps) {
                 <button
                   onClick={handlePrev}
                   aria-label="Previous slide"
-                  className="w-9 h-9 rounded-full border border-brand-plum-900/20 bg-white/60 hover:bg-white text-brand-plum-900 flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-plum-900"
+                  className="w-9 h-9 rounded-full border border-brand-plum-900/20 bg-white/70 hover:bg-white text-brand-plum-900 flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-plum-900 shadow-2xs"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </button>
                 <button
                   onClick={handleNext}
                   aria-label="Next slide"
-                  className="w-9 h-9 rounded-full border border-brand-plum-900/20 bg-white/60 hover:bg-white text-brand-plum-900 flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-plum-900"
+                  className="w-9 h-9 rounded-full border border-brand-plum-900/20 bg-white/70 hover:bg-white text-brand-plum-900 flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-plum-900 shadow-2xs"
                 >
                   <ChevronRight className="w-4 h-4" />
                 </button>
@@ -119,16 +144,17 @@ export function HeroSection({ content }: HeroSectionProps) {
 
           {/* Right Column: Hero Visual Model */}
           <div className="lg:col-span-6 order-1 lg:order-2 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-lg lg:max-w-none aspect-[4/3] sm:aspect-[16/11] lg:aspect-[5/4] rounded-2xl overflow-hidden shadow-xl ring-1 ring-brand-plum-900/10 bg-brand-blush-100">
+            <div className="relative w-full max-w-md aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] rounded-2xl overflow-hidden shadow-xl ring-1 ring-brand-plum-900/10 bg-brand-blush-100 mx-auto lg:ml-auto">
               <Image
+                key={currentSlide.image}
                 src={assetPath(currentSlide.image)}
                 alt={currentSlide.imageAlt}
                 fill
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                className="object-cover object-center transition-all duration-500 hover:scale-[1.02]"
+                priority={currentSlideIndex === 0}
+                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 450px, 500px"
+                className="object-cover object-center transition-all duration-700 animate-in fade-in zoom-in-95 hover:scale-[1.02]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
             </div>
           </div>
         </div>

@@ -7,9 +7,9 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Olenna — Customer Concierge & Inquiries",
+  title: "Contact Olenna StudioX - A Sahasra Business Solutions — Customer Concierge & Inquiries",
   description:
-    "Get in touch with Olenna. Enquire about our retail collections, book in-store styling appointments, or connect with our customer concierge team.",
+    "Get in touch with Olenna StudioX - A Sahasra Business Solutions. Enquire about our retail collections, book in-store styling appointments, or connect with our customer concierge team.",
   alternates: {
     canonical: "/contact",
   },
@@ -36,7 +36,7 @@ export default async function ContactPage() {
           as="h1"
           overline="Get In Touch"
           title="We'd Love to Hear From You"
-          subtitle="Have questions about our collections, customized tailoring, or bridal styling? Our team is at your service."
+          subtitle="Have questions about our collections, styling consultations, or orders? Our team is at your service."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
@@ -135,7 +135,7 @@ export default async function ContactPage() {
               {/* Verified Status Tag */}
               <div className="pt-4 border-t border-brand-plum-900/10 text-xs text-brand-text-muted flex items-center gap-1.5">
                 <Compass className="w-3.5 h-3.5 text-brand-plum-700" />
-                <span>Physical store & workspace in progress in Rajajinagar, Bangalore. Opening soon!</span>
+                <span>Physical store in progress in Bangalore. Opening soon!</span>
               </div>
             </div>
 
@@ -146,7 +146,7 @@ export default async function ContactPage() {
                   Business Opportunities
                 </span>
                 <h4 className="font-serif text-lg text-brand-plum-900 mt-2">
-                  Partner with Olenna StudioX
+                  Partner with Olenna StudioX - A Sahasra Business Solutions
                 </h4>
               </div>
 
@@ -180,7 +180,7 @@ export default async function ContactPage() {
                     <span>3. Product Manufacturers (Sell With Us)</span>
                   </div>
                   <p className="text-purple-900/80 leading-relaxed pl-3.5">
-                    We are onboarding direct manufacturers of products (beauty products, skincare, cosmetics, and lifestyle goods) willing to sell and retail through Olenna StudioX. Connect with your catalog &amp; <strong>Instagram handle</strong>.
+                    We are onboarding direct manufacturers of products (beauty products, skincare, cosmetics, and lifestyle goods) willing to sell and retail through Olenna StudioX - A Sahasra Business Solutions. Connect with your catalog &amp; <strong>Instagram handle</strong>.
                   </p>
                 </div>
               </div>
@@ -193,17 +193,17 @@ export default async function ContactPage() {
             {/* In-Store Styling Notice Card */}
             <div className="bg-[#FAF1F4] p-6 sm:p-8 rounded-2xl border border-brand-plum-900/10 space-y-3">
               <h4 className="font-serif text-lg text-brand-plum-900">
-                Store &amp; Workspace In Progress
+                Store In Progress
               </h4>
               <p className="text-xs sm:text-sm text-brand-text-secondary leading-relaxed font-light">
-                Our physical store in Rajajinagar, Bangalore is currently in progress and opening soon. Once onboarded, our workspace and shop hours will be 10:00 AM to 10:00 PM, Monday to Sunday.
+                Our physical store in Bangalore is currently in progress and opening soon. Official store hours and launch updates will be announced upon opening.
               </p>
               <div className="pt-2">
                 <Link
                   href="/stores"
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-plum-900 hover:underline"
                 >
-                  <span>View store updates and timings →</span>
+                  <span>View store updates →</span>
                 </Link>
               </div>
             </div>

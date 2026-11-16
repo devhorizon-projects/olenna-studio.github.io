@@ -160,10 +160,10 @@ export default async function AboutPage() {
                 Physical Experience
               </span>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif leading-tight">
-                Experience Olenna Studio in Rajajinagar, Bangalore.
+                Experience Olenna StudioX in Bangalore.
               </h2>
               <p className="text-sm sm:text-base text-brand-mauve-100 font-light leading-relaxed">
-                Our physical store and workspace is currently in progress and opening soon! Designed for modern women, with workspace and store hours from 10:00 AM to 10:00 PM, Monday to Sunday.
+                Our physical boutique store is currently in progress and opening soon! Designed as a sanctuary for modern women celebrating fashion, beauty, jewellery, and curated accessories.
               </p>
               <div className="pt-4">
                 <Button

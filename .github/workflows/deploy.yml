@@ -73,6 +73,9 @@ jobs:
         run: |
           npm run build
           touch out/.nojekyll
+          if [ -f "CNAME" ] && [ ! -f "out/CNAME" ]; then
+            cp CNAME out/CNAME
+          fi
           if [ -f "out/404/index.html" ] && [ ! -f "out/404.html" ]; then
             cp out/404/index.html out/404.html
           fi
