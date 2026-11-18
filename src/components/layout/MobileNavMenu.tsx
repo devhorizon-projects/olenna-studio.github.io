@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 
 export interface NavItem {
@@ -30,8 +30,8 @@ const DEFAULT_NAV_ITEMS: NavItem[] = [
  * - Frame Dimensions: 240px width, Hug vertical (252px)
  * - Styling: White (#FFFFFF), 4px border-radius, drop-shadow 0 6px 20px rgba(0,0,0,0.14)
  * - Padding: 20px horizontal (px-5), 12px vertical (py-3)
- * - Motion Timing: 92ms duration, ease-out on open, ease-in on drag/dismiss
- * - Touch Targets: Expanded close button to 44x44px for WCAG/ergonomics
+ * - Motion Timing: 92ms duration, ease-out (click/open), ease-in (drag/dismiss)
+ * - Touch Targets: Expanded close button to 44x44px for WCAG compliance
  */
 export function MobileNavMenu({
   isOpen,
@@ -39,30 +39,8 @@ export function MobileNavMenu({
   items = DEFAULT_NAV_ITEMS,
   activeHref,
 }: MobileNavMenuProps) {
-  const [shouldRender, setShouldRender] = useState(isOpen);
-  const [isVisible, setIsVisible] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const dragStartY = useRef<number | null>(null);
-
-  // Synchronize mount and transition states (matching 92ms Figma Smart Animate)
-  useEffect(() => {
-    let timer: NodeJS.Timeout;
-    if (isOpen) {
-      setShouldRender(true);
-      // Double rAF ensures DOM paint before transition triggers
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          setIsVisible(true);
-        });
-      });
-    } else {
-      setIsVisible(false);
-      timer = setTimeout(() => {
-        setShouldRender(false);
-      }, 92); // 92ms transition
-    }
-    return () => clearTimeout(timer);
-  }, [isOpen]);
 
   // Close on Escape key press
   useEffect(() => {
@@ -92,21 +70,19 @@ export function MobileNavMenu({
     dragStartY.current = null;
   };
 
-  if (!shouldRender) return null;
+  if (!isOpen) return null;
 
   return (
     <>
       {/* Backdrop overlay for focus and tap-outside dismiss */}
       <div
-        className={`fixed inset-0 z-40 bg-black/25 backdrop-blur-[2px] transition-opacity duration-[92ms] ease-out ${
-          isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
+        className="fixed inset-0 z-40 bg-black/25 backdrop-blur-[2px] animate-in fade-in duration-[92ms] ease-out"
         onClick={onClose}
         aria-hidden="true"
       />
 
       {/* Floating Navigation Menu Card (Figma Node 149:3196) */}
-      <div className="fixed top-14 right-4 sm:right-6 z-50 pointer-events-none">
+      <div className="fixed top-18 sm:top-20 right-4 sm:right-6 z-50">
         <nav
           ref={menuRef}
           role="dialog"
@@ -115,16 +91,7 @@ export function MobileNavMenu({
           data-node-id="149:3196"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
-          className={`pointer-events-auto w-[240px] bg-white rounded-[4px] px-5 py-3 shadow-[0_6px_20px_rgba(0,0,0,0.14)] border border-brand-plum-900/10 flex flex-col focus:outline-none transition-all duration-[92ms] ${
-            isVisible
-              ? "opacity-100 scale-100 translate-y-0 ease-out"
-              : "opacity-0 scale-95 -translate-y-2 ease-in"
-          }`}
-          style={{
-            transitionTimingFunction: isVisible
-              ? "cubic-bezier(0.0, 0.0, 0.2, 1.0)"
-              : "cubic-bezier(0.4, 0.0, 1.0, 1.0)",
-          }}
+          className="w-[240px] bg-white rounded-[4px] px-5 py-3 shadow-[0_6px_20px_rgba(0,0,0,0.14)] border border-brand-plum-900/10 flex flex-col focus:outline-none animate-in fade-in zoom-in-95 slide-in-from-top-2 duration-[92ms] ease-out"
         >
           {/* Close Button Header (Figma Node 149:3197) */}
           <div

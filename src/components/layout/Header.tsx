@@ -3,12 +3,12 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Search, ArrowUpRight, ShoppingBag, X } from "lucide-react";
+import { Search, ArrowUpRight, ShoppingBag, X, Menu } from "lucide-react";
 import { SiteSettings } from "@/lib/models/settings";
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 import { useToast } from "@/components/ui/Toast";
-import { MobileNav } from "./MobileNav";
+import { MobileNavMenu } from "./MobileNavMenu";
 
 interface HeaderProps {
   settings: SiteSettings;
@@ -20,6 +20,7 @@ export function Header({ settings }: HeaderProps) {
   const { showComingSoon } = useToast();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,11 +36,6 @@ export function Header({ settings }: HeaderProps) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18 sm:h-20">
-          {/* Mobile hamburger navigation */}
-          <div className="flex md:hidden items-center">
-            <MobileNav settings={settings} />
-          </div>
-
           {/* Brand Logo */}
           <div className="flex items-center">
             <Logo size="md" variant="horizontal" priority />
@@ -113,6 +109,16 @@ export function Header({ settings }: HeaderProps) {
               <span>{settings.customerPwaLabel}</span>
               <ArrowUpRight className="w-4 h-4 ml-1 stroke-[2.2]" />
             </Button>
+
+            {/* Mobile Menu Trigger (Figma Node 149:3196) */}
+            <button
+              type="button"
+              onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+              aria-label={isMobileNavOpen ? "Close navigation menu" : "Open navigation menu"}
+              className="md:hidden p-2 text-brand-plum-900 hover:text-brand-plum-700 hover:bg-brand-blush-100/50 rounded-full transition-colors"
+            >
+              <Menu className="w-6 h-6 stroke-[1.75]" />
+            </button>
           </div>
         </div>
 
@@ -149,6 +155,13 @@ export function Header({ settings }: HeaderProps) {
           </div>
         )}
       </div>
+
+      {/* Figma 149:3196 Mobile Navigation Menu with 92ms Motion */}
+      <MobileNavMenu
+        isOpen={isMobileNavOpen}
+        onClose={() => setIsMobileNavOpen(false)}
+        activeHref={pathname}
+      />
     </header>
   );
 }
