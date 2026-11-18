@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { HeroSectionContent } from "@/lib/models/content";
 import { Button } from "@/components/ui/Button";
@@ -62,8 +63,13 @@ export function HeroSection({ content }: HeroSectionProps) {
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-serif font-normal text-brand-plum-900 leading-[1.15] tracking-tight mb-5">
-              {currentSlide.headline.split(",").length > 1 ? (
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[48px] font-serif font-normal text-brand-plum-900 leading-[1.18] tracking-tight mb-5">
+              {currentSlide.headline.includes("Celebrate") ? (
+                <>
+                  Radiance Redefined,<br />
+                  <span className="italic font-light">Celebrate</span> in Timeless Elegance.
+                </>
+              ) : currentSlide.headline.split(",").length > 1 ? (
                 <>
                   {currentSlide.headline.split(",")[0]},<br />
                   <span className="italic font-light">
@@ -79,72 +85,72 @@ export function HeroSection({ content }: HeroSectionProps) {
               {currentSlide.subheadline}
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 mb-10">
+            <div className="flex flex-wrap items-center gap-6 mb-8">
               <Button
                 href={currentSlide.primaryCtaUrl}
                 variant="primary"
                 size="lg"
-                className="group shadow-sm hover:shadow-md"
+                className="group rounded-full px-7 py-3.5 text-xs font-medium tracking-wider uppercase shadow-sm hover:shadow-md"
               >
                 <span>{currentSlide.primaryCtaLabel}</span>
-                <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" />
               </Button>
 
               {currentSlide.secondaryCtaLabel && currentSlide.secondaryCtaUrl && (
-                <Button
+                <Link
                   href={currentSlide.secondaryCtaUrl}
-                  variant="outline"
-                  size="lg"
+                  className="text-xs font-semibold tracking-widest text-brand-plum-900 uppercase hover:text-brand-plum-700 underline underline-offset-4 decoration-brand-plum-900/40 hover:decoration-brand-plum-900 transition-colors py-2 px-1"
                 >
                   {currentSlide.secondaryCtaLabel}
-                </Button>
+                </Link>
               )}
             </div>
 
-            {/* Slider Indicator & Navigation Controls */}
-            <div className="flex items-center gap-6 pt-4 border-t border-brand-plum-900/10">
-              {/* Clickable Slide Dots & Numbers */}
-              <div className="flex items-center gap-2">
-                {slides.map((_, i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    onClick={() => setCurrentSlideIndex(i)}
-                    aria-label={`Go to slide ${i + 1}`}
-                    className={`transition-all rounded-full ${
-                      i === currentSlideIndex
-                        ? "w-8 h-2 bg-brand-plum-900"
-                        : "w-2 h-2 bg-brand-plum-900/25 hover:bg-brand-plum-900/50"
-                    }`}
-                  />
-                ))}
-                <span className="text-xs font-semibold text-brand-plum-900 ml-2">
-                  {String(currentSlideIndex + 1).padStart(2, "0")} / {String(totalSlides).padStart(2, "0")}
-                </span>
-              </div>
+            {/* Slider Indicator & Navigation Controls (Shown if multi-slide) */}
+            {totalSlides > 1 && (
+              <div className="flex items-center gap-6 pt-4 border-t border-brand-plum-900/10">
+                <div className="flex items-center gap-2">
+                  {slides.map((_, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => setCurrentSlideIndex(i)}
+                      aria-label={`Go to slide ${i + 1}`}
+                      className={`transition-all rounded-full ${
+                        i === currentSlideIndex
+                          ? "w-8 h-2 bg-brand-plum-900"
+                          : "w-2 h-2 bg-brand-plum-900/25 hover:bg-brand-plum-900/50"
+                      }`}
+                    />
+                  ))}
+                  <span className="text-xs font-semibold text-brand-plum-900 ml-2">
+                    {String(currentSlideIndex + 1).padStart(2, "0")} / {String(totalSlides).padStart(2, "0")}
+                  </span>
+                </div>
 
-              <div className="flex items-center gap-2 ml-auto">
-                <button
-                  onClick={handlePrev}
-                  aria-label="Previous slide"
-                  className="w-9 h-9 rounded-full border border-brand-plum-900/20 bg-white/70 hover:bg-white text-brand-plum-900 flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-plum-900 shadow-2xs"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={handleNext}
-                  aria-label="Next slide"
-                  className="w-9 h-9 rounded-full border border-brand-plum-900/20 bg-white/70 hover:bg-white text-brand-plum-900 flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-plum-900 shadow-2xs"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
+                <div className="flex items-center gap-2 ml-auto">
+                  <button
+                    onClick={handlePrev}
+                    aria-label="Previous slide"
+                    className="w-9 h-9 rounded-full border border-brand-plum-900/20 bg-white/70 hover:bg-white text-brand-plum-900 flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-plum-900 shadow-2xs"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={handleNext}
+                    aria-label="Next slide"
+                    className="w-9 h-9 rounded-full border border-brand-plum-900/20 bg-white/70 hover:bg-white text-brand-plum-900 flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-plum-900 shadow-2xs"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/* Right Column: Hero Visual Model */}
           <div className="lg:col-span-6 order-1 lg:order-2 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-md aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] rounded-2xl overflow-hidden shadow-xl ring-1 ring-brand-plum-900/10 bg-brand-blush-100 mx-auto lg:ml-auto">
+            <div className="relative w-full max-w-md aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-brand-plum-900/10 bg-brand-blush-100 mx-auto lg:ml-auto">
               <Image
                 key={currentSlide.image}
                 src={assetPath(currentSlide.image)}
@@ -154,7 +160,18 @@ export function HeroSection({ content }: HeroSectionProps) {
                 sizes="(max-width: 640px) 90vw, (max-width: 1024px) 450px, 500px"
                 className="object-cover object-center transition-all duration-700 animate-in fade-in zoom-in-95 hover:scale-[1.02]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+
+              {/* Floating Collection Badge (Figma Desktop Mockup) */}
+              <div className="absolute bottom-5 right-5 z-10">
+                <Link
+                  href="/collections/imitation-jewellery"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-black/60 hover:bg-black/80 backdrop-blur-md text-white text-xs font-medium rounded-full border border-white/20 shadow-lg transition-colors"
+                >
+                  <span>Emperor&apos;s Heritage: Edition Jewel</span>
+                  <ChevronRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
